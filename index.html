@@ -87,7 +87,7 @@
         }
 
         .card-hover {
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card-hover:hover {
             transform: translateY(-5px);
@@ -103,6 +103,7 @@
             display: inline-block;
             white-space: nowrap;
             animation: ticker 25s linear infinite;
+            will-change: transform; /* Performance Optimization */
         }
         
         /* Loader */
@@ -133,13 +134,14 @@
         .mobile-sidebar {
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             transform: translateX(-100%);
+            will-change: transform; /* Performance Optimization */
         }
         
         .mobile-sidebar.open {
             transform: translateX(0);
         }
         
-        /* Glow Animations */
+        /* Glow Animations Optimized */
         @keyframes purplePulse {
             0% { box-shadow: 0 0 15px 0px rgba(109, 40, 217, 0.4); }
             50% { box-shadow: 0 0 25px 5px rgba(109, 40, 217, 0.7); }
@@ -148,6 +150,7 @@
         .purple-glow-box {
             animation: purplePulse 3s infinite;
             border: 1px solid rgba(109, 40, 217, 0.5);
+            will-change: box-shadow; /* Performance Optimization */
         }
 
         @keyframes greenPulse {
@@ -158,9 +161,10 @@
         .green-glow-box {
             animation: greenPulse 3s infinite;
             border: 1px solid rgba(74, 222, 128, 0.4);
+            will-change: box-shadow; /* Performance Optimization */
         }
         
-        /* Fade In Up Utility - Explicit Definition */
+        /* Fade In Up Utility */
         @keyframes fadeInUp {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -168,6 +172,7 @@
         .animate-fade-up {
             opacity: 0; 
             animation: fadeInUp 0.8s ease-out forwards;
+            will-change: opacity, transform; /* Performance Optimization */
         }
         .delay-100 { animation-delay: 0.1s; }
         .delay-200 { animation-delay: 0.2s; }
@@ -183,13 +188,19 @@
         .animate-gradient-text {
             background-size: 200% auto;
             animation: gradientWave 3s linear infinite;
+            will-change: background-position; /* Performance Optimization */
         }
 
-        /* Pro Icon Style */
+        /* Pro Icon Style Optimized */
         .pro-icon-container {
             background: linear-gradient(145deg, #1e293b, #0f172a);
             box-shadow: 5px 5px 10px #0b111f, -5px -5px 10px #212d41;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            /* Avoid using 'all' for better performance */
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                        background 0.4s ease,
+                        box-shadow 0.4s ease,
+                        border-color 0.4s ease;
+            will-change: transform, box-shadow; /* Performance Optimization */
         }
         .group:hover .pro-icon-container {
             transform: scale(1.1) rotate(5deg);
@@ -198,7 +209,7 @@
             border-color: #4ade80;
         }
         .pro-icon-container i {
-            transition: all 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
         .group:hover .pro-icon-container i {
             color: white !important;
