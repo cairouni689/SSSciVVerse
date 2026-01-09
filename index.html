@@ -446,7 +446,7 @@
         </footer>
     </div>
 
-    <div id="bachelor-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative pt-10 flex flex-col justify-between">
+    <div id="bachelor-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
 
         <div class="container mx-auto px-4 relative z-10 flex-grow">
@@ -563,6 +563,7 @@
             </div>
 
             <div id="subjects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-fade-up delay-100">
+                <!-- سيتم ملؤها ديناميكيًا -->
                 </div>
         </div>
 
@@ -622,6 +623,7 @@
             </div>
             
             <div id="departments-list-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-up delay-100">
+                <!-- سيتم ملؤها ديناميكيًا -->
                 </div>
         </div>
 
@@ -645,6 +647,7 @@
             </div>
             
             <div id="specialized-programs-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-up delay-100">
+                <!-- سيتم ملؤها ديناميكيًا -->
                 </div>
         </div>
 
@@ -668,6 +671,7 @@
             </div>
             
             <div id="dept-selection-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-up delay-100">
+                <!-- سيتم ملؤها ديناميكيًا -->
                 </div>
         </div>
 
@@ -693,7 +697,7 @@
 
         <div class="container mx-auto px-4 relative z-10 flex-grow flex flex-col items-center justify-center gap-8 max-w-4xl">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-                <div onclick="showSemesterPage('الفصل الدراسي الأول', '#')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-100 flex flex-col items-center">
+                <div onclick="showDepartmentSemester(lastSelectedYear, lastSelectedDept, 'الفصل الدراسي الأول')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-100 flex flex-col items-center">
                     <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
                         <i class="fas fa-book-open text-3xl text-gray-400"></i>
                     </div>
@@ -701,7 +705,7 @@
                     <span class="text-xs text-gray-500 group-hover:text-gray-300">عرض المواد</span>
                 </div>
 
-                <div onclick="showSemesterPage('الفصل الدراسي الثاني', '#')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-200 flex flex-col items-center">
+                <div onclick="showDepartmentSemester(lastSelectedYear, lastSelectedDept, 'الفصل الدراسي الثاني')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-200 flex flex-col items-center">
                     <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
                         <i class="fas fa-book-reader text-3xl text-gray-400"></i>
                     </div>
@@ -709,6 +713,30 @@
                     <span class="text-xs text-gray-500 group-hover:text-gray-300">عرض المواد</span>
                 </div>
             </div>
+        </div>
+
+        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
+           © 2026 Cairo SciVerse
+        </div>
+    </div>
+
+    <div id="department-subjects-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+        <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-10">
+            <div class="flex justify-between items-center mb-10 animate-fade-up">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2" id="department-subjects-title">قائمة المواد</h2>
+                    <p class="text-cuGreen-400 text-lg" id="department-subjects-subtitle">اختر المادة لعرض المحتوى</p>
+                </div>
+                <button onclick="showSpecializedSemesters(lastSelectedDept)" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
+                    <span class="text-sm font-bold">رجوع</span> <i class="fas fa-arrow-left"></i>
+                </button>
+            </div>
+
+            <div id="department-subjects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-fade-up delay-100">
+                <!-- سيتم ملؤها ديناميكيًا -->
+                </div>
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
@@ -1137,44 +1165,55 @@
 
         // --- DATA FOR YEAR 1 SEMESTER 1 SUBJECTS ---
         const semester1Subjects = [
-            { name: "كيمياء ك101", icon: "fa-flask", link: "https://drive.google.com/drive/folders/1HVbRH3wWeDL0e0g7W6nJyE2Ytp9ObXEs?usp=drive_link" },
-            { name: "فيزياء ف101", icon: "fa-atom", link: "https://drive.google.com/drive/folders/1BEDrq1O5n-S8Lg16Ue9cHyIUnxmvMSsN?usp=drive_link" },
-            { name: "حيوان ح101", icon: "fa-frog", link: "https://drive.google.com/drive/folders/1ohLpop-XZl31QjGDbFTa_t1h8yQPZnbe?usp=drive_link" },
-            { name: "نبات ن101", icon: "fa-leaf", link: "https://drive.google.com/drive/folders/1dFeOXyFYrI0Pv_pSGEXkF-JB5a0b9DSo?usp=drive_link" },
-            { name: "الجبر ر110", icon: "fa-calculator", link: "https://drive.google.com/drive/folders/1TGuOnmPMkAphpqkQF3YUjAjOQ_FiopVU?usp=drive_link" },
-            { name: "فلك ل111", icon: "fa-star", link: "https://drive.google.com/drive/folders/1A7N4bbPkc0NxnkMnYTdSxA7FV-p-PMB0?usp=drive_link" },
-            { name: "بايوفيزياء بف111", icon: "fa-dna", link: "https://drive.google.com/drive/folders/163qTS34_0an3m7RGcx7vfo6urV7rTCAS?usp=drive_link" },
-            { name: "التفاضل ر131", icon: "fa-square-root-alt", link: "https://drive.google.com/drive/folders/17By2a0NMP8zThghq67RnnYBAdKf3o3uO?usp=drive_link" },
-            { name: "حشرات ش101", icon: "fa-bug", link: "https://drive.google.com/drive/folders/1WNrh0JIyScXVGJ2q2l9EWNlxmKKnHYP9?usp=drive_link" },
-            { name: "جيولوجيا ج101", icon: "fa-mountain", link: "https://drive.google.com/drive/folders/1Wpu75ZUIR1hPnAy1ERZTDhpnvCZJzA7r?usp=drive_link" },
-            { name: "جيوفيزياء جف101", icon: "fa-globe-americas", link: "https://drive.google.com/drive/folders/1jISANqevryna4u8glph29rTWorcTQ0mh?usp=drive_link" },
-            { name: "الإحصاء ص100", icon: "fa-chart-bar", link: "https://drive.google.com/drive/folders/1_ixUROt112a3axl7NR6mNoA-VV5M9Nno?usp=drive_link" }
+            { name: "كيمياء ك101", icon: "fa-flask", link: "https://drive.google.com/drive/folders/1V5Sq9pDBwXLhlhZIJgMuF-1Z3_Rq7A4U?usp=drive_link" },
+            { name: "فيزياء ف101", icon: "fa-atom", link: "https://drive.google.com/drive/folders/139ONov_kV4GO-nmk_WFikDR9-8hf0uWt?usp=drive_link" },
+            { name: "حيوان ح101", icon: "fa-frog", link: "https://drive.google.com/drive/folders/1EvcNCzOvQqBwP4Km1c5FLM8rwcWZrSZL?usp=drive_link" },
+            { name: "نبات ن101", icon: "fa-leaf", link: "https://drive.google.com/drive/folders/1dPShBPukZ0zbVPbe0fJaUj8VBM5zQ0aO?usp=drive_link" },
+            { name: "الجبر ر110", icon: "fa-calculator", link: "https://drive.google.com/drive/folders/14Ret7GOChrqpGCxDAPA-RIUGMVIzpASS?usp=drive_link" },
+            { name: "فلك ل111", icon: "fa-star", link: "https://drive.google.com/drive/folders/1nK6NX7tQPUt3lPeGP0y4sR-haUMCX6MO?usp=drive_link" },
+            { name: "بايوفيزياء بف111", icon: "fa-dna", link: "https://drive.google.com/drive/folders/1Xhyt9Xgcatfc_Z6lC7ba0vzkOZTqJKY8?usp=drive_link" },
+            { name: "التفاضل ر131", icon: "fa-square-root-alt", link: "https://drive.google.com/drive/folders/1rqA1lS67Esv7eMQ0S4QgpEBNY5yDk-YX?usp=drive_link" },
+            { name: "حشرات ش101", icon: "fa-bug", link: "https://drive.google.com/drive/folders/19xQiqaiG8GlTLeB96QCnZvTXBuqTL35O?usp=drive_link" },
+            { name: "جيولوجيا ج101", icon: "fa-mountain", link: "https://drive.google.com/drive/folders/1X-Vt91lr19PQx_ZPwaLVMjArg_EEo_Qj?usp=drive_link" },
+            { name: "جيوفيزياء جف101", icon: "fa-globe-americas", link: "https://drive.google.com/drive/folders/1L0wjl727wux66iu-kXBsLw5eQR0-zmF6?usp=drive_link" },
+            { name: "الإحصاء ص100", icon: "fa-chart-bar", link: "https://drive.google.com/drive/folders/1NFN7JiEkHbvuxdJCK8LGKyB38ssGuptu?usp=drive_link" }
         ];
 
         // --- DATA FOR YEAR 1 SEMESTER 2 SUBJECTS ---
         const semester2Subjects = [
-            { name: "كيمياء ك102", icon: "fa-flask", link: "https://drive.google.com/drive/folders/1cXhDJsS0pKztdgWhY7vhPbj4li4Mmg_R?usp=drive_link" },
-            { name: "فيزياء ف102", icon: "fa-atom", link: "https://drive.google.com/drive/folders/1X8a58dQJsN0Y53rdYW_fvD1GBqQALDV1?usp=drive_link" },
-            { name: "التكامل ر132", icon: "fa-infinity", link: "https://drive.google.com/drive/folders/1oQNFONCz9yXQvMlvnOSEOH_UfW67DcAL?usp=drive_link" },
-            { name: "جافا س101", icon: "fa-code", link: "https://drive.google.com/drive/folders/1wPfU_ynGiGj-5KrL7Jd1-ZBySXmlnlm7?usp=drive_link" },
-            { name: "جيولوجيا ج102", icon: "fa-mountain", link: "https://drive.google.com/drive/folders/1jXi-a9HOGhksELw4cAHebO84n-hqPUd2?usp=drive_link" },
-            { name: "حيوان ح102", icon: "fa-frog", link: "https://drive.google.com/drive/folders/121azBbQVFxxftaTWFqlwHEDbkbUnz7aY?usp=drive_link" },
-            { name: "نبات 102", icon: "fa-leaf", link: "https://drive.google.com/drive/folders/1A3S1il36Ohp15OmdKjdh-0qduwGOy5Sf?usp=drive_link" },
-            { name: "ميكانيكس ر170", icon: "fa-cogs", link: "https://drive.google.com/drive/folders/1yZXglFtZTmI_Gp2GcgPoRM2IfdihQX3X?usp=drive_link" },
-            { name: "فلك ل112", icon: "fa-star", link: "https://drive.google.com/drive/folders/1x__zCp4nk3eVbtRyOLgwlQficUh2CyOQ?usp=drive_link" },
-            { name: "بايوفيزياء بف112", icon: "fa-dna", link: "https://drive.google.com/drive/folders/1AAlA4oJvSuHdQtQKL6V2IZemVRo7Zlfz?usp=drive_link" },
-            { name: "جيوفيزياء جف102", icon: "fa-globe-americas", link: "https://drive.google.com/drive/folders/1UXgi56kNjuw89CzMJPgqZsYS2nQw5_wR?usp=drive_link" },
-            { name: "حشرات 102", icon: "fa-bug", link: "https://drive.google.com/drive/folders/1e9mtqnQ4nW3mRTzT_fzmabLoVvZoyxXp?usp=drive_link" }
+            { name: "كيمياء ك102", icon: "fa-flask", link: "" },
+            { name: "فيزياء ف102", icon: "fa-atom", link: "" },
+            { name: "التكامل ر132", icon: "fa-infinity", link: "" },
+            { name: "جافا س101", icon: "fa-code", link: "" },
+            { name: "جيولوجيا ج102", icon: "fa-mountain", link: "" },
+            { name: "حيوان ح102", icon: "fa-frog", link: "" },
+            { name: "نبات 102", icon: "fa-leaf", link: "" },
+            { name: "ميكانيكس ر170", icon: "fa-cogs", link: "" },
+            { name: "فلك ل112", icon: "fa-star", link: "" },
+            { name: "بايوفيزياء بف112", icon: "fa-dna", link: "" },
+            { name: "جيوفيزياء جف102", icon: "fa-globe-americas", link: "" },
+            { name: "حشرات 102", icon: "fa-bug", link: "" }
         ];
 
         const uniRequirementsSubjects = [
-             { name: "الثقافة البيئية ع109", icon: "fa-tree", link: "https://drive.google.com/drive/folders/1JoPuMG_ECBMw1gKO7ANxuFDWbJ3Nn394?usp=drive_link" },
-             { name: "الحاسب ع101", icon: "fa-laptop", link: "https://drive.google.com/drive/folders/1xoPzjfmqunl72bq3xekgqYLig8QbaeZ3?usp=drive_link" },
-             { name: "المبادئ ع104", icon: "fa-balance-scale", link: "https://drive.google.com/drive/folders/1UJOpR9svQyEPzHCkXrAtFxymJ0k_whYw?usp=drive_link" },
-             { name: "انجليزي ع102", icon: "fa-language", link: "https://drive.google.com/drive/folders/1TQqJN-sPJpHPYcRcY35XwXbKzhTOvaje?usp=drive_link" },
-             { name: "تاريخ ع108", icon: "fa-landmark", link: "https://drive.google.com/drive/folders/1Rv59CPKiQt7z_Ypf51BLUhqPDwRifzWl?usp=drive_link" },
-             { name: "تفكير نقدي ع110", icon: "fa-brain", link: "https://drive.google.com/drive/folders/1gUyxodalOhmvgTx858krHq55w_qXyyK3?usp=drive_link" },
-             { name: "قضايا مجتمعية ع103", icon: "fa-users", link: "https://drive.google.com/drive/folders/1R0-xgThRWq6FmX21eD_KjfZvPzrlE5qZ?usp=drive_link" }
+             { name: "الثقافة البيئية ع109", icon: "fa-tree", link: "" },
+             { name: "الحاسب ع101", icon: "fa-laptop", link: "" },
+             { name: "المبادئ ع104", icon: "fa-balance-scale", link: "" },
+             { name: "انجليزي ع102", icon: "fa-language", link: "" },
+             { name: "تاريخ ع108", icon: "fa-landmark", link: "" },
+             { name: "تفكير نقدي ع110", icon: "fa-brain", link: "" },
+             { name: "قضايا مجتمعية ع103", icon: "fa-users", link: "" }
+        ];
+
+        // --- DATA FOR CHEMISTRY/BIOCHEMISTRY DEPARTMENT (YEAR 2, SEMESTER 1) ---
+        const chemBiochemYear2Semester1 = [
+            { name: "Genetics ح212", icon: "fa-dna", link: "" },
+            { name: "Cell biology ح211", icon: "fa-microscope", link: "" },
+            { name: "Analytical chemistry ك221", icon: "fa-flask", link: "" },
+            { name: "Aromatic chemistry ك242", icon: "fa-vial", link: "" },
+            { name: "Organic chemistry ك241", icon: "fa-atom", link: "" },
+            { name: "Thermodynamics ك211", icon: "fa-thermometer-half", link: "" },
+            { name: "Stat 222", icon: "fa-chart-bar", link: "" }
         ];
 
         let lastSelectedYear = "";
@@ -1191,6 +1230,7 @@
             'specialized-programs-view',
             'dept-selection-view',
             'specialized-semesters-view',
+            'department-subjects-view',
             'career-view',
             'tools-view',
             'history-view'
@@ -1328,6 +1368,57 @@
             switchView('specialized-semesters-view');
         }
 
+        function showDepartmentSemester(year, dept, semester) {
+            // Set the title for department subjects view
+            const titleEl = document.getElementById('department-subjects-title');
+            const subtitleEl = document.getElementById('department-subjects-subtitle');
+            
+            if(titleEl) titleEl.innerText = `${dept} - ${semester}`;
+            if(subtitleEl) subtitleEl.innerText = `اختر المادة لعرض المحتوى`;
+            
+            // Get the appropriate subjects based on department and semester
+            let subjectsList = [];
+            
+            if (dept === "كيمياء/كيمياء حيوي" && semester === "الفصل الدراسي الأول") {
+                if (year === "الفرقة الثانية") {
+                    subjectsList = chemBiochemYear2Semester1;
+                }
+            }
+            
+            // If no subjects found for this combination, show a message
+            if (subjectsList.length === 0) {
+                const container = document.getElementById('department-subjects-container');
+                container.innerHTML = `
+                    <div class="col-span-4 text-center py-12">
+                        <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                            <i class="fas fa-exclamation-circle text-3xl text-cuGold-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">لم يتم إضافة المواد بعد</h3>
+                        <p class="text-gray-400">سيتم إضافة مواد هذا الفصل قريباً</p>
+                    </div>
+                `;
+            } else {
+                // Render the subjects
+                const container = document.getElementById('department-subjects-container');
+                container.innerHTML = "";
+                
+                subjectsList.forEach(subject => {
+                    const html = `
+                    <div onclick="showSemesterPage('${subject.name}', '${subject.link}')" class="group bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
+                        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                            <i class="fas ${subject.icon} text-2xl text-gray-400"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-200 group-hover:text-white mb-2">${subject.name}</h4>
+                        <span class="text-xs text-cuGreen-500">${subject.link ? 'عرض المحتوى' : 'سيتم إضافته قريباً'}</span>
+                    </div>
+                    `;
+                    container.innerHTML += html;
+                });
+            }
+            
+            switchView('department-subjects-view');
+        }
+
         // --- UPDATED LOGIC FOR SUBJECTS ---
         function showSubjectsPage(category) {
             lastSelectedSubjectCategory = category;
@@ -1348,21 +1439,26 @@
             container.innerHTML = "";
             dataList.forEach(subject => {
                  const html = `
-                <div onclick="showSemesterPage('${subject.name}', '${subject.link}')" class="group bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
-                    <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
-                        <i class="fas ${subject.icon} text-2xl text-gray-400"></i>
-                    </div>
-                    <h4 class="text-lg font-bold text-gray-200 group-hover:text-white mb-2">${subject.name}</h4>
-                    <span class="text-xs text-cuGreen-500">عرض المحتوى</span>
-                </div>
-                `;
-                container.innerHTML += html;
+                 <div onclick="showSemesterPage('${subject.name}', '${subject.link}')" class="group bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
+                     <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                         <i class="fas ${subject.icon} text-2xl text-gray-400"></i>
+                     </div>
+                     <h4 class="text-lg font-bold text-gray-200 group-hover:text-white mb-2">${subject.name}</h4>
+                     <span class="text-xs text-cuGreen-500">${subject.link ? 'عرض المحتوى' : 'سيتم إضافته قريباً'}</span>
+                 </div>
+                 `;
+                 container.innerHTML += html;
             });
 
             switchView('subjects-view');
         }
 
         function showSemesterPage(title, link) {
+            if (!link) {
+                showToast('الرابط غير متوفر حالياً');
+                return;
+            }
+            
             const titleEl = document.getElementById('semester-title');
             if (titleEl) titleEl.innerText = title;
             
@@ -1374,7 +1470,7 @@
                 if (lastSelectedYear === 'الفرقة الأولى') {
                      backBtn.setAttribute('onclick', `showSubjectsPage('${lastSelectedSubjectCategory}')`);
                 } else {
-                    backBtn.setAttribute('onclick', `showSpecializedSemesters('${lastSelectedDept}')`);
+                    backBtn.setAttribute('onclick', `showDepartmentSemester('${lastSelectedYear}', '${lastSelectedDept}', 'الفصل الدراسي الأول')`);
                 }
             }
 
@@ -1400,7 +1496,7 @@
                 } else {
                     setTimeout(() => {
                         if(!overlay.classList.contains('open')) {
-                           // overlay.classList.add('hidden'); 
+                           overlay.classList.add('hidden'); 
                         }
                     }, 300);
                 }
@@ -1466,4 +1562,4 @@
         }
     </script>
 </body>
-</html>
+                </html>
