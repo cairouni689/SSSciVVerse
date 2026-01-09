@@ -99,7 +99,7 @@
             display: inline-block;
             white-space: nowrap;
             animation: ticker 25s linear infinite;
-            will-change: transform; /* Performance Optimization */
+            will-change: transform;
         }
         
         /* Loader */
@@ -130,7 +130,7 @@
         .mobile-sidebar {
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             transform: translateX(-100%);
-            will-change: transform; /* Performance Optimization */
+            will-change: transform;
         }
         
         .mobile-sidebar.open {
@@ -146,7 +146,7 @@
         .purple-glow-box {
             animation: purplePulse 3s infinite;
             border: 1px solid rgba(109, 40, 217, 0.5);
-            will-change: box-shadow; /* Performance Optimization */
+            will-change: box-shadow;
         }
 
         @keyframes greenPulse {
@@ -157,7 +157,7 @@
         .green-glow-box {
             animation: greenPulse 3s infinite;
             border: 1px solid rgba(74, 222, 128, 0.4);
-            will-change: box-shadow; /* Performance Optimization */
+            will-change: box-shadow;
         }
         
         /* Fade In Up Utility */
@@ -168,7 +168,7 @@
         .animate-fade-up {
             opacity: 0; 
             animation: fadeInUp 0.8s ease-out forwards;
-            will-change: opacity, transform; /* Performance Optimization */
+            will-change: opacity, transform;
         }
         .delay-100 { animation-delay: 0.1s; }
         .delay-200 { animation-delay: 0.2s; }
@@ -184,19 +184,18 @@
         .animate-gradient-text {
             background-size: 200% auto;
             animation: gradientWave 3s linear infinite;
-            will-change: background-position; /* Performance Optimization */
+            will-change: background-position;
         }
 
         /* Pro Icon Style Optimized */
         .pro-icon-container {
             background: linear-gradient(145deg, #1e293b, #0f172a);
             box-shadow: 5px 5px 10px #0b111f, -5px -5px 10px #212d41;
-            /* Avoid using 'all' for better performance */
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
                         background 0.4s ease,
                         box-shadow 0.4s ease,
                         border-color 0.4s ease;
-            will-change: transform, box-shadow; /* Performance Optimization */
+            will-change: transform, box-shadow;
         }
         .group:hover .pro-icon-container {
             transform: scale(1.1) rotate(5deg);
@@ -266,9 +265,25 @@
                         <span class="text-xs md:text-sm text-cuGold-500 font-semibold tracking-wide">جامعة القاهرة</span>
                     </div>
                 </a>
-                <button id="mobile-menu-btn" class="text-2xl text-white focus:outline-none hover:text-cuGreen-400 transition">
-                    <i class="fas fa-bars"></i>
-                </button>
+
+                <div class="flex items-center gap-4">
+                    <div id="auth-container">
+                        <button id="login-btn" class="text-white hover:text-cuGreen-400 transition transform hover:scale-110" title="تسجيل الدخول">
+                            <i class="fas fa-user-circle text-2xl"></i>
+                        </button>
+                        
+                        <div id="user-profile" class="hidden relative group cursor-pointer" onclick="logout()">
+                            <img id="user-avatar" src="" alt="User" class="w-9 h-9 rounded-full border-2 border-cuGreen-500 shadow-md hover:shadow-cuGreen-500/50 transition">
+                            <div class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap pointer-events-none">
+                                تسجيل خروج
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="mobile-menu-btn" class="text-2xl text-white focus:outline-none hover:text-cuGreen-400 transition">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -1317,9 +1332,6 @@
             if(container) {
                 container.innerHTML = "";
                 subjects.forEach(sub => {
-                    // Using a generic drive link placeholder for now as specific links per subject weren't provided, 
-                    // or redirecting to semester page for a "hub" feeling.
-                    // For now, let's make it click to open the general semester view (or a placeholder action).
                     const html = `
                     <div onclick="showSemesterPage('${sub.name}', '#')" class="group bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGold-500 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-cuGold-900/20 text-center flex flex-col items-center">
                         <div class="w-14 h-14 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
@@ -1362,12 +1374,9 @@
             
             const backBtn = document.getElementById('semester-back-btn');
             if (backBtn) {
-                // If we came from the subject list view (Year 1 context), go back there? 
-                // Or go back to Year 1 main page? Let's make it smart.
                 const currentView = document.getElementById('subjects-list-view');
                 if (!currentView.classList.contains('hidden')) {
-                     backBtn.setAttribute('onclick', "showSubjectsList('semester1')"); // Default fallback, but ideally needs state
-                     // Better yet, just go back to Year 1 Page to start over
+                     backBtn.setAttribute('onclick', "showSubjectsList('semester1')"); 
                      backBtn.setAttribute('onclick', 'showYear1Page()');
                 } else if (lastSelectedYear === 'الفرقة الأولى') {
                     backBtn.setAttribute('onclick', 'showYear1Page()');
@@ -1398,7 +1407,7 @@
                 } else {
                     setTimeout(() => {
                         if(!overlay.classList.contains('open')) {
-                           // overlay.classList.add('hidden'); // Optional if CSS handles it
+                           // overlay.classList.add('hidden');
                         }
                     }, 300);
                 }
@@ -1462,6 +1471,78 @@
                 }, 3000);
             }
         }
+    </script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCRP9gGEV5VcqXTDelYiuZOgNZkp7Fys-g",
+            authDomain: "sciverseeee.firebaseapp.com",
+            projectId: "sciverseeee",
+            storageBucket: "sciverseeee.firebasestorage.app",
+            messagingSenderId: "119079824144",
+            appId: "1:119079824144:web:45d9da947ae848206a9395",
+            measurementId: "G-YKCKBDM2DG"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+
+        // UI Elements
+        const loginBtn = document.getElementById('login-btn');
+        const userProfile = document.getElementById('user-profile');
+        const userAvatar = document.getElementById('user-avatar');
+
+        // Login Logic
+        loginBtn.addEventListener('click', () => {
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    // This gives you a Google Access Token. You can use it to access the Google API.
+                    const credential = GoogleAuthProvider.credentialFromResult(result);
+                    const token = credential.accessToken;
+                    // The signed-in user info.
+                    const user = result.user;
+                    
+                    showToast(`مرحباً ${user.displayName.split(' ')[0]} 🚀`);
+                }).catch((error) => {
+                    // Handle Errors here.
+                    console.error(error);
+                    showToast('حدث خطأ في تسجيل الدخول');
+                });
+        });
+
+        // Logout Logic (Attached to window so onclick works)
+        window.logout = function() {
+            if(confirm('هل تريد تسجيل الخروج؟')) {
+                signOut(auth).then(() => {
+                    showToast('تم تسجيل الخروج');
+                }).catch((error) => {
+                    console.error(error);
+                });
+            }
+        }
+
+        // Monitor Auth State
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in
+                loginBtn.classList.add('hidden');
+                userProfile.classList.remove('hidden');
+                userAvatar.src = user.photoURL;
+            } else {
+                // User is signed out
+                loginBtn.classList.remove('hidden');
+                userProfile.classList.add('hidden');
+            }
+        });
     </script>
 </body>
 </html>
