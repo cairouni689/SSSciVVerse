@@ -500,162 +500,6 @@
         </div>
     </div>
 
-    <div id="year1-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
-        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
-
-        <div class="container mx-auto px-4 relative z-10 pt-10">
-            <div class="flex justify-between items-center animate-fade-up">
-                <div>
-                    <h2 class="text-4xl font-bold text-white mb-2">الفرقة الأولى</h2>
-                    <p class="text-cuGreen-400 text-lg">اختر الفصل الدراسي</p>
-                </div>
-                <button onclick="showBachelorPage()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
-                    <span class="text-sm font-bold">رجوع</span> <i class="fas fa-arrow-left"></i>
-                </button>
-            </div>
-        </div>
-
-        <div class="container mx-auto px-4 relative z-10 flex-grow flex flex-col items-center justify-center gap-8 max-w-4xl">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-                <div onclick="showSubjectsPage('الفصل الدراسي الأول')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-100 flex flex-col items-center">
-                    <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
-                        <i class="fas fa-book-open text-3xl text-gray-400"></i>
-                    </div>
-                    <h4 class="text-2xl font-bold text-gray-100 group-hover:text-white mb-2">الفصل الدراسي الأول</h4>
-                    <span class="text-xs text-gray-500 group-hover:text-gray-300">عرض المواد</span>
-                </div>
-
-                <div onclick="showSubjectsPage('الفصل الدراسي الثاني')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-200 flex flex-col items-center">
-                    <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
-                        <i class="fas fa-book-reader text-3xl text-gray-400"></i>
-                    </div>
-                    <h4 class="text-2xl font-bold text-gray-100 group-hover:text-white mb-2">الفصل الدراسي الثاني</h4>
-                    <span class="text-xs text-gray-500 group-hover:text-gray-300">عرض المواد</span>
-                </div>
-            </div>
-
-            <div onclick="showSubjectsPage('متطلبات الجامعة')" class="w-full md:w-1/2 group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGold-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGold-900/40 text-center animate-fade-up delay-300 flex flex-col items-center">
-                <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
-                    <i class="fas fa-university text-3xl text-gray-400"></i>
-                </div>
-                <h4 class="text-2xl font-bold text-gray-100 group-hover:text-white mb-2">متطلبات الجامعة</h4>
-                <span class="text-xs text-gray-500 group-hover:text-gray-300">عرض المواد</span>
-            </div>
-        </div>
-
-        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
-        </div>
-    </div>
-
-    <div id="subjects-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
-        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
-
-        <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-10">
-            <div class="flex justify-between items-center mb-10 animate-fade-up">
-                <div>
-                    <h2 class="text-3xl font-bold text-white mb-2" id="subjects-page-title">قائمة المواد</h2>
-                    <p class="text-cuGreen-400 text-lg">اختر المادة لعرض المحتوى</p>
-                </div>
-                <button onclick="showYear1Page()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
-                    <span class="text-sm font-bold">رجوع</span> <i class="fas fa-arrow-left"></i>
-                </button>
-            </div>
-
-            <div id="subjects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-fade-up delay-100">
-                <!-- سيتم ملؤها ديناميكيًا -->
-                </div>
-        </div>
-
-        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
-        </div>
-    </div>
-
-    <div id="semester-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
-        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#eab308 1px, transparent 1px); background-size: 30px 30px;"></div>
-        
-        <div class="h-20"></div>
-
-        <div class="container mx-auto px-4 relative z-10 flex-grow flex items-center justify-center">
-            <div class="max-w-2xl w-full bg-dark-800 p-10 rounded-3xl border border-gray-700 shadow-2xl purple-glow-box animate-fade-up text-center">
-                <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600 green-glow-box">
-                    <i class="fas fa-folder-open text-4xl text-gray-400"></i>
-                </div>
-                
-                <h2 class="text-3xl font-bold text-white mb-2" id="semester-title">مرحباً بك</h2>
-                <div class="h-1 w-20 bg-cuGold-500 mx-auto rounded mb-6"></div>
-                
-                <p class="text-gray-300 text-lg leading-relaxed mb-8" id="semester-message">
-                    ستجد هنا كنزك الدراسي! <br>
-                    جميع المحاضرات والمراجع التي تحتاجها للتفوق متاحة الآن بين يديك.
-                </p>
-                
-                <div class="flex flex-col gap-4 justify-center items-center">
-                    <a id="semester-drive-link" href="#" target="_blank" class="bg-cuGreen-600 hover:bg-cuGreen-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105 border border-cuGreen-500 flex items-center gap-3">
-                        <i class="fab fa-google-drive text-xl"></i> الدخول إلى المحتوى (Google Drive)
-                    </a>
-                    
-                    <button id="semester-back-btn" onclick="showYear1Page()" class="text-gray-500 hover:text-white transition text-sm mt-2 flex items-center gap-2">
-                        <i class="fas fa-arrow-right"></i> العودة
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
-        </div>
-    </div>
-
-    <div id="departments-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
-        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
-
-        <div class="container mx-auto px-4 relative z-10 flex-grow">
-            <div class="flex justify-between items-center mb-16 pt-10 animate-fade-up">
-                <div>
-                    <h2 class="text-4xl font-bold text-white mb-2">الأقسام العامة</h2>
-                    <p class="text-cuGreen-400 text-lg">تصفح الأقسام العلمية بالكلية</p>
-                </div>
-                <button onclick="showHomePage()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
-                    <span class="text-sm font-bold">الرئيسية</span> <i class="fas fa-home"></i>
-                </button>
-            </div>
-            
-            <div id="departments-list-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-up delay-100">
-                <!-- سيتم ملؤها ديناميكيًا -->
-                </div>
-        </div>
-
-        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
-        </div>
-    </div>
-
-    <div id="specialized-programs-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
-        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
-
-        <div class="container mx-auto px-4 relative z-10 flex-grow">
-            <div class="flex justify-between items-center mb-16 pt-10 animate-fade-up">
-                <div>
-                    <h2 class="text-4xl font-bold text-white mb-2">البرامج النوعية</h2>
-                    <p class="text-cuGreen-400 text-lg">البرامج المتخصصة بالكلية</p>
-                </div>
-                <button onclick="showHomePage()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
-                    <span class="text-sm font-bold">الرئيسية</span> <i class="fas fa-home"></i>
-                </button>
-            </div>
-            
-            <div id="specialized-programs-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-up delay-100">
-                <!-- سيتم ملؤها ديناميكيًا -->
-                </div>
-        </div>
-
-        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
-        </div>
-    </div>
-
     <div id="dept-selection-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
 
@@ -671,12 +515,11 @@
             </div>
             
             <div id="dept-selection-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-up delay-100">
-                <!-- سيتم ملؤها ديناميكيًا -->
                 </div>
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
+            © 2026 Cairo SciVerse
         </div>
     </div>
 
@@ -716,7 +559,7 @@
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
+            © 2026 Cairo SciVerse
         </div>
     </div>
 
@@ -735,18 +578,283 @@
             </div>
 
             <div id="department-subjects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-fade-up delay-100">
-                <!-- سيتم ملؤها ديناميكيًا -->
                 </div>
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
+            © 2026 Cairo SciVerse
         </div>
+    </div>
+
+    <div id="semester-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
+        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#eab308 1px, transparent 1px); background-size: 30px 30px;"></div>
+        
+        <div class="h-20"></div>
+
+        <div class="container mx-auto px-4 relative z-10 flex-grow flex items-center justify-center">
+            <div class="max-w-2xl w-full bg-dark-800 p-10 rounded-3xl border border-gray-700 shadow-2xl purple-glow-box animate-fade-up text-center">
+                <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600 green-glow-box">
+                    <i class="fas fa-folder-open text-4xl text-gray-400"></i>
+                </div>
+                
+                <h2 class="text-3xl font-bold text-white mb-2" id="semester-title">مرحباً بك</h2>
+                <div class="h-1 w-20 bg-cuGold-500 mx-auto rounded mb-6"></div>
+                
+                <p class="text-gray-300 text-lg leading-relaxed mb-8" id="semester-message">
+                    ستجد هنا كنزك الدراسي! <br>
+                    جميع المحاضرات والمراجع التي تحتاجها للتفوق متاحة الآن بين يديك.
+                </p>
+                
+                <div class="flex flex-col gap-4 justify-center items-center">
+                    <a id="semester-drive-link" href="#" target="_blank" class="bg-cuGreen-600 hover:bg-cuGreen-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105 border border-cuGreen-500 flex items-center gap-3">
+                        <i class="fab fa-google-drive text-xl"></i> الدخول إلى المحتوى (Google Drive)
+                    </a>
+                    
+                    <button id="semester-back-btn" onclick="showYear1Page()" class="text-gray-500 hover:text-white transition text-sm mt-2 flex items-center gap-2">
+                        <i class="fas fa-arrow-right"></i> العودة
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
+            © 2026 Cairo SciVerse
+        </div>
+    </div>
+
+    <div id="year1-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <div class="container mx-auto px-4 relative z-10 pt-10">
+            <div class="flex justify-between items-center animate-fade-up">
+                <div>
+                    <h2 class="text-4xl font-bold text-white mb-2">الفرقة الأولى</h2>
+                    <p class="text-cuGreen-400 text-lg">اختر الفصل الدراسي</p>
+                </div>
+                <button onclick="showBachelorPage()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
+                    <span class="text-sm font-bold">رجوع</span> <i class="fas fa-arrow-left"></i>
+                </button>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10 flex-grow flex flex-col items-center justify-center gap-8 max-w-4xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+                <div onclick="showSubjectsPage('الفصل الدراسي الأول')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-100 flex flex-col items-center">
+                    <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                        <i class="fas fa-book-open text-3xl text-gray-400"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-100 group-hover:text-white mb-2">الفصل الدراسي الأول</h4>
+                    <span class="text-xs text-gray-500 group-hover:text-gray-300">عرض المواد</span>
+                </div>
+                <div onclick="showSubjectsPage('الفصل الدراسي الثاني')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-200 flex flex-col items-center">
+                    <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                        <i class="fas fa-book-reader text-3xl text-gray-400"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-100 group-hover:text-white mb-2">الفصل الدراسي الثاني</h4>
+                    <span class="text-xs text-gray-500 group-hover:text-gray-300">عرض المواد</span>
+                </div>
+            </div>
+            <div onclick="showSubjectsPage('متطلبات الجامعة')" class="w-full md:w-1/2 group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGold-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGold-900/40 text-center animate-fade-up delay-300 flex flex-col items-center">
+                <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                    <i class="fas fa-university text-3xl text-gray-400"></i>
+                </div>
+                <h4 class="text-2xl font-bold text-gray-100 group-hover:text-white mb-2">متطلبات الجامعة</h4>
+                <span class="text-xs text-gray-500 group-hover:text-gray-300">عرض المواد</span>
+            </div>
+        </div>
+        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">© 2026 Cairo SciVerse</div>
+    </div>
+
+    <div id="subjects-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-10">
+            <div class="flex justify-between items-center mb-10 animate-fade-up">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2" id="subjects-page-title">قائمة المواد</h2>
+                    <p class="text-cuGreen-400 text-lg">اختر المادة لعرض المحتوى</p>
+                </div>
+                <button onclick="showYear1Page()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
+                    <span class="text-sm font-bold">رجوع</span> <i class="fas fa-arrow-left"></i>
+                </button>
+            </div>
+            <div id="subjects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-fade-up delay-100"></div>
+        </div>
+        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">© 2026 Cairo SciVerse</div>
+    </div>
+
+    <div id="departments-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <div class="container mx-auto px-4 relative z-10 flex-grow">
+            <div class="flex justify-between items-center mb-16 pt-10 animate-fade-up">
+                <div>
+                    <h2 class="text-4xl font-bold text-white mb-2">الأقسام العامة</h2>
+                    <p class="text-cuGreen-400 text-lg">تصفح الأقسام العلمية بالكلية</p>
+                </div>
+                <button onclick="showHomePage()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
+                    <span class="text-sm font-bold">الرئيسية</span> <i class="fas fa-home"></i>
+                </button>
+            </div>
+            <div id="departments-list-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-up delay-100"></div>
+        </div>
+        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">© 2026 Cairo SciVerse</div>
+    </div>
+
+    <div id="specialized-programs-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <div class="container mx-auto px-4 relative z-10 flex-grow">
+            <div class="flex justify-between items-center mb-16 pt-10 animate-fade-up">
+                <div>
+                    <h2 class="text-4xl font-bold text-white mb-2">البرامج النوعية</h2>
+                    <p class="text-cuGreen-400 text-lg">البرامج المتخصصة بالكلية</p>
+                </div>
+                <button onclick="showHomePage()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
+                    <span class="text-sm font-bold">الرئيسية</span> <i class="fas fa-home"></i>
+                </button>
+            </div>
+            <div id="specialized-programs-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-up delay-100"></div>
+        </div>
+        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">© 2026 Cairo SciVerse</div>
+    </div>
+
+    <div id="career-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-16">
+            <div class="flex justify-between items-center mb-10 animate-fade-up">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2">ما وراء المقاعد</h2>
+                    <p class="text-cuGreen-400 text-lg">دليلك الشامل لسوق العمل</p>
+                </div>
+                <button onclick="showHomePage()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
+                    <span class="text-sm font-bold">الرئيسية</span> <i class="fas fa-home"></i>
+                </button>
+            </div>
+            
+            <div class="max-w-6xl mx-auto space-y-12 animate-fade-up delay-100">
+                <div class="bg-dark-800 p-8 rounded-2xl border border-gray-700 shadow-xl text-center">
+                    <h1 class="text-2xl md:text-3xl font-bold text-white mb-4 leading-relaxed">
+                        <span class="text-cuGold-500">"ماذا سأعمل بعد التخرج؟"</span>
+                    </h1>
+                    <p class="text-gray-300 leading-8 text-lg max-w-4xl mx-auto">
+                        تخرجك من كلية العلوم يمنحك "جوكر" في سوق العمل. أنت لست مجرد حافظ للمعلومات، أنت باحث، محلل، ومبتكر. مجالات العمل مفتوحة أمامك بشكل لا تتخيله، فقط تحتاج لاكتشاف المسار المناسب وتطوير نفسك فيه.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-8 border-r-4 border-cuGreen-500 pr-4">مسارات مهنية تفصيلية</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGreen-500 transition group">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 flex items-center justify-center bg-green-900/50 rounded-lg text-green-400"><i class="fas fa-microscope text-xl"></i></div>
+                                <h4 class="text-xl font-bold text-white">القطاع الطبي والتحاليل</h4>
+                            </div>
+                            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                                <li>أخصائي تحاليل طبية (بعد الدبلومة).</li>
+                                <li>مراكز الحقن المجهري وأطفال الأنابيب.</li>
+                                <li>بنوك الدم وبنوك الخلايا الجذعية.</li>
+                                <li>شركات الأدوية (R&D أو Quality Control).</li>
+                                <li>الطب الشرعي والأدلة الجنائية.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition group">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 flex items-center justify-center bg-blue-900/50 rounded-lg text-blue-400"><i class="fas fa-industry text-xl"></i></div>
+                                <h4 class="text-xl font-bold text-white">قطاع الصناعة والإنتاج</h4>
+                            </div>
+                            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                                <li>مهندس جودة (Quality Assurance/Control).</li>
+                                <li>مصانع الأغذية والألبان.</li>
+                                <li>محطات معالجة وتنقية المياه.</li>
+                                <li>صناعة البتروكيماويات والأسمدة.</li>
+                                <li>مصانع السيراميك والأسمنت والدهانات.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-yellow-500 transition group">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 flex items-center justify-center bg-yellow-900/50 rounded-lg text-yellow-400"><i class="fas fa-oil-well text-xl"></i></div>
+                                <h4 class="text-xl font-bold text-white">البترول والطاقة</h4>
+                            </div>
+                            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                                <li>شركات التنقيب عن البترول والغاز (Geologist).</li>
+                                <li>فيزياء الأرض والاستكشاف الزلزالي.</li>
+                                <li>هيئة الطاقة الذرية والنووية.</li>
+                                <li>الطاقة الجديدة والمتجددة (الشمسية والرياح).</li>
+                                <li>التعدين والمحاجر.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-purple-500 transition group">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 flex items-center justify-center bg-purple-900/50 rounded-lg text-purple-400"><i class="fas fa-laptop-code text-xl"></i></div>
+                                <h4 class="text-xl font-bold text-white">التكنولوجيا والبيانات</h4>
+                            </div>
+                            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                                <li>مطور برمجيات (Software Developer).</li>
+                                <li>تحليل البيانات (Data Analyst).</li>
+                                <li>علوم البيانات والذكاء الاصطناعي.</li>
+                                <li>أمن المعلومات والشبكات.</li>
+                                <li>الإحصاء والبنوك.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-red-500 transition group">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 flex items-center justify-center bg-red-900/50 rounded-lg text-red-400"><i class="fas fa-briefcase text-xl"></i></div>
+                                <h4 class="text-xl font-bold text-white">المبيعات والتسويق</h4>
+                            </div>
+                            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                                <li>دعاية طبية (Medical Representative).</li>
+                                <li>مبيعات الأجهزة العلمية والمعملية.</li>
+                                <li>تسويق الكيماويات والمواد الخام.</li>
+                                <li>إدارة المنتجات (Product Specialist).</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGold-500 transition group">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 flex items-center justify-center bg-cuGold-900/50 rounded-lg text-cuGold-400"><i class="fas fa-graduation-cap text-xl"></i></div>
+                                <h4 class="text-xl font-bold text-white">المسار الأكاديمي</h4>
+                            </div>
+                            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                                <li>التدريس الجامعي والبحث العلمي.</li>
+                                <li>العمل بالمراكز البحثية (المركز القومي للبحوث).</li>
+                                <li>منح الماجستير والدكتوراة في الخارج.</li>
+                                <li>التدريس في المدارس الدولية (IG/American).</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-cuGreen-900 to-dark-800 p-8 rounded-2xl border border-cuGreen-600 shadow-lg">
+                    <h3 class="text-2xl font-bold text-white mb-4"><i class="fas fa-lightbulb text-cuGold-500 ml-2"></i> نصيحة غالية</h3>
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="flex-1">
+                            <h4 class="text-lg font-bold text-cuGreen-400 mb-2">أثناء الدراسة:</h4>
+                            <ul class="text-gray-300 space-y-1 list-disc list-inside">
+                                <li>اهتم بالتدريبات الصيفية (Internships) جداً.</li>
+                                <li>شارك في الأنشطة الطلابية لتطوير شخصيتك.</li>
+                                <li>حافظ على تقدير جيد على الأقل (Good GPA).</li>
+                            </ul>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-bold text-cuGreen-400 mb-2">مهارات لا غنى عنها:</h4>
+                            <ul class="text-gray-300 space-y-1 list-disc list-inside">
+                                <li>اللغة الإنجليزية (تحدثاً وكتابة).</li>
+                                <li>مهارات الكمبيوتر (Office & Basic IT).</li>
+                                <li>مهارات التواصل (Soft Skills) والعرض (Presentation).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">© 2026 Cairo SciVerse</div>
     </div>
 
     <div id="tools-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
-
         <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-16">
             <div class="flex justify-between items-center mb-10 animate-fade-up">
                 <div>
@@ -757,15 +865,12 @@
                     <span class="text-sm font-bold">الرئيسية</span> <i class="fas fa-home"></i>
                 </button>
             </div>
-
             <div class="max-w-6xl mx-auto space-y-16 animate-fade-up delay-100">
-                
                 <div class="text-center mb-12">
                     <p class="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed bg-dark-800/50 p-6 rounded-2xl border border-gray-700">
                         بما إنكم سألتو كتير عن الأدوات، تعالو نبدأ سوا بالأدوات الضرورية اللي هيحتاجها كل طلاب سنة أولى سواء كانو رياضة أو علوم.
                     </p>
                 </div>
-
                 <div>
                     <h3 class="text-2xl font-bold text-white mb-8 border-r-4 border-cuGreen-500 pr-4 flex items-center gap-3">
                         <i class="fas fa-tools text-cuGold-500"></i> الأدوات الأساسية (لكل الطلبة)
@@ -864,176 +969,11 @@
 
             </div>
         </div>
-
-        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
-        </div>
-    </div>
-
-    <div id="career-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
-        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
-
-        <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-16">
-            <div class="flex justify-between items-center mb-10 animate-fade-up">
-                <div>
-                    <h2 class="text-3xl font-bold text-white mb-2">ما وراء المقاعد</h2>
-                    <p class="text-cuGreen-400 text-lg">دليلك الشامل لسوق العمل</p>
-                </div>
-                <button onclick="showHomePage()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
-                    <span class="text-sm font-bold">الرئيسية</span> <i class="fas fa-home"></i>
-                </button>
-            </div>
-
-            <div class="max-w-4xl mx-auto space-y-12 animate-fade-up delay-100">
-                <div class="bg-dark-800 p-8 rounded-2xl border border-gray-700 shadow-xl">
-                    <h1 class="text-2xl md:text-3xl font-bold text-white mb-6 leading-relaxed">
-                        <span class="text-cuGold-500">"ماذا سأعمل بعد التخرج؟"</span> - هذا هو السؤال الأهم!
-                    </h1>
-                    <p class="text-gray-300 leading-8 text-lg">
-                        لسنوات طويلة، ارتبطت الإجابة في أذهان الكثيرين بخيارين فقط: إما العمل في التدريس أو استكمال الدراسات العليا.
-                        والحقيقة أن هذه النظرة قاصرة للغاية. خريج كلية العلوم اليوم هو واحد من أكثر الخريجين طلباً في سوق العمل الحديث، 
-                        والسبب لا يكمن فقط في المعلومات التي درسها، بل في <span class="text-cuGreen-400 font-bold">"العقلية"</span> التي بنتها فيه الكلية.
-                    </p>
-                </div>
-
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-6 border-r-4 border-cuGreen-500 pr-4">المهارات المكتسبة: "القوة الخفية"</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGold-500 transition group flex flex-col items-center text-center">
-                            <div class="w-14 h-14 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
-                                <i class="fas fa-brain text-2xl text-cuGold-500"></i>
-                            </div>
-                            <h4 class="text-xl font-bold text-white mb-2">التفكير التحليلي والنقدي</h4>
-                            <p class="text-gray-400 text-sm">تحليل المسائل المعقدة وتفكيكها، المهارة رقم 1 في حل المشكلات.</p>
-                        </div>
-                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGold-500 transition group flex flex-col items-center text-center">
-                            <div class="w-14 h-14 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
-                                <i class="fas fa-puzzle-piece text-2xl text-cuGold-500"></i>
-                            </div>
-                            <h4 class="text-xl font-bold text-white mb-2">حل المشكلات (Problem Solving)</h4>
-                            <p class="text-gray-400 text-sm">منهجية علمية كاملة: تحديد المشكلة، الافتراض، الاختبار، والحل.</p>
-                        </div>
-                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGold-500 transition group flex flex-col items-center text-center">
-                            <div class="w-14 h-14 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
-                                <i class="fas fa-microscope text-2xl text-cuGold-500"></i>
-                            </div>
-                            <h4 class="text-xl font-bold text-white mb-2">المهارات التقنية والمعملية</h4>
-                            <p class="text-gray-400 text-sm">التعامل مع الأجهزة الدقيقة وتوثيق النتائج بدقة عالية.</p>
-                        </div>
-                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGold-500 transition group flex flex-col items-center text-center">
-                            <div class="w-14 h-14 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
-                                <i class="fas fa-chart-line text-2xl text-cuGold-500"></i>
-                            </div>
-                            <h4 class="text-xl font-bold text-white mb-2">تحليل البيانات (Data Analysis)</h4>
-                            <p class="text-gray-400 text-sm">قراءة البيانات واستخلاص المعنى، أساس علم البيانات الحديث.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-8 border-r-4 border-cuGreen-500 pr-4">مجالات العمل: أين يذهب خريج "قلعة العلوم"؟</h3>
-                    
-                    <div class="space-y-8">
-                        <div class="bg-dark-800 rounded-2xl overflow-hidden border border-gray-700">
-                            <div class="bg-blue-900/40 p-4 border-b border-blue-800/50 flex items-center gap-3">
-                                <div class="w-10 h-10 flex items-center justify-center bg-blue-900/50 rounded-lg"><i class="fas fa-industry text-lg text-blue-400"></i></div>
-                                <h4 class="text-xl font-bold text-white">1. قطاع الصناعة والإنتاج</h4>
-                            </div>
-                            <div class="p-6">
-                                <p class="text-gray-300 mb-4">القطاع الأضخم الذي يستوعب آلاف الخريجين (خاصة كيمياء وبيولوجي):</p>
-                                <ul class="space-y-3 text-gray-400 list-disc list-inside">
-                                    <li><strong class="text-white">رقابة الجودة (QC):</strong> تحليل المواد الخام والمنتج النهائي.</li>
-                                    <li><strong class="text-white">توكيد الجودة (QA):</strong> مراقبة أنظمة الجودة لضمان سلامة المنتج.</li>
-                                    <li><strong class="text-white">البحث والتطوير (R&D):</strong> تطوير منتجات جديدة وتحسين الحالية.</li>
-                                    <li><strong class="text-white">السلامة والصحة المهنية (HSE):</strong> تطبيق معايير الأمان في المصانع.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="bg-dark-800 rounded-2xl overflow-hidden border border-gray-700">
-                            <div class="bg-green-900/40 p-4 border-b border-green-800/50 flex items-center gap-3">
-                                <div class="w-10 h-10 flex items-center justify-center bg-green-900/50 rounded-lg"><i class="fas fa-heartbeat text-lg text-green-400"></i></div>
-                                <h4 class="text-xl font-bold text-white">2. قطاع الرعاية الصحية والطبية</h4>
-                            </div>
-                            <div class="p-6">
-                                <div class="mb-4">
-                                    <h5 class="text-cuGreen-400 font-bold mb-2">خريج البيولوجي:</h5>
-                                    <ul class="space-y-2 text-gray-400 text-sm list-disc list-inside">
-                                        <li>معامل التحاليل الطبية (بعد الدبلومة).</li>
-                                        <li>شركات الأدوية ومراكز أبحاث التكنولوجيا الحيوية.</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h5 class="text-cuGreen-400 font-bold mb-2">خريج الفيزياء (طبية):</h5>
-                                    <ul class="space-y-2 text-gray-400 text-sm list-disc list-inside">
-                                        <li>أخصائي فيزياء طبية (علاج إشعاعي وأورام).</li>
-                                        <li>الحماية من الإشعاع في الهيئات النووية.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-dark-800 rounded-2xl overflow-hidden border border-gray-700">
-                            <div class="bg-purple-900/40 p-4 border-b border-purple-800/50 flex items-center gap-3">
-                                <div class="w-10 h-10 flex items-center justify-center bg-purple-900/50 rounded-lg"><i class="fas fa-laptop-code text-lg text-purple-400"></i></div>
-                                <h4 class="text-xl font-bold text-white">3. قطاع التكنولوجيا والبيانات</h4>
-                            </div>
-                            <div class="p-6">
-                                <ul class="space-y-3 text-gray-400 list-disc list-inside">
-                                    <li><strong class="text-white">علوم الحاسب:</strong> تطوير البرمجيات، الذكاء الاصطناعي، الأمن السيبراني.</li>
-                                    <li><strong class="text-white">الرياضيات والإحصاء:</strong> تحليل البيانات (Data Analysis) في البنوك والاتصالات، والعلوم الاكتوارية.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="bg-dark-800 rounded-2xl overflow-hidden border border-gray-700">
-                            <div class="bg-yellow-900/40 p-4 border-b border-yellow-800/50 flex items-center gap-3">
-                                <div class="w-10 h-10 flex items-center justify-center bg-yellow-900/50 rounded-lg"><i class="fas fa-bolt text-lg text-yellow-400"></i></div>
-                                <h4 class="text-xl font-bold text-white">4. الطاقة والموارد الطبيعية</h4>
-                            </div>
-                            <div class="p-6">
-                                <p class="text-gray-400 mb-2">يعتمد على خريجي الجيولوجيا والفيزياء:</p>
-                                <ul class="space-y-2 text-gray-400 text-sm list-disc list-inside">
-                                    <li>شركات البترول والغاز والتعدين.</li>
-                                    <li>الجيولوجيا الهندسية واستكشاف المياه الجوفية.</li>
-                                    <li>هيئات الطاقة الجديدة والمتجددة.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="bg-dark-800 rounded-2xl overflow-hidden border border-gray-700">
-                            <div class="bg-red-900/40 p-4 border-b border-red-800/50 flex items-center gap-3">
-                                <div class="w-10 h-10 flex items-center justify-center bg-red-900/50 rounded-lg"><i class="fas fa-briefcase text-lg text-red-400"></i></div>
-                                <h4 class="text-xl font-bold text-white">5. المبيعات والتسويق العلمي</h4>
-                            </div>
-                            <div class="p-6">
-                                <ul class="space-y-2 text-gray-400 text-sm list-disc list-inside">
-                                    <li><strong class="text-white">Medical Rep:</strong> تسويق الأدوية.</li>
-                                    <li><strong class="text-white">Science Sales:</strong> بيع الكيماويات والأجهزة المعملية.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-r from-cuGreen-900 to-dark-800 p-8 rounded-2xl border border-cuGreen-600 text-center shadow-lg">
-                    <h3 class="text-2xl font-bold text-white mb-4">الخلاصة: شهادتك هي مفتاحك 🔑</h3>
-                    <p class="text-gray-200 leading-relaxed text-lg">
-                        الاعتقاد بأن مستقبل خريج العلوم محدود هو خطأ تماماً. شهادتك هي "جواز سفر" لأي قطاع لأنك تملك العقلية العلمية.
-                        طور لغتك ومهاراتك، وستجد الأبواب مفتوحة.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
-        </div>
+        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">© 2026 Cairo SciVerse</div>
     </div>
 
     <div id="history-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
-
         <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-16">
             <div class="flex justify-between items-center mb-16 animate-fade-up">
                 <div>
@@ -1044,9 +984,7 @@
                     <span class="text-sm font-bold">الرئيسية</span> <i class="fas fa-home"></i>
                 </button>
             </div>
-
             <div class="max-w-5xl mx-auto space-y-16 animate-fade-up delay-100">
-                
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div>
                         <h3 class="text-2xl font-bold text-white mb-6 border-r-4 border-cuGreen-500 pr-4">البداية: بذرة في قلب الجامعة</h3>
@@ -1070,7 +1008,6 @@
 
                 <div class="bg-gradient-to-br from-dark-800 to-dark-900 rounded-3xl p-8 border border-cuGold-500/30 shadow-2xl relative overflow-hidden group">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-cuGold-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
-                    
                     <div class="flex flex-col md:flex-row gap-8 items-center relative z-10">
                         <div class="w-full md:w-1/3 flex justify-center">
                             <div class="w-56 h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-cuGold-500 relative transform group-hover:scale-105 transition duration-500">
@@ -1135,16 +1072,13 @@
                         منذ 1925 وحتى اليوم، تظل كلية العلوم هي "القلب النابض" للبحث العلمي في مصر. تاريخها شهادة على أن الاستثمار في العقل البشري هو أثمن استثمار لبناء الأوطان.
                     </p>
                 </div>
-
             </div>
         </div>
-
-        <div class="w-full text-center text-gray-600 text-sm py-6 relative z-10 bg-dark-900 border-t border-gray-800">
-           © 2026 Cairo SciVerse
-        </div>
+        <div class="w-full text-center text-gray-600 text-sm py-6 relative z-10 bg-dark-900 border-t border-gray-800">© 2026 Cairo SciVerse</div>
     </div>
 
     <script>
+        // --- DATA CONFIGURATION ---
         const departments = [
             "رياضيات منفرد", "علوم حاسب منفرد", "كيمياء منفرد", "جيولوجيا منفرد",
             "علوم فضاء (فلك)", "بايوفيزياء منفرد", "جيوفيزياء منفرد", "فيزياء منفرد", "رياضيات/إحصاء",
@@ -1154,16 +1088,12 @@
         ];
 
         const specializedPrograms = [
-            "الكيمياء الحيوية والميكروبيولوجي",
-            "علوم البترول الجيولوجية",
-            "الكيمياء الحيوية الجزيئية والتكنولوجيا الحيوية",
-            "البيوفيزياء الطبية",
-            "علوم وتكنولوجيا النانو",
-            "علوم وتكنولوجيا البيئة",
-            "كيمياء/كيمياء حيوية"
+            "الكيمياء الحيوية والميكروبيولوجي", "علوم البترول الجيولوجية",
+            "الكيمياء الحيوية الجزيئية والتكنولوجيا الحيوية", "البيوفيزياء الطبية",
+            "علوم وتكنولوجيا النانو", "علوم وتكنولوجيا البيئة", "كيمياء/كيمياء حيوية"
         ];
 
-        // --- DATA FOR YEAR 1 SEMESTER 1 SUBJECTS ---
+        // Year 1 Data (Manual)
         const semester1Subjects = [
             { name: "كيمياء ك101", icon: "fa-flask", link: "https://drive.google.com/drive/folders/1V5Sq9pDBwXLhlhZIJgMuF-1Z3_Rq7A4U?usp=drive_link" },
             { name: "فيزياء ف101", icon: "fa-atom", link: "https://drive.google.com/drive/folders/139ONov_kV4GO-nmk_WFikDR9-8hf0uWt?usp=drive_link" },
@@ -1179,42 +1109,251 @@
             { name: "الإحصاء ص100", icon: "fa-chart-bar", link: "https://drive.google.com/drive/folders/1NFN7JiEkHbvuxdJCK8LGKyB38ssGuptu?usp=drive_link" }
         ];
 
-        // --- DATA FOR YEAR 1 SEMESTER 2 SUBJECTS ---
         const semester2Subjects = [
-            { name: "كيمياء ك102", icon: "fa-flask", link: "" },
-            { name: "فيزياء ف102", icon: "fa-atom", link: "" },
-            { name: "التكامل ر132", icon: "fa-infinity", link: "" },
-            { name: "جافا س101", icon: "fa-code", link: "" },
-            { name: "جيولوجيا ج102", icon: "fa-mountain", link: "" },
-            { name: "حيوان ح102", icon: "fa-frog", link: "" },
-            { name: "نبات 102", icon: "fa-leaf", link: "" },
-            { name: "ميكانيكس ر170", icon: "fa-cogs", link: "" },
-            { name: "فلك ل112", icon: "fa-star", link: "" },
-            { name: "بايوفيزياء بف112", icon: "fa-dna", link: "" },
-            { name: "جيوفيزياء جف102", icon: "fa-globe-americas", link: "" },
-            { name: "حشرات 102", icon: "fa-bug", link: "" }
+            { name: "كيمياء ك102", icon: "fa-flask", link: "" }, { name: "فيزياء ف102", icon: "fa-atom", link: "" },
+            { name: "التكامل ر132", icon: "fa-infinity", link: "" }, { name: "جافا س101", icon: "fa-code", link: "" },
+            { name: "جيولوجيا ج102", icon: "fa-mountain", link: "" }, { name: "حيوان ح102", icon: "fa-frog", link: "" },
+            { name: "نبات 102", icon: "fa-leaf", link: "" }, { name: "ميكانيكس ر170", icon: "fa-cogs", link: "" },
+            { name: "فلك ل112", icon: "fa-star", link: "" }, { name: "بايوفيزياء بف112", icon: "fa-dna", link: "" },
+            { name: "جيوفيزياء جف102", icon: "fa-globe-americas", link: "" }, { name: "حشرات 102", icon: "fa-bug", link: "" }
         ];
 
         const uniRequirementsSubjects = [
-             { name: "الثقافة البيئية ع109", icon: "fa-tree", link: "" },
-             { name: "الحاسب ع101", icon: "fa-laptop", link: "" },
-             { name: "المبادئ ع104", icon: "fa-balance-scale", link: "" },
-             { name: "انجليزي ع102", icon: "fa-language", link: "" },
-             { name: "تاريخ ع108", icon: "fa-landmark", link: "" },
-             { name: "تفكير نقدي ع110", icon: "fa-brain", link: "" },
+             { name: "الثقافة البيئية ع109", icon: "fa-tree", link: "" }, { name: "الحاسب ع101", icon: "fa-laptop", link: "" },
+             { name: "المبادئ ع104", icon: "fa-balance-scale", link: "" }, { name: "انجليزي ع102", icon: "fa-language", link: "" },
+             { name: "تاريخ ع108", icon: "fa-landmark", link: "" }, { name: "تفكير نقدي ع110", icon: "fa-brain", link: "" },
              { name: "قضايا مجتمعية ع103", icon: "fa-users", link: "" }
         ];
 
-        // --- DATA FOR CHEMISTRY/BIOCHEMISTRY DEPARTMENT (YEAR 2, SEMESTER 1) ---
-        const chemBiochemYear2Semester1 = [
-            { name: "Genetics ح212", icon: "fa-dna", link: "" },
-            { name: "Cell biology ح211", icon: "fa-microscope", link: "" },
-            { name: "Analytical chemistry ك221", icon: "fa-flask", link: "" },
-            { name: "Aromatic chemistry ك242", icon: "fa-vial", link: "" },
-            { name: "Organic chemistry ك241", icon: "fa-atom", link: "" },
-            { name: "Thermodynamics ك211", icon: "fa-thermometer-half", link: "" },
-            { name: "Stat 222", icon: "fa-chart-bar", link: "" }
-        ];
+        // --- HUGE DATABASE FOR YEARS 2, 3, 4 ---
+        // This object maps the department name (key) to its curriculum.
+        // We match keys to the 'departments' array above.
+        const departmentCurricula = {
+            "رياضيات منفرد": {
+                "second_year": {
+                    "term_1": [ { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, { "code": "ر 231", "name": "تفاضل وتكامل وهندسة تحليلية (3)", "type": "mandatory" }, { "code": "ر 271", "name": "الميكانيكا النيوتونية (2)", "type": "mandatory" }, { "code": "س 201", "name": "البرمجة الموجهة", "type": "mandatory" }, { "code": "ص 201", "name": "مقدمة نظرية الاحتمالات", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" }, { "code": "ر 272", "name": "الميكانيكا التحليلية", "type": "mandatory" }, { "code": "س 202", "name": "هياكل البيانات والخوارزميات", "type": "mandatory" } ]
+                },
+                "third_year": {
+                    "term_1": [ { "code": "ر 311", "name": "الجبر المجرد (1)", "type": "mandatory" }, { "code": "ر 331", "name": "التحليل الحقيقي (1)", "type": "mandatory" }, { "code": "ر 351", "name": "التحليل العددي (1)", "type": "mandatory" }, { "code": "ر 371", "name": "ميكانيكا الأوساط المتصلة (1)", "type": "mandatory" }, { "code": "ر 373", "name": "الكهرومغناطيسية والنسبية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ر 312", "name": "الجبر المجرد (2)", "type": "mandatory" }, { "code": "ر 332", "name": "التحليل الحقيقي (2)", "type": "mandatory" }, { "code": "ر 335", "name": "التحليل الدالي", "type": "mandatory" }, { "code": "ر 352", "name": "التحليل العددي (2)", "type": "mandatory" }, { "code": "ر 372", "name": "ميكانيكا الأوساط المتصلة (2)", "type": "mandatory" }, { "code": "ر 374", "name": "الكهرومغناطيسية والنسبية (2)", "type": "mandatory" } ]
+                },
+                "fourth_year": {
+                    "term_1": [ { "code": "ر 421", "name": "الهندسة التفاضلية (1)", "type": "mandatory" }, { "code": "ر 431", "name": "التحليل المركب (1)", "type": "mandatory" }, { "code": "ر 441", "name": "المعادلات التفاضلية الجزئية (1)", "type": "mandatory" }, { "code": "ر 471", "name": "ميكانيكا الكم (1)", "type": "mandatory" }, { "code": "ر 481", "name": "نظرية التحكم الأمثل (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ر 422", "name": "الهندسة التفاضلية (2)", "type": "mandatory" }, { "code": "ر 432", "name": "التحليل المركب (2)", "type": "mandatory" }, { "code": "ر 472", "name": "ميكانيكا الكم (2)", "type": "mandatory" }, { "code": "ر 490", "name": "بحث ومقال", "type": "mandatory" } ]
+                }
+            },
+            "رياضيات/علوم حاسب": {
+                "second_year": {
+                    "term_1": [ { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, { "code": "ر 231", "name": "تفاضل وتكامل وهندسة تحليلية (3)", "type": "mandatory" }, { "code": "ر 271", "name": "الميكانيكا النيوتونية (2)", "type": "mandatory" }, { "code": "س 201", "name": "البرمجة الموجهة", "type": "mandatory" }, { "code": "ص 201", "name": "مقدمة نظرية الاحتمالات", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, { "code": "ر 213", "name": "الرياضيات المتقطعة", "type": "mandatory" }, { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" }, { "code": "ر 272", "name": "الميكانيكا التحليلية", "type": "mandatory" }, { "code": "س 202", "name": "هياكل البيانات والخوارزميات", "type": "mandatory" } ]
+                },
+                "third_year": {
+                    "term_1": [ { "code": "ر 311", "name": "الجبر المجرد (1)", "type": "mandatory" }, { "code": "ر 331", "name": "التحليل الحقيقي (1)", "type": "mandatory" }, { "code": "ر 351", "name": "التحليل العددي (1)", "type": "mandatory" }, { "code": "س 305", "name": "تحليل وتصميم خوارزميات", "type": "mandatory" }, { "code": "س 307", "name": "نظم قواعد البيانات", "type": "mandatory" }, { "code": "س 309", "name": "تحليل وتصميم نظم", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ر 306", "name": "المنطق الرياضي (2)", "type": "mandatory" }, { "code": "ر 312", "name": "الجبر المجرد (2)", "type": "mandatory" }, { "code": "ر 332", "name": "التحليل الحقيقي (2)", "type": "mandatory" }, { "code": "س 303", "name": "تطوير البرمجيات", "type": "mandatory" }, { "code": "س 306", "name": "نظم تشغيل الحاسب", "type": "mandatory" }, { "code": "س 308", "name": "تصميم قواعد البيانات", "type": "mandatory" } ]
+                },
+                "fourth_year": {
+                    "term_1": [ { "code": "ر 411", "name": "نظرية الأعداد", "type": "mandatory" }, { "code": "ر 441", "name": "المعادلات التفاضلية الجزئية (1)", "type": "mandatory" }, { "code": "ر 481", "name": "نظرية التحكم الأمثل (1)", "type": "mandatory" }, { "code": "س 403", "name": "الأتوماتيكية واللغات الشكلية", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ر 451", "name": "الحلول العددية للمعادلات التفاضلية", "type": "mandatory" }, { "code": "س 402", "name": "نظرية التشفير", "type": "mandatory" }, { "code": "س 407", "name": "تصميم لغات البرمجة", "type": "mandatory" }, { "code": "س 408", "name": "الذكاء الاصطناعي", "type": "mandatory" } ]
+                }
+            },
+            "رياضيات/إحصاء": {
+                "second_year": {
+                    "term_1": [ { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, { "code": "ر 231", "name": "تفاضل وتكامل وهندسة تحليلية (3)", "type": "mandatory" }, { "code": "ر 271", "name": "الميكانيكا النيوتونية (2)", "type": "mandatory" }, { "code": "س 201", "name": "البرمجة الموجهة", "type": "mandatory" }, { "code": "ص 201", "name": "مقدمة نظرية الاحتمالات", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" }, { "code": "ر 272", "name": "الميكانيكا التحليلية", "type": "mandatory" }, { "code": "م 202", "name": "الاستدلال الإحصائي (1)", "type": "mandatory" } ]
+                },
+                "third_year": {
+                    "term_1": [ { "code": "ر 331", "name": "التحليل الحقيقي (1)", "type": "mandatory" }, { "code": "ر 351", "name": "التحليل العددي (1)", "type": "mandatory" }, { "code": "م 301", "name": "العمليات العشوائية", "type": "mandatory" }, { "code": "م 302", "name": "الاستدلال الإحصائي (2)", "type": "mandatory" }, { "code": "ص 326", "name": "نظرية الارتباط (1)", "type": "optional" } ],
+                    "term_2": [ { "code": "ر 332", "name": "التحليل الحقيقي (2)", "type": "mandatory" }, { "code": "ر 335", "name": "التحليل الدالي", "type": "mandatory" }, { "code": "س 303", "name": "تحليل الانحدار", "type": "mandatory" }, { "code": "م 304", "name": "برمجيات إحصائية", "type": "mandatory" }, { "code": "ص 327", "name": "نظرية الارتباط (2)", "type": "mandatory" } ]
+                },
+                "fourth_year": {
+                    "term_1": [ { "code": "ر 431", "name": "التحليل المركب (1)", "type": "mandatory" }, { "code": "ر 481", "name": "نظرية التحكم الأمثل (1)", "type": "mandatory" }, { "code": "س 401", "name": "تصميم تجارب", "type": "mandatory" }, { "code": "م 402", "name": "إحصاء لا معلمي", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ر 432", "name": "التحليل المركب (2)", "type": "mandatory" }, { "code": "ر 482", "name": "نظرية التحكم الأمثل (2)", "type": "mandatory" }, { "code": "س 403", "name": "نظرية الموثوقية", "type": "mandatory" }, { "code": "ص 404", "name": "إحصاء متعدد المتغيرات", "type": "mandatory" } ]
+                }
+            },
+            "رياضيات/فيزياء": {
+                "second_year": {
+                    "term_1": [ { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, { "code": "ر 231", "name": "تفاضل وتكامل (3)", "type": "mandatory" }, { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" }, { "code": "ف 201", "name": "فيزياء عملية", "type": "mandatory" }, { "code": "ف 221", "name": "كهرومغناطيسية (1)", "type": "mandatory" }, { "code": "ف 231", "name": "كهرومغناطيسية (1) [مكرر]", "type": "mandatory" }, { "code": "ف 241", "name": "فيزياء رياضية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, { "code": "ف 202", "name": "فيزياء عملية", "type": "mandatory" }, { "code": "ف 222", "name": "ميكانيكا كلاسيكية (2)", "type": "mandatory" }, { "code": "ف 232", "name": "كهرومغناطيسية (2)", "type": "mandatory" }, { "code": "ف 251", "name": "ديناميكا حرارية", "type": "mandatory" } ]
+                },
+                "third_year": {
+                    "term_1": [ { "code": "ر 311", "name": "الجبر المجرد (1)", "type": "mandatory" }, { "code": "ر 331", "name": "التحليل الحقيقي (1)", "type": "mandatory" }, { "code": "ر 351", "name": "التحليل العددي (1)", "type": "mandatory" }, { "code": "ف 303", "name": "فيزياء عملية", "type": "mandatory" }, { "code": "ف 351", "name": "فيزياء إحصائية (1)", "type": "mandatory" }, { "code": "ف 362", "name": "ميكانيكا الكم (1)", "type": "mandatory" }, { "code": "ف 366", "name": "فيزياء الليزر", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ر 312", "name": "الجبر المجرد (2)", "type": "mandatory" }, { "code": "ر 332", "name": "التحليل الحقيقي (2)", "type": "mandatory" }, { "code": "ر 352", "name": "التحليل العددي (2)", "type": "mandatory" }, { "code": "ف 304", "name": "فيزياء عملية", "type": "mandatory" }, { "code": "ف 352", "name": "فيزياء إحصائية (2)", "type": "mandatory" }, { "code": "ف 363", "name": "ميكانيكا الكم (2)", "type": "mandatory" }, { "code": "ف 371", "name": "فيزياء الجوامد (1)", "type": "mandatory" }, { "code": "ف 381", "name": "فيزياء نووية (1)", "type": "mandatory" } ]
+                },
+                "fourth_year": {
+                    "term_1": [ { "code": "ر 431", "name": "التحليل المركب (1)", "type": "mandatory" }, { "code": "ر 441", "name": "المعادلات التفاضلية الجزئية (1)", "type": "mandatory" }, { "code": "ف 371", "name": "فيزياء الجوامد (1) [مكرر]", "type": "mandatory" }, { "code": "ف 381", "name": "فيزياء نووية (1) [مكرر]", "type": "mandatory" }, { "code": "ف 401", "name": "فيزياء عملية (نووية)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ر 432", "name": "التحليل المركب (2)", "type": "mandatory" }, { "code": "ر 451", "name": "الحلول العددية", "type": "mandatory" }, { "code": "ف 402", "name": "فيزياء عملية (جوامد)", "type": "mandatory" } ]
+                }
+            },
+            "فيزياء/فلك": {
+                "second_year": {
+                    "term_1": [ { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, { "code": "ر 231", "name": "تفاضل وتكامل (3)", "type": "mandatory" }, { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" }, { "code": "ل 201", "name": "معمل أرصاد شمسية", "type": "mandatory" }, { "code": "ل 211", "name": "فيزياء فلكية (1)", "type": "mandatory" }, { "code": "ل 213", "name": "فلك كروي (1)", "type": "mandatory" }, { "code": "ل 215", "name": "ميكانيكا سماوية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, { "code": "ل 202", "name": "معمل أرصاد نجمية", "type": "mandatory" }, { "code": "ل 212", "name": "فيزياء فلكية (2)", "type": "mandatory" }, { "code": "ل 214", "name": "فلك كروي (2)", "type": "mandatory" }, { "code": "ل 216", "name": "أجهزة فلكية", "type": "mandatory" } ]
+                },
+                "third_year": {
+                    "term_1": [ { "code": "ر 311", "name": "الجبر المجرد (1)", "type": "mandatory" }, { "code": "ر 331", "name": "التحليل الحقيقي (1)", "type": "mandatory" }, { "code": "ر 351", "name": "التحليل العددي (1)", "type": "mandatory" }, { "code": "ل 301", "name": "حسابات فلكية", "type": "mandatory" }, { "code": "ل 303", "name": "الحسابات المدارية", "type": "mandatory" }, { "code": "ل 311", "name": "فيزياء شمسية", "type": "mandatory" }, { "code": "ل 313", "name": "انتقال الإشعاع", "type": "mandatory" }, { "code": "ل 315", "name": "ميكانيكا سماوية (2)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ر 312", "name": "الجبر المجرد (2)", "type": "mandatory" }, { "code": "ر 332", "name": "التحليل الحقيقي (2)", "type": "mandatory" }, { "code": "ر 352", "name": "التحليل العددي (2)", "type": "mandatory" }, { "code": "ل 302", "name": "معمل تحليل البيانات الفلكية", "type": "mandatory" }, { "code": "ل 304", "name": "معمل فلك فيزيائي", "type": "mandatory" }, { "code": "ل 312", "name": "تركيب وتطور النجوم", "type": "mandatory" }, { "code": "ل 322", "name": "فيزياء الكواكب", "type": "mandatory" } ]
+                },
+                "fourth_year": {
+                    "term_1": [ { "code": "ر 431", "name": "التحليل المركب (1)", "type": "mandatory" }, { "code": "ر 441", "name": "المعادلات التفاضلية الجزئية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ر 432", "name": "التحليل المركب (2)", "type": "mandatory" }, { "code": "ر 451", "name": "الحلول العددية", "type": "mandatory" } ]
+                }
+            },
+            "علوم حاسب منفرد": {
+                "second_year": {
+                    "term_1": [ { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, { "code": "ر 231", "name": "تفاضل وتكامل (3)", "type": "mandatory" }, { "code": "ر 271", "name": "الميكانيكا النيوتونية (2)", "type": "mandatory" }, { "code": "س 201", "name": "البرمجة الموجهة", "type": "mandatory" }, { "code": "ص 201", "name": "مقدمة نظرية الاحتمالات", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, { "code": "ر 213", "name": "الرياضيات المتقطعة", "type": "mandatory" }, { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" }, { "code": "ر 272", "name": "الميكانيكا التحليلية", "type": "mandatory" }, { "code": "س 202", "name": "هياكل البيانات والخوارزميات", "type": "mandatory" } ]
+                },
+                "third_year": {
+                    "term_1": [ { "code": "س 302", "name": "تنظيم الحاسب", "type": "mandatory" }, { "code": "س 304", "name": "رسومات الحاسب", "type": "mandatory" }, { "code": "س 305", "name": "تحليل وتصميم خوارزميات", "type": "mandatory" }, { "code": "س 307", "name": "نظم قواعد البيانات", "type": "mandatory" }, { "code": "س 309", "name": "تحليل وتصميم نظم", "type": "mandatory" } ],
+                    "term_2": [ { "code": "س 303", "name": "تطوير البرمجيات", "type": "mandatory" }, { "code": "س 306", "name": "نظم تشغيل الحاسب", "type": "mandatory" }, { "code": "س 308", "name": "تصميم قواعد البيانات", "type": "mandatory" } ]
+                },
+                "fourth_year": {
+                    "term_1": [ { "code": "ر 411", "name": "نظرية الأعداد", "type": "mandatory" }, { "code": "س 401", "name": "شبكات الحاسب", "type": "mandatory" }, { "code": "س 403", "name": "الأتوماتيكية واللغات الشكلية", "type": "mandatory" } ],
+                    "term_2": [ { "code": "س 402", "name": "نظرية التشفير", "type": "mandatory" }, { "code": "س 407", "name": "تصميم لغات البرمجة", "type": "mandatory" }, { "code": "س 408", "name": "الذكاء الاصطناعي", "type": "mandatory" }, { "code": "س 490", "name": "بحث ومقال", "type": "mandatory" } ]
+                }
+            },
+            "علوم فضاء (فلك)": { // Mapped from علوم_الفضاء_منفرد and فلك_منفرد
+                "second_year": {
+                    "term_1": [ { "code": "جو 215", "name": "مقدمة الفيزياء الجوية", "type": "mandatory" }, { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, { "code": "ر 231", "name": "تفاضل وتكامل (3)", "type": "mandatory" }, { "code": "م 201", "name": "معمل أرصاد", "type": "mandatory" }, { "code": "م 211", "name": "مبادئ فيزياء الفضاء", "type": "mandatory" }, { "code": "ع 213", "name": "إحداثيات سماوية وأرضية", "type": "mandatory" }, { "code": "ف 221", "name": "كهرومغناطيسية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "جو 213", "name": "مقدمة الديناميكا الجوية", "type": "mandatory" }, { "code": "ف 241", "name": "المعادلات التفاضلية العادية / فيزياء رياضية", "type": "mandatory" }, { "code": "ض 214", "name": "الميكانيكا المدارية", "type": "mandatory" }, { "code": "ف 261", "name": "فيزياء حديثة", "type": "mandatory" }, { "code": "ل 202", "name": "معمل أرصاد نجمية", "type": "mandatory" }, { "code": "211", "name": "فيزياء فلكية (1)", "type": "mandatory" } ]
+                },
+                "third_year": {
+                    "term_1": [ { "code": "ض 301", "name": "معمل تحليل وحاسب (1)", "type": "mandatory" }, { "code": "م 303", "name": "حساب المدارات (1)", "type": "mandatory" }, { "code": "م 305", "name": "معمل أطياف نسبة", "type": "mandatory" }, { "code": "م 307", "name": "معمل تحليل وحاسب (2)", "type": "mandatory" }, { "code": "ض 311", "name": "ديناميكا الفضاء", "type": "mandatory" }, { "code": "ش 313", "name": "فيزياء الفضاء", "type": "mandatory" }, { "code": "م 315", "name": "فيزياء وطاقة شمسية", "type": "mandatory" }, { "code": "ف 242", "name": "فيزياء رياضية (2)", "type": "mandatory" }, { "code": "ف 351", "name": "فيزياء إحصائية (1)", "type": "mandatory" }, { "code": "ل 318", "name": "النسبية العامة وتطبيقاتها", "type": "mandatory" }, { "code": "ف 321", "name": "ديناميكا الموائع", "type": "mandatory" }, { "code": "ل 301", "name": "حسابات فلكية", "type": "mandatory" }, { "code": "ل 313", "name": "انتقال الإشعاع", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ش 302", "name": "معمل تحليل وحاسب (2)", "type": "mandatory" }, { "code": "ش 304", "name": "حساب المدارات (2)", "type": "mandatory" }, { "code": "ش 306", "name": "معمل أطياف (2)", "type": "mandatory" }, { "code": "ض 308", "name": "معمل فيزياء الفضاء (2)", "type": "mandatory" }, { "code": "ش 310", "name": "معمل تحليل وحاسب (3)", "type": "mandatory" }, { "code": "ف 352", "name": "فيزياء إحصائية (2)", "type": "mandatory" }, { "code": "ف 362", "name": "ميكانيكا الكم (1)", "type": "mandatory" }, { "code": "ل 322", "name": "فيزياء الكواكب", "type": "mandatory" }, { "code": "ل 306", "name": "تطبيقات فلكية على الحاسب", "type": "mandatory" } ]
+                },
+                "fourth_year": {
+                    "term_1": [ { "code": "جو 413", "name": "فيزياء الغلاف الجوي العلوي", "type": "mandatory" }, { "code": "ش 490", "name": "بحث ومقال", "type": "mandatory" }, { "code": "417", "name": "النظم الديناميكية", "type": "mandatory" } ],
+                    "term_2": []
+                }
+            },
+            "جيولوجيا منفرد": {
+                "second_year": {
+                    "term_1": [ { "code": "ج 201", "name": "جيولوجيا تركيبية (1)", "type": "mandatory" }, { "code": "ج 203", "name": "طبقات صخرية", "type": "mandatory" }, { "code": "ج 205", "name": "حفريات كبيرة (1)", "type": "mandatory" }, { "code": "ج 207", "name": "مجهرية المعادن", "type": "mandatory" }, { "code": "ج 209", "name": "علم البللورات", "type": "mandatory" }, { "code": "ح 201", "name": "اللافقاريات والفقاريات", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ج 202", "name": "حفريات دقيقة (1)", "type": "mandatory" }, { "code": "ج 204", "name": "علم الصخور الرسوبية (1)", "type": "mandatory" }, { "code": "ج 206", "name": "المعادن المكونة للصخور", "type": "mandatory" }, { "code": "ج 208", "name": "طبقات حيوية", "type": "mandatory" }, { "code": "ج 210", "name": "تضاريس وصور جوية", "type": "mandatory" }, { "code": "ج 212", "name": "جيولوجيا تركيبية (2)", "type": "mandatory" }, { "code": "ج 214", "name": "حفريات كبيرة (2)", "type": "mandatory" } ]
+                },
+                "third_year": {
+                    "term_1": [ { "code": "ج 301", "name": "علم الصخور النارية (1)", "type": "mandatory" }, { "code": "ج 303", "name": "جيوكيمياء", "type": "mandatory" }, { "code": "ج 305", "name": "جيوفيزياء (1)", "type": "mandatory" }, { "code": "ج 309", "name": "حفريات دقيقة (2)", "type": "mandatory" }, { "code": "ج 311", "name": "علم الطبقات المتقدم", "type": "mandatory" }, { "code": "ج 313", "name": "ميكانيكا الصخور", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ج 302", "name": "علم الصخور المتحولة (1)", "type": "mandatory" }, { "code": "ج 304", "name": "جيولوجيا القاعدة بمصر", "type": "mandatory" }, { "code": "ج 306", "name": "جيولوجيا الخامات", "type": "mandatory" }, { "code": "ج 308", "name": "جيولوجيا حقلية ودراسات حقلية", "type": "mandatory" }, { "code": "ج 310", "name": "علم الصخور الرسوبية (2)", "type": "mandatory" }, { "code": "ج 312", "name": "علم الصخور النارية (2)", "type": "mandatory" }, { "code": "ج 314", "name": "جيولوجيا تحت سطحية", "type": "mandatory" }, { "code": "ج 316", "name": "مبادئ الجيولوجيا الهندسية", "type": "mandatory" } ]
+                },
+                "fourth_year": {
+                    "term_1": [ { "code": "ج 401", "name": "جيولوجية الفانيروزوي بمصر (1)", "type": "mandatory" }, { "code": "ج 403", "name": "جيولوجيا البترول (1)", "type": "mandatory" }, { "code": "ج 405", "name": "جيولوجيا المياه (1)", "type": "mandatory" }, { "code": "ج 407", "name": "لترسيب", "type": "mandatory" }, { "code": "ج 409", "name": "معادن الخامات", "type": "mandatory" }, { "code": "ج 411", "name": "الاستشعار عن بعد (1)", "type": "mandatory" }, { "code": "ج 413", "name": "علم الجيولوجيا الهندسية", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ج 402", "name": "جيولوجيا تكتونية", "type": "mandatory" }, { "code": "ج 404", "name": "تفريط حقلي ودراسات حقلية", "type": "mandatory" }, { "code": "ج 406", "name": "جيولوجية الفانيروزوي بمصر (2)", "type": "mandatory" }, { "code": "ج 408", "name": "الإحصاء الجيولوجي", "type": "mandatory" }, { "code": "ج 410", "name": "جيولوجيا البيئة", "type": "mandatory" }, { "code": "ج 490", "name": "بحث ومقال", "type": "mandatory" } ]
+                }
+            },
+            "كيمياء منفرد": {
+                "second_year": {
+                    "term_1": [ { "code": "م 221", "name": "إحصاء تطبيقي (1)", "type": "mandatory" }, { "code": "ك 249", "name": "علم البللورات والأشعة السينية", "type": "mandatory" }, { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, { "code": "ك 214", "name": "قاعدة الصنف", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" }, { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ك 212", "name": "الكيمياء الكهربية الإتزانية (1)", "type": "mandatory" }, { "code": "ك 213", "name": "كيمياء الكم (1)", "type": "mandatory" }, { "code": "ك 231", "name": "كيمياء العناصر الممثلة (1)", "type": "mandatory" }, { "code": "ك 243", "name": "الكيمياء الفراغية", "type": "mandatory" }, { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" }, { "code": "ك 251", "name": "أسس الكيمياء الحيوية (1)", "type": "mandatory" }, { "code": "ك 252", "name": "أسس الكيمياء الحيوية (2)", "type": "mandatory" } ]
+                },
+                "third_year": {
+                    "term_1": [ { "code": "ك 311", "name": "كيمياء الكم (2)", "type": "mandatory" }, { "code": "ك 312", "name": "الكيمياء الكهربية الديناميكية", "type": "mandatory" }, { "code": "ك 313", "name": "حركية التفاعلات الكيميائية", "type": "mandatory" }, { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, { "code": "ك 331", "name": "كيمياء العناصر الانتقالية (1)", "type": "mandatory" }, { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" }, { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ك 314", "name": "الأطياف الجزيئية", "type": "mandatory" }, { "code": "ك 315", "name": "الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, { "code": "ك 322", "name": "طرق التحليل الكهربي", "type": "mandatory" }, { "code": "ك 333", "name": "كيمياء العناصر الانتقالية (3)", "type": "mandatory" }, { "code": "ك 343", "name": "كيمياء المنتجات الطبيعية", "type": "mandatory" }, { "code": "ك 344", "name": "الكيمياء الضوئية", "type": "mandatory" }, { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" } ]
+                },
+                "fourth_year": {
+                    "term_1": [ { "code": "ك 481", "name": "كيمياء فيزيائية عملية (1)", "type": "mandatory" }, { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ك 483", "name": "كيمياء فيزيائية عملية (2)", "type": "mandatory" }, { "code": "ك 484", "name": "كيمياء عضوية عملية (2)", "type": "mandatory" }, { "code": "ك 490", "name": "بحث ومقال", "type": "mandatory" } ]
+                }
+            },
+            "كيمياء/جيولوجيا": {
+                "second_year": {
+                    "term_1": [ { "code": "ج 201", "name": "جيولوجيا تركيبية (1)", "type": "mandatory" }, { "code": "ج 203", "name": "طبقات صخرية", "type": "mandatory" }, { "code": "ج 205", "name": "حفريات كبيرة (1)", "type": "mandatory" }, { "code": "ج 207", "name": "مجهرية المعادن", "type": "mandatory" }, { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ج 202", "name": "حفريات دقيقة (1)", "type": "mandatory" }, { "code": "ج 204", "name": "علم الصخور الرسوبية (1)", "type": "mandatory" }, { "code": "ج 206", "name": "المعادن المكونة للصخور", "type": "mandatory" }, { "code": "ج 208", "name": "طبقات حيوية", "type": "mandatory" }, { "code": "ج 210", "name": "تضاريس وصور جوية", "type": "mandatory" }, { "code": "ك 212", "name": "الكيمياء الكهربية الإتزانية (1)", "type": "mandatory" }, { "code": "ك 232", "name": "كيمياء العناصر الممثلة (2)", "type": "mandatory" }, { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" } ]
+                },
+                "third_year": {
+                    "term_1": [ { "code": "ج 301", "name": "علم الصخور النارية (1)", "type": "mandatory" }, { "code": "ج 303", "name": "جيوكيمياء", "type": "mandatory" }, { "code": "ج 305", "name": "جيوفيزياء (1)", "type": "mandatory" }, { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, { "code": "ك 332", "name": "كيمياء العناصر الانتقالية (2)", "type": "mandatory" }, { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ج 302", "name": "علم الصخور المتحولة (1)", "type": "mandatory" }, { "code": "ج 304", "name": "جيولوجيا القاعدة بمصر", "type": "mandatory" }, { "code": "ج 306", "name": "جيولوجية الخامات", "type": "mandatory" }, { "code": "ج 308", "name": "جيولوجية حقلية", "type": "mandatory" }, { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } ]
+                },
+                "fourth_year": {
+                    "term_1": [ { "code": "ج 401", "name": "جيولوجية الفانيروزوي بمصر (1)", "type": "mandatory" }, { "code": "ج 403", "name": "جيولوجيا البترول (1)", "type": "mandatory" }, { "code": "ج 405", "name": "جيولوجيا المياه (1)", "type": "mandatory" }, { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ج 402", "name": "جيولوجيا تكتونية", "type": "mandatory" }, { "code": "ج 404", "name": "تفريط حقلي", "type": "mandatory" }, { "code": "ج 406", "name": "جيولوجية الفانيروزوي بمصر (2)", "type": "mandatory" }, { "code": "ج 408", "name": "الإحصاء الجيولوجي", "type": "mandatory" }, { "code": "ج 410", "name": "جيولوجيا البيئة", "type": "mandatory" }, { "code": "ك 490", "name": "بحث ومقال", "type": "mandatory" }, { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" } ]
+                }
+            },
+            "كيمياء/فيزياء": {
+                "second_year": {
+                    "term_1": [ { "code": "ف 201", "name": "فيزياء عملية", "type": "mandatory" }, { "code": "ف 221", "name": "كهرومغناطيسية (1)", "type": "mandatory" }, { "code": "ف 231", "name": "كهرومغناطيسية (1) [مكرر]", "type": "mandatory" }, { "code": "ف 241", "name": "فيزياء رياضية (1)", "type": "mandatory" }, { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ف 202", "name": "فيزياء عملية", "type": "mandatory" }, { "code": "ف 222", "name": "ميكانيكا كلاسيكية (2)", "type": "mandatory" }, { "code": "ف 232", "name": "كهرومغناطيسية (2)", "type": "mandatory" }, { "code": "ف 251", "name": "ديناميكا حرارية", "type": "mandatory" }, { "code": "ك 215", "name": "الكيمياء الكهربية الإتزانية (2)", "type": "mandatory" }, { "code": "ك 232", "name": "كيمياء العناصر الممثلة (2)", "type": "mandatory" }, { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" } ]
+                },
+                "third_year": {
+                    "term_1": [ { "code": "ف 235", "name": "بصريات فيزيائية", "type": "mandatory" }, { "code": "245", "name": "علوم الكمبيوتر", "type": "mandatory" }, { "code": "ف 261", "name": "فيزياء حديثة", "type": "mandatory" }, { "code": "ف 301", "name": "فيزياء عملية", "type": "mandatory" }, { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, { "code": "ك 332", "name": "كيمياء العناصر الانتقالية (2)", "type": "mandatory" }, { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ف 302", "name": "فيزياء عملية", "type": "mandatory" }, { "code": "ف 351", "name": "فيزياء إحصائية (1)", "type": "mandatory" }, { "code": "ف 362", "name": "ميكانيكا الكم (1)", "type": "mandatory" }, { "code": "ف 366", "name": "فيزياء الليزر", "type": "mandatory" }, { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } ]
+                },
+                "fourth_year": {
+                    "term_1": [ { "code": "ف 371", "name": "فيزياء الجوامد (1)", "type": "mandatory" }, { "code": "ف 381", "name": "فيزياء نووية (1)", "type": "mandatory" }, { "code": "ف 401", "name": "فيزياء عملية (نووية)", "type": "mandatory" }, { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ف 402", "name": "فيزياء عملية (جوامد)", "type": "mandatory" }, { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" } ]
+                }
+            },
+            "كيمياء/حيوان": {
+                "second_year": {
+                    "term_1": [ { "code": "ح 211", "name": "بيولوجيا الخلية (1)", "type": "mandatory" }, { "code": "ح 221", "name": "لا فقاريات (1)", "type": "mandatory" }, { "code": "ح 261", "name": "أساسيات علم البيئة", "type": "mandatory" }, { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ح 212", "name": "وراثة", "type": "mandatory" }, { "code": "ح 231", "name": "الفقاريات", "type": "mandatory" }, { "code": "ك 215", "name": "الكيمياء الكهربية الإتزانية (2)", "type": "mandatory" }, { "code": "ك 232", "name": "كيمياء العناصر الممثلة (2)", "type": "mandatory" }, { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" } ]
+                },
+                "third_year": {
+                    "term_1": [ { "code": "ح 311", "name": "بيولوجيا الخلية (2)", "type": "mandatory" }, { "code": "ح 331", "name": "تشريح مقارن", "type": "mandatory" }, { "code": "ح 351", "name": "فسيولوجي (1)", "type": "mandatory" }, { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, { "code": "ك 332", "name": "كيمياء العناصر الانتقالية (2)", "type": "mandatory" }, { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ح 321", "name": "علم الأوليات والطفيليات", "type": "mandatory" }, { "code": "ح 341", "name": "مناعة (1)", "type": "mandatory" }, { "code": "ح 352", "name": "الفسيولوجي (2)", "type": "mandatory" }, { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } ]
+                },
+                "fourth_year": {
+                    "term_1": [ { "code": "ح 411", "name": "بيولوجيا جزيئية", "type": "mandatory" }, { "code": "ح 431", "name": "علم الأجنة", "type": "mandatory" }, { "code": "ح 451", "name": "فسيولوجي (3)", "type": "mandatory" }, { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ح 400", "name": "سيمينار", "type": "mandatory" }, { "code": "ح 412", "name": "كيمياء الأنسجة", "type": "mandatory" }, { "code": "ح 452", "name": "فسيولوجي (4)", "type": "mandatory" }, { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" } ]
+                }
+            },
+            "كيمياء/حشرات": {
+                "second_year": {
+                    "term_1": [ { "code": "ش 211", "name": "بيولوجيا الخلية", "type": "mandatory" }, { "code": "ش 212", "name": "تشريح وأنسجة الحشرات", "type": "mandatory" }, { "code": "ش 213", "name": "مورفولوجيا الحشرات", "type": "mandatory" }, { "code": "ش 214", "name": "مجموعات تنوعية وتحضيرات", "type": "mandatory" }, { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ش 215", "name": "علم الأجنة والتكوين", "type": "mandatory" }, { "code": "ش 216", "name": "المحيط الحيوي والعلاقات الحشرية", "type": "mandatory" }, { "code": "ش 281", "name": "مكافحة الآفات الحشرية", "type": "mandatory" }, { "code": "ك 215", "name": "الكيمياء الكهربية الإتزانية (2)", "type": "mandatory" }, { "code": "ك 232", "name": "كيمياء العناصر الممثلة (2)", "type": "mandatory" }, { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" } ]
+                },
+                "third_year": {
+                    "term_1": [ { "code": "ش 321", "name": "تصنيف وتقسيم الحشرات", "type": "mandatory" }, { "code": "ش 331", "name": "علم بيئة الحشرات والسلوك", "type": "mandatory" }, { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, { "code": "ك 332", "name": "كيمياء العناصر الانتقالية (2)", "type": "mandatory" }, { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ش 311", "name": "آفات النبات ونقل الأمراض", "type": "mandatory" }, { "code": "ش 341", "name": "علم الحشرات والأكاروسات الطبية", "type": "mandatory" }, { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } ]
+                },
+                "fourth_year": {
+                    "term_1": [ { "code": "ش 451", "name": "فسيولوجيا الحشرات", "type": "mandatory" }, { "code": "ش 481", "name": "السيطرة المتكاملة على الآفات", "type": "mandatory" }, { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ش 461", "name": "الكيمياء الحيوية للحشرات", "type": "mandatory" }, { "code": "ش 462", "name": "الأيض في الحشرات", "type": "mandatory" }, { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" } ]
+                }
+            },
+            "كيمياء/كيمياء حيوي": {
+                "second_year": {
+                    "term_1": [ { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" }, { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, { "code": "ك 251", "name": "أسس الكيمياء الحيوية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ك 212", "name": "الكيمياء الكهربية الإتزانية (1)", "type": "mandatory" }, { "code": "ك 231", "name": "كيمياء العناصر الممثلة (1)", "type": "mandatory" }, { "code": "ك 243", "name": "الكيمياء الفراغية", "type": "mandatory" }, { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" }, { "code": "ك 252", "name": "أسس الكيمياء الحيوية (2)", "type": "mandatory" } ]
+                },
+                "third_year": {
+                    "term_1": [ { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" }, { "code": "ك 353", "name": "كيمياء حيوية فيزيائية", "type": "mandatory" }, { "code": "ك 354", "name": "إنزيمات", "type": "mandatory" }, { "code": "ك 355", "name": "أيض حيوي (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" }, { "code": "ك 356", "name": "أيض حيوي (2)", "type": "mandatory" }, { "code": "ك 357", "name": "بيولوجيا جزيئية (1)", "type": "mandatory" }, { "code": "ك 358", "name": "كيمياء حيوية عملية (1)", "type": "mandatory" }, { "code": "ك 362", "name": "تغذية", "type": "mandatory" } ]
+                },
+                "fourth_year": {
+                    "term_1": [ { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, { "code": "ك 451", "name": "هرمونات", "type": "mandatory" }, { "code": "ك 452", "name": "بيولوجيا جزيئية (2)", "type": "mandatory" }, { "code": "ك 453", "name": "كيمياء حيوية عملية (2)", "type": "mandatory" }, { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ك 454", "name": "سوائل الجسم", "type": "mandatory" }, { "code": "ك 455", "name": "كيمياء حيوية اكلينيكية", "type": "mandatory" }, { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" }, { "code": "ك 490", "name": "بحث ومقال", "type": "mandatory" } ]
+                }
+            },
+            "كيمياء/ميكروبيولوجي": {
+                "second_year": {
+                    "term_1": [ { "code": "ن 210", "name": "ميكروبيولوجيا عامة", "type": "mandatory" }, { "code": "ن 211", "name": "تنوع البكتيريا", "type": "mandatory" }, { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ن 212", "name": "فسيولوجيا البكتيريا", "type": "mandatory" }, { "code": "ن 213", "name": "ميكروبيولوجيا التربة والمياه", "type": "mandatory" }, { "code": "ك 212", "name": "الكيمياء الكهربية الإتزانية (1)", "type": "mandatory" }, { "code": "ك 231", "name": "كيمياء العناصر الممثلة (1)", "type": "mandatory" }, { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" } ]
+                },
+                "third_year": {
+                    "term_1": [ { "code": "ن 311", "name": "وراثة ميكروبية", "type": "mandatory" }, { "code": "ن 312", "name": "ميكروبيولوجيا تطبيقية", "type": "mandatory" }, { "code": "ن 313", "name": "طحالب", "type": "mandatory" }, { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, { "code": "ك 332", "name": "كيمياء العناصر الانتقالية (2)", "type": "mandatory" }, { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ن 314", "name": "فطريات", "type": "mandatory" }, { "code": "ن 315", "name": "فيروسات", "type": "mandatory" }, { "code": "ن 316", "name": "مناعة", "type": "mandatory" }, { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } ]
+                },
+                "fourth_year": {
+                    "term_1": [ { "code": "ن 411", "name": "مضادات حيوية", "type": "mandatory" }, { "code": "ن 412", "name": "ميكروبيولوجيا الصناعات الغذائية", "type": "mandatory" }, { "code": "ن 413", "name": "امراض نبات", "type": "mandatory" }, { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ن 414", "name": "بيولوجيا جزيئية للميكروبات", "type": "mandatory" }, { "code": "ن 415", "name": "ميكروبيولوجيا بيئية", "type": "mandatory" }, { "code": "ن 416", "name": "ميكروبيولوجيا البترول", "type": "mandatory" }, { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" } ]
+                }
+            },
+            "كيمياء/نبات": {
+                "second_year": {
+                    "term_1": [ { "code": "ن 201", "name": "تشريح نبات", "type": "mandatory" }, { "code": "ن 203", "name": "تقسيم نبات (1)", "type": "mandatory" }, { "code": "ن 205", "name": "ميكروبيولوجيا عامة", "type": "mandatory" }, { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ن 202", "name": "فسيولوجيا نبات (1)", "type": "mandatory" }, { "code": "ن 204", "name": "وراثة", "type": "mandatory" }, { "code": "ن 206", "name": "طحالب", "type": "mandatory" }, { "code": "ك 212", "name": "الكيمياء الكهربية الإتزانية (1)", "type": "mandatory" }, { "code": "ك 231", "name": "كيمياء العناصر الممثلة (1)", "type": "mandatory" }, { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" } ]
+                },
+                "third_year": {
+                    "term_1": [ { "code": "ن 301", "name": "فسيولوجيا نبات (2)", "type": "mandatory" }, { "code": "ن 303", "name": "بيئة نباتية (1)", "type": "mandatory" }, { "code": "ن 305", "name": "فطريات", "type": "mandatory" }, { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, { "code": "ك 332", "name": "كيمياء العناصر الانتقالية (2)", "type": "mandatory" }, { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ن 302", "name": "بيئة نباتية (2)", "type": "mandatory" }, { "code": "ن 304", "name": "تقسيم نبات (2)", "type": "mandatory" }, { "code": "ن 306", "name": "أراضى واستصلاح", "type": "mandatory" }, { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } ]
+                },
+                "fourth_year": {
+                    "term_1": [ { "code": "ن 401", "name": "فسيولوجيا نبات (3)", "type": "mandatory" }, { "code": "ن 403", "name": "امراض نبات", "type": "mandatory" }, { "code": "ن 405", "name": "فيروسات", "type": "mandatory" }, { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } ],
+                    "term_2": [ { "code": "ن 402", "name": "نباتات اقتصادية وطبية", "type": "mandatory" }, { "code": "ن 404", "name": "بيولوجيا جزيئية وهندسة وراثية", "type": "mandatory" }, { "code": "ن 406", "name": "فلورا مصر", "type": "mandatory" }, { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" } ]
+                }
+            }
+        };
 
         let lastSelectedYear = "";
         let lastSelectedDept = "";
@@ -1251,6 +1390,23 @@
             renderDepartments('specialized-programs-container', specializedPrograms, false);
         });
 
+        // --- HELPER FUNCTION: Get Icon based on Subject Code Letter ---
+        function getIconByCode(code) {
+            if(!code) return "fa-book";
+            const letter = code.trim().charAt(0);
+            if (['ر'].includes(letter)) return "fa-calculator"; // Math
+            if (['ف'].includes(letter)) return "fa-atom";       // Physics
+            if (['ك'].includes(letter)) return "fa-flask";      // Chemistry
+            if (['س'].includes(letter)) return "fa-laptop-code"; // CS
+            if (['ح', 'ن'].includes(letter)) return "fa-dna";   // Bio/Zoology/Botany
+            if (['ج'].includes(letter)) return "fa-mountain";   // Geology
+            if (['ل', 'ض'].includes(letter)) return "fa-star";  // Astronomy/Space
+            if (['ش'].includes(letter)) return "fa-bug";        // Entomology
+            if (['م', 'ص'].includes(letter)) return "fa-chart-bar"; // Stat/Micro? (Stat mainly)
+            if (['ج', 'و'].includes(letter)) return "fa-cloud"; // Atmos?
+            return "fa-flask"; // Default
+        }
+
         function getDeptIcon(deptName) {
             if (deptName.includes("حاسب") || deptName.includes("تكنولوجيا")) return "fa-laptop-code";
             if (deptName.includes("رياضيات") || deptName.includes("إحصاء")) return "fa-square-root-alt";
@@ -1285,7 +1441,6 @@
         }
 
         function switchView(showId) {
-            // Hide all views first
             ALL_VIEWS.forEach(id => {
                 const el = document.getElementById(id);
                 if (el && !el.classList.contains('hidden')) {
@@ -1296,20 +1451,16 @@
                 }
             });
 
-            // Show target view
             setTimeout(() => {
                 const showEl = document.getElementById(showId);
                 if (showEl) {
                     showEl.classList.remove('hidden');
-                    
-                    // Reset animations
                     const animatedElements = showEl.querySelectorAll('.animate-fade-up');
                     animatedElements.forEach(el => {
                         el.style.animation = 'none';
                         el.offsetHeight; 
                         el.style.animation = null; 
                     });
-
                     setTimeout(() => {
                          showEl.classList.remove('opacity-0');
                     }, 50);
@@ -1318,34 +1469,14 @@
             }, 500);
         }
 
-        function showBachelorPage() {
-            switchView('bachelor-view');
-        }
-
-        function showHomePage() {
-            switchView('main-view');
-        }
-
-        function showDepartmentsPage() {
-            switchView('departments-view');
-        }
-
-        function showSpecializedProgramsPage() {
-            switchView('specialized-programs-view');
-        }
-
-        function showCareerPage() {
-            switchView('career-view');
-        }
-
-        function showToolsPage() {
-            switchView('tools-view');
-        }
-
-        function showHistoryPage() {
-            switchView('history-view');
-        }
-
+        function showBachelorPage() { switchView('bachelor-view'); }
+        function showHomePage() { switchView('main-view'); }
+        function showDepartmentsPage() { switchView('departments-view'); }
+        function showSpecializedProgramsPage() { switchView('specialized-programs-view'); }
+        function showCareerPage() { switchView('career-view'); }
+        function showToolsPage() { switchView('tools-view'); }
+        function showHistoryPage() { switchView('history-view'); }
+        
         function showYear1Page() {
             lastSelectedYear = 'الفرقة الأولى';
             switchView('year1-view');
@@ -1368,48 +1499,62 @@
             switchView('specialized-semesters-view');
         }
 
+        // --- CORE LOGIC FOR UPPER YEARS ---
         function showDepartmentSemester(year, dept, semester) {
-            // Set the title for department subjects view
             const titleEl = document.getElementById('department-subjects-title');
             const subtitleEl = document.getElementById('department-subjects-subtitle');
             
             if(titleEl) titleEl.innerText = `${dept} - ${semester}`;
             if(subtitleEl) subtitleEl.innerText = `اختر المادة لعرض المحتوى`;
             
-            // Get the appropriate subjects based on department and semester
+            const container = document.getElementById('department-subjects-container');
+            container.innerHTML = "";
+
+            // 1. Map UI strings to Database Keys
+            let yearKey = "";
+            if (year === "الفرقة الثانية") yearKey = "second_year";
+            else if (year === "الفرقة الثالثة") yearKey = "third_year";
+            else if (year === "الفرقة الرابعة") yearKey = "fourth_year";
+
+            let termKey = "";
+            if (semester === "الفصل الدراسي الأول") termKey = "term_1";
+            else if (semester === "الفصل الدراسي الثاني") termKey = "term_2";
+
+            // 2. Fetch Subjects safely
             let subjectsList = [];
-            
-            if (dept === "كيمياء/كيمياء حيوي" && semester === "الفصل الدراسي الأول") {
-                if (year === "الفرقة الثانية") {
-                    subjectsList = chemBiochemYear2Semester1;
-                }
+            if (departmentCurricula[dept] && 
+                departmentCurricula[dept][yearKey] && 
+                departmentCurricula[dept][yearKey][termKey]) {
+                subjectsList = departmentCurricula[dept][yearKey][termKey];
             }
-            
-            // If no subjects found for this combination, show a message
+
+            // 3. Render
             if (subjectsList.length === 0) {
-                const container = document.getElementById('department-subjects-container');
                 container.innerHTML = `
-                    <div class="col-span-4 text-center py-12">
+                    <div class="col-span-full text-center py-12">
                         <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
                             <i class="fas fa-exclamation-circle text-3xl text-cuGold-500"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">لم يتم إضافة المواد بعد</h3>
-                        <p class="text-gray-400">سيتم إضافة مواد هذا الفصل قريباً</p>
+                        <p class="text-gray-400">سيتم إضافة مواد هذا القسم/الفصل قريباً</p>
                     </div>
                 `;
             } else {
-                // Render the subjects
-                const container = document.getElementById('department-subjects-container');
-                container.innerHTML = "";
-                
                 subjectsList.forEach(subject => {
+                    // Determine Icon automatically
+                    const iconClass = getIconByCode(subject.code);
+                    
                     const html = `
-                    <div onclick="showSemesterPage('${subject.name}', '${subject.link}', false)" class="group bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
+                    <div onclick="showSemesterPage('${subject.name}', '', false)" class="group bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
                         <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
-                            <i class="fas ${subject.icon} text-2xl text-gray-400"></i>
+                            <i class="fas ${iconClass} text-2xl text-gray-400"></i>
                         </div>
                         <h4 class="text-lg font-bold text-gray-200 group-hover:text-white mb-2">${subject.name}</h4>
-                        <span class="text-xs text-cuGreen-500">${subject.link ? 'عرض المحتوى' : 'سيتم إضافته قريباً'}</span>
+                        <div class="flex justify-center gap-2 mb-2">
+                            <span class="text-xs bg-dark-900 px-2 py-1 rounded text-cuGold-500 border border-dark-700">${subject.code}</span>
+                            ${subject.type === 'optional' ? '<span class="text-xs bg-dark-900 px-2 py-1 rounded text-blue-400 border border-dark-700">اختياري</span>' : ''}
+                        </div>
+                        <span class="text-xs text-cuGreen-500">سيتم إضافته قريباً</span>
                     </div>
                     `;
                     container.innerHTML += html;
@@ -1419,7 +1564,6 @@
             switchView('department-subjects-view');
         }
 
-        // --- UPDATED LOGIC FOR SUBJECTS ---
         function showSubjectsPage(category) {
             lastSelectedSubjectCategory = category;
             const container = document.getElementById('subjects-container');
@@ -1461,7 +1605,6 @@
             if (titleEl) titleEl.innerText = title;
             
             if (hasLink && link) {
-                // If there's a link, show the normal message and enable the button
                 if (messageEl) messageEl.innerText = "ستجد هنا كنزك الدراسي! \nجميع المحاضرات والمراجع التي تحتاجها للتفوق متاحة الآن بين يديك.";
                 if (linkEl) {
                     linkEl.href = link;
@@ -1470,7 +1613,6 @@
                     linkEl.innerHTML = '<i class="fab fa-google-drive text-xl"></i> الدخول إلى المحتوى (Google Drive)';
                 }
             } else {
-                // If no link, show preparing message and disable the button
                 if (messageEl) messageEl.innerText = "جاري تحضير المحتوى لهذه المادة \nسيتم إضافة الروابط قريباً بإذن الله";
                 if (linkEl) {
                     linkEl.href = "#";
@@ -1485,7 +1627,13 @@
                 if (lastSelectedYear === 'الفرقة الأولى') {
                      backBtn.setAttribute('onclick', `showSubjectsPage('${lastSelectedSubjectCategory}')`);
                 } else {
-                    backBtn.setAttribute('onclick', `showDepartmentSemester('${lastSelectedYear}', '${lastSelectedDept}', 'الفصل الدراسي الأول')`);
+                    // For upper years, go back to the semester view of that department
+                    let semName = "";
+                    const deptTitle = document.getElementById('department-subjects-title');
+                    if(deptTitle && deptTitle.innerText.includes('الأول')) semName = 'الفصل الدراسي الأول';
+                    else semName = 'الفصل الدراسي الثاني';
+                    
+                    backBtn.setAttribute('onclick', `showDepartmentSemester('${lastSelectedYear}', '${lastSelectedDept}', '${semName}')`);
                 }
             }
 
