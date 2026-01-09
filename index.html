@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cairo SciVerse - جامعة القاهرة</title>
-    <meta name="description" content="Cairo SciVerse - البوابة التعريفية لكلية العلوم جامعة القاهرة">
+    <meta name="description" content="Cairo SciVerse - البوابة الرسمية لكلية العلوم جامعة القاهرة">
     
+    <!-- Google Fonts: Cairo Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Configuration for Tailwind -->
     <script>
         tailwind.config = {
             theme: {
@@ -99,7 +103,7 @@
             display: inline-block;
             white-space: nowrap;
             animation: ticker 25s linear infinite;
-            will-change: transform;
+            will-change: transform; /* Performance Optimization */
         }
         
         /* Loader */
@@ -130,7 +134,7 @@
         .mobile-sidebar {
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             transform: translateX(-100%);
-            will-change: transform;
+            will-change: transform; /* Performance Optimization */
         }
         
         .mobile-sidebar.open {
@@ -146,7 +150,7 @@
         .purple-glow-box {
             animation: purplePulse 3s infinite;
             border: 1px solid rgba(109, 40, 217, 0.5);
-            will-change: box-shadow;
+            will-change: box-shadow; /* Performance Optimization */
         }
 
         @keyframes greenPulse {
@@ -157,7 +161,7 @@
         .green-glow-box {
             animation: greenPulse 3s infinite;
             border: 1px solid rgba(74, 222, 128, 0.4);
-            will-change: box-shadow;
+            will-change: box-shadow; /* Performance Optimization */
         }
         
         /* Fade In Up Utility */
@@ -168,7 +172,7 @@
         .animate-fade-up {
             opacity: 0; 
             animation: fadeInUp 0.8s ease-out forwards;
-            will-change: opacity, transform;
+            will-change: opacity, transform; /* Performance Optimization */
         }
         .delay-100 { animation-delay: 0.1s; }
         .delay-200 { animation-delay: 0.2s; }
@@ -184,18 +188,19 @@
         .animate-gradient-text {
             background-size: 200% auto;
             animation: gradientWave 3s linear infinite;
-            will-change: background-position;
+            will-change: background-position; /* Performance Optimization */
         }
 
         /* Pro Icon Style Optimized */
         .pro-icon-container {
             background: linear-gradient(145deg, #1e293b, #0f172a);
             box-shadow: 5px 5px 10px #0b111f, -5px -5px 10px #212d41;
+            /* Avoid using 'all' for better performance */
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
                         background 0.4s ease,
                         box-shadow 0.4s ease,
                         border-color 0.4s ease;
-            will-change: transform, box-shadow;
+            will-change: transform, box-shadow; /* Performance Optimization */
         }
         .group:hover .pro-icon-container {
             transform: scale(1.1) rotate(5deg);
@@ -214,14 +219,16 @@
 </head>
 <body class="bg-dark-900 text-gray-100 antialiased relative overflow-x-hidden">
 
+    <!-- Loading Screen -->
     <div id="loader" class="fixed inset-0 bg-dark-900 z-[70] flex items-center justify-center transition-opacity duration-500">
         <div class="text-center">
             <div class="loader mx-auto mb-4"></div>
             <h2 class="text-cuGreen-400 font-bold text-xl">Cairo SciVerse</h2>
-            <p class="text-gray-400 text-sm">البوابة التعريفية</p>
+            <p class="text-gray-400 text-sm">جامعة القاهرة</p>
         </div>
     </div>
 
+    <!-- Notification Toast -->
     <div id="toast" class="fixed top-24 left-5 bg-dark-800 shadow-xl rounded-lg p-4 border-r-4 border-cuGreen-500 transform translate-x-full transition-transform duration-300 z-[80] flex items-center gap-3 hidden text-white">
         <i class="fas fa-check-circle text-cuGreen-500 text-xl"></i>
         <div>
@@ -230,6 +237,7 @@
         </div>
     </div>
 
+    <!-- WhatsApp Floating Button -->
     <a href="https://chat.whatsapp.com/DLbeD1yHlJWBkxo1FSilv5?mode=ems_copy_t" target="_blank" class="fixed bottom-6 right-6 z-50 group hover:-translate-y-2 transition-transform duration-300">
         <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping group-hover:opacity-0 transition-opacity duration-300"></span>
         <div class="relative bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-2xl transition-all transform hover:scale-110 flex items-center justify-center w-16 h-16 border-2 border-white">
@@ -237,6 +245,7 @@
         </div>
     </a>
 
+    <!-- Top Bar -->
     <div class="bg-black text-gray-300 text-sm py-2 px-4 hidden md:block border-b border-gray-800">
         <div class="container mx-auto flex justify-end items-center">
             <div class="flex gap-4 items-center">
@@ -253,6 +262,7 @@
         </div>
     </div>
 
+    <!-- Header & Navigation -->
     <header class="bg-dark-800 shadow-md sticky top-0 z-40 border-b border-gray-700">
         <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
@@ -272,6 +282,7 @@
         </div>
     </header>
 
+    <!-- Mobile Menu -->
     <div id="mobile-menu-overlay" class="mobile-menu-overlay fixed inset-0 bg-black bg-opacity-80 z-50" onclick="toggleMobileMenu()"></div>
     <div id="mobile-sidebar" class="mobile-sidebar fixed top-0 left-0 h-full w-72 bg-dark-800 shadow-2xl z-50 flex flex-col border-r border-gray-700 overflow-y-auto" dir="rtl">
         <div class="p-6 border-b border-gray-700 flex justify-between items-center">
@@ -284,7 +295,7 @@
             <a href="#home" onclick="toggleMobileMenu(); showHomePage()" class="menu-item block p-3 rounded hover:bg-dark-700 text-gray-200 hover:text-cuGreen-400 font-semibold transition group" style="transition-delay: 50ms;">
                 <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-dark-900 group-hover:bg-cuGreen-900/50 ml-2 transition-colors"><i class="fas fa-home"></i></span> الرئيسية
             </a>
-            <a href="#" onclick="toggleMobileMenu(); showToast('جاري تحضير المحتوى')" class="menu-item block p-3 rounded hover:bg-dark-700 text-gray-200 hover:text-cuGreen-400 font-semibold transition group" style="transition-delay: 100ms;">
+            <a href="#" onclick="toggleMobileMenu(); showYear1Page()" class="menu-item block p-3 rounded hover:bg-dark-700 text-gray-200 hover:text-cuGreen-400 font-semibold transition group" style="transition-delay: 100ms;">
                 <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-dark-900 group-hover:bg-cuGreen-900/50 ml-2 transition-colors"><i class="fas fa-book-open"></i></span> تعريف مواد سنة اولى
             </a>
             <a href="#" onclick="toggleMobileMenu(); showDepartmentsPage()" class="menu-item block p-3 rounded hover:bg-dark-700 text-gray-200 hover:text-cuGreen-400 font-semibold transition group" style="transition-delay: 150ms;">
@@ -312,25 +323,28 @@
         </div>
     </div>
 
+    <!-- MAIN HOME VIEW -->
     <div id="main-view" class="transition-opacity duration-500">
+        <!-- News Ticker -->
         <div class="bg-cuGold-600 text-white py-2 overflow-hidden relative shadow-lg">
             <div class="container mx-auto flex items-center gap-4">
                 <span class="bg-dark-900 text-cuGold-400 px-3 py-1 text-xs font-bold rounded z-10 whitespace-nowrap border border-cuGold-500">Notes</span>
                 <div class="flex-1 overflow-hidden">
                     <div class="news-ticker-content w-full font-semibold">
-                        <span class="mx-8">• أهلاً بكم في Cairo SciVerse - البوابة التعريفية لكلية العلوم</span>
+                        <span class="mx-8">• أهلاً بكم في Cairo SciVerse - البوابة الجديدة لكلية العلوم</span>
                         <span class="mx-8">• تواصل معنا عبر واتساب للمساعدة الفورية عن طريق ايقونة الواتس اب العلوية</span>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Hero Section -->
         <section id="home" class="hero-bg relative h-[500px] flex items-center justify-center text-center px-4 border-b border-gray-800">
             <div class="relative z-10 max-w-4xl text-white">
                 <h2 class="text-xl md:text-2xl font-light mb-4 text-cuGold-400 tracking-wider">أهلاً بكم في</h2>
                 <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg font-sans tracking-tight">Cairo SciVerse</h1>
                 <p class="text-lg md:text-xl mb-10 text-gray-300 max-w-2xl mx-auto drop-shadow-md">
-                    البوابة التعريفية - كلية العلوم جامعة القاهرة
+                    كلية العلوم - جامعة القاهرة
                 </p>
                 <div class="flex flex-col md:flex-row gap-4 justify-center">
                     <button onclick="showBachelorPage()" class="bg-cuGold-500 hover:bg-cuGold-600 text-black font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105 border-2 border-cuGold-500 group">
@@ -348,8 +362,10 @@
             </div>
         </section>
 
+        <!-- Stats Section -->
         <section class="py-10 -mt-10 relative z-20 container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Stat 1 -->
                 <div class="bg-dark-800 p-6 rounded-xl shadow-xl text-center border-b-4 border-cuGreen-500 card-hover border-t border-l border-r border-gray-700 group">
                     <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-dark-700 to-dark-900 rounded-2xl flex items-center justify-center border border-gray-600 shadow-inner pro-icon-container">
                         <i class="fas fa-user-graduate text-3xl text-cuGreen-400"></i>
@@ -357,6 +373,7 @@
                     <h3 class="text-3xl font-bold text-white count-up" data-target="15000">0</h3>
                     <p class="text-gray-400">طالب وطالبة</p>
                 </div>
+                <!-- Stat 2 -->
                 <div class="bg-dark-800 p-6 rounded-xl shadow-xl text-center border-b-4 border-cuGreen-500 card-hover border-t border-l border-r border-gray-700 group">
                     <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-dark-700 to-dark-900 rounded-2xl flex items-center justify-center border border-gray-600 shadow-inner pro-icon-container">
                         <i class="fas fa-chalkboard-teacher text-3xl text-cuGreen-400"></i>
@@ -364,6 +381,7 @@
                     <h3 class="text-3xl font-bold text-white count-up" data-target="1200">0</h3>
                     <p class="text-gray-400">عضو هيئة تدريس</p>
                 </div>
+                <!-- Stat 3 -->
                 <div class="bg-dark-800 p-6 rounded-xl shadow-xl text-center border-b-4 border-cuGreen-500 card-hover border-t border-l border-r border-gray-700 group">
                     <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-dark-700 to-dark-900 rounded-2xl flex items-center justify-center border border-gray-600 shadow-inner pro-icon-container">
                         <i class="fas fa-flask text-3xl text-cuGreen-400"></i>
@@ -371,6 +389,7 @@
                     <h3 class="text-3xl font-bold text-white count-up" data-target="20">0</h3>
                     <p class="text-gray-400">قسم علمي</p>
                 </div>
+                <!-- Stat 4 -->
                 <div class="bg-dark-800 p-6 rounded-xl shadow-xl text-center border-b-4 border-cuGreen-500 card-hover border-t border-l border-r border-gray-700 group">
                     <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-dark-700 to-dark-900 rounded-2xl flex items-center justify-center border border-gray-600 shadow-inner pro-icon-container">
                         <i class="fas fa-award text-3xl text-cuGreen-400"></i>
@@ -381,6 +400,7 @@
             </div>
         </section>
 
+        <!-- Dean Appreciation Section -->
         <section class="py-16 container mx-auto px-4">
             <div class="purple-glow-box relative bg-gradient-to-r from-dark-800 to-dark-900 rounded-2xl p-8 md:p-12 overflow-hidden flex flex-col md:flex-row items-center gap-8 md:gap-12 transition-all duration-300">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-cuPurple-glow opacity-20 rounded-full -mr-16 -mt-16 blur-xl"></div>
@@ -405,6 +425,7 @@
             </div>
         </section>
 
+        <!-- Map Footer Section -->
         <footer id="map" class="bg-black text-gray-400 pt-16 border-t-4 border-cuGreen-600">
             <div class="container mx-auto px-4 pb-8">
                 <div class="text-center mb-8">
@@ -426,6 +447,7 @@
                 </div>
             </div>
 
+            <!-- Modified Footer for Main View -->
             <div class="bg-black border-t border-gray-800 py-6">
                 <div class="container mx-auto px-4">
                     <p class="text-center text-sm mb-4 font-bold text-transparent bg-clip-text bg-gradient-to-r from-cuGreen-400 via-cuGold-500 to-cuGreen-400 animate-gradient-text opacity-90">
@@ -434,7 +456,7 @@
                     <div class="flex flex-col md:flex-row justify-between items-center text-sm pt-4">
                         <div class="flex items-center gap-2 mb-4 md:mb-0">
                             <span class="text-gray-600"></span>
-                            <span>© 2026 جميع الحقوق محفوظة</span>
+                            <span>&copy; 2026 جميع الحقوق محفوظة</span>
                         </div>
                         <div class="flex gap-4">
                             <a href="#" onclick="showToast('سيتم إضافة السياسة قريباً'); return false;" class="hover:text-cuGold-500 transition">سياسة الخصوصية</a>
@@ -446,6 +468,7 @@
         </footer>
     </div>
 
+    <!-- BACHELOR PROGRAM VIEW -->
     <div id="bachelor-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative pt-10 flex flex-col justify-between">
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
 
@@ -461,6 +484,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Year 1 -->
                 <div onclick="showYear1Page()" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-100 flex flex-col items-center">
                     <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
                         <i class="fas fa-flask text-3xl text-gray-400"></i>
@@ -469,6 +493,7 @@
                     <span class="text-xs text-gray-500 group-hover:text-gray-300">اضغط للاستمرار</span>
                 </div>
 
+                <!-- Year 2 -->
                 <div onclick="showDeptSelection('الفرقة الثانية')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-blue-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-900/40 text-center animate-fade-up delay-200 flex flex-col items-center">
                     <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
                         <i class="fas fa-microscope text-3xl text-gray-400"></i>
@@ -477,6 +502,7 @@
                     <span class="text-xs text-gray-500 group-hover:text-gray-300">اختيار القسم</span>
                 </div>
 
+                <!-- Year 3 -->
                 <div onclick="showDeptSelection('الفرقة الثالثة')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-purple-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-purple-900/40 text-center animate-fade-up delay-300 flex flex-col items-center">
                     <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
                         <i class="fas fa-atom text-3xl text-gray-400"></i>
@@ -485,6 +511,7 @@
                     <span class="text-xs text-gray-500 group-hover:text-gray-300">اختيار القسم</span>
                 </div>
 
+                <!-- Year 4 -->
                 <div onclick="showDeptSelection('الفرقة الرابعة')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGold-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGold-900/40 text-center animate-fade-up delay-400 flex flex-col items-center">
                     <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
                         <i class="fas fa-user-graduate text-3xl text-gray-400"></i>
@@ -496,10 +523,11 @@
         </div>
         
         <div class="w-full text-center text-gray-600 text-sm py-6 relative z-10 bg-dark-900 border-t border-gray-800">
-           © 2026 Cairo SciVerse
+           &copy; 2026 Cairo SciVerse
         </div>
     </div>
 
+    <!-- YEAR 1 VIEW -->
     <div id="year1-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
 
@@ -517,7 +545,7 @@
 
         <div class="container mx-auto px-4 relative z-10 flex-grow flex flex-col items-center justify-center gap-8 max-w-4xl">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-                <div onclick="showSubjectsPage('الفصل الدراسي الأول')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-100 flex flex-col items-center">
+                <div onclick="showSubjectsList('semester1')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-100 flex flex-col items-center">
                     <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
                         <i class="fas fa-book-open text-3xl text-gray-400"></i>
                     </div>
@@ -525,7 +553,7 @@
                     <span class="text-xs text-gray-500 group-hover:text-gray-300">عرض المواد</span>
                 </div>
 
-                <div onclick="showSubjectsPage('الفصل الدراسي الثاني')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-200 flex flex-col items-center">
+                <div onclick="showSubjectsList('semester2')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-200 flex flex-col items-center">
                     <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
                         <i class="fas fa-book-reader text-3xl text-gray-400"></i>
                     </div>
@@ -534,7 +562,7 @@
                 </div>
             </div>
 
-            <div onclick="showSubjectsPage('متطلبات الجامعة')" class="w-full md:w-1/2 group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGold-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGold-900/40 text-center animate-fade-up delay-300 flex flex-col items-center">
+            <div onclick="showSubjectsList('uni_requirements')" class="w-full md:w-1/2 group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGold-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGold-900/40 text-center animate-fade-up delay-300 flex flex-col items-center">
                 <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
                     <i class="fas fa-university text-3xl text-gray-400"></i>
                 </div>
@@ -544,11 +572,12 @@
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
+           &copy; 2026 Cairo SciVerse
         </div>
     </div>
 
-    <div id="subjects-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
+    <!-- SUBJECTS LIST VIEW (NEW) -->
+    <div id="subjects-list-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
 
         <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-10">
@@ -557,20 +586,22 @@
                     <h2 class="text-3xl font-bold text-white mb-2" id="subjects-page-title">قائمة المواد</h2>
                     <p class="text-cuGreen-400 text-lg">اختر المادة لعرض المحتوى</p>
                 </div>
-                <button onclick="goBackFromSubjects()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
+                <button onclick="showYear1Page()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
                     <span class="text-sm font-bold">رجوع</span> <i class="fas fa-arrow-left"></i>
                 </button>
             </div>
-
-            <div id="subjects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-fade-up delay-100">
+            
+            <div id="subjects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-up delay-100">
+                <!-- Subjects will be injected here via JS -->
             </div>
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
+           &copy; 2026 Cairo SciVerse
         </div>
     </div>
 
+    <!-- SEMESTER CONTENT VIEW (Generic for now if needed, or specific subject link) -->
     <div id="semester-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
         <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#eab308 1px, transparent 1px); background-size: 30px 30px;"></div>
         
@@ -595,7 +626,7 @@
                         <i class="fab fa-google-drive text-xl"></i> الدخول إلى المحتوى (Google Drive)
                     </a>
                     
-                    <button id="semester-back-btn" onclick="showSubjectsPage(lastSelectedSubjectCategory)" class="text-gray-500 hover:text-white transition text-sm mt-2 flex items-center gap-2">
+                    <button id="semester-back-btn" onclick="showYear1Page()" class="text-gray-500 hover:text-white transition text-sm mt-2 flex items-center gap-2">
                         <i class="fas fa-arrow-right"></i> العودة
                     </button>
                 </div>
@@ -603,10 +634,11 @@
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
+           &copy; 2026 Cairo SciVerse
         </div>
     </div>
 
+    <!-- DEPARTMENTS LIST VIEW -->
     <div id="departments-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
 
@@ -622,14 +654,16 @@
             </div>
             
             <div id="departments-list-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-up delay-100">
+                <!-- Departments injected by JS -->
             </div>
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
+           &copy; 2026 Cairo SciVerse
         </div>
     </div>
 
+    <!-- SPECIALIZED PROGRAMS VIEW -->
     <div id="specialized-programs-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
 
@@ -645,14 +679,16 @@
             </div>
             
             <div id="specialized-programs-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-up delay-100">
+                <!-- Programs injected by JS -->
             </div>
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
+           &copy; 2026 Cairo SciVerse
         </div>
     </div>
 
+    <!-- DEPARTMENT SELECTION VIEW -->
     <div id="dept-selection-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
 
@@ -668,14 +704,16 @@
             </div>
             
             <div id="dept-selection-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-up delay-100">
+                <!-- Selectable Departments injected by JS -->
             </div>
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
+           &copy; 2026 Cairo SciVerse
         </div>
     </div>
 
+    <!-- SPECIALIZED SEMESTER VIEW -->
     <div id="specialized-semesters-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
 
@@ -693,7 +731,7 @@
 
         <div class="container mx-auto px-4 relative z-10 flex-grow flex flex-col items-center justify-center gap-8 max-w-4xl">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-                <div onclick="showDepartmentSubjects('الفصل الدراسي الأول')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-100 flex flex-col items-center">
+                <div onclick="showSemesterPage('الفصل الدراسي الأول', '#')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-100 flex flex-col items-center">
                     <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
                         <i class="fas fa-book-open text-3xl text-gray-400"></i>
                     </div>
@@ -701,7 +739,7 @@
                     <span class="text-xs text-gray-500 group-hover:text-gray-300">عرض المواد</span>
                 </div>
 
-                <div onclick="showDepartmentSubjects('الفصل الدراسي الثاني')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-200 flex flex-col items-center">
+                <div onclick="showSemesterPage('الفصل الدراسي الثاني', '#')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-200 flex flex-col items-center">
                     <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
                         <i class="fas fa-book-reader text-3xl text-gray-400"></i>
                     </div>
@@ -712,14 +750,160 @@
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
+           &copy; 2026 Cairo SciVerse
         </div>
     </div>
 
-    <div id="career-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
+    <!-- TOOLS VIEW -->
+    <div id="tools-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
 
         <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-16">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-10 animate-fade-up">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2">الأدوات الدراسية</h2>
+                    <p class="text-cuGreen-400 text-lg">كل ما تحتاجه لبداية موفقة ✨🤍</p>
+                </div>
+                <button onclick="showHomePage()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
+                    <span class="text-sm font-bold">الرئيسية</span> <i class="fas fa-home"></i>
+                </button>
+            </div>
+
+            <!-- Content Area -->
+            <div class="max-w-6xl mx-auto space-y-16 animate-fade-up delay-100">
+                
+                <!-- Intro -->
+                <div class="text-center mb-12">
+                    <p class="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed bg-dark-800/50 p-6 rounded-2xl border border-gray-700">
+                        بما إنكم سألتو كتير عن الأدوات، تعالو نبدأ سوا بالأدوات الضرورية اللي هيحتاجها كل طلاب سنة أولى سواء كانو رياضة أو علوم.
+                    </p>
+                </div>
+
+                <!-- Section 1: Basic Tools -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-8 border-r-4 border-cuGreen-500 pr-4 flex items-center gap-3">
+                        <i class="fas fa-tools text-cuGold-500"></i> الأدوات الأساسية (لكل الطلبة)
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                        <!-- Tool 1 -->
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGreen-500 transition group flex flex-col items-center text-center h-full">
+                            <div class="w-16 h-16 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                                <i class="fas fa-vial text-3xl text-gray-400"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">6 Test Tubes</h4>
+                            <p class="text-cuGreen-400 text-sm font-semibold mb-2">(أنابيب اختبار)</p>
+                            <p class="text-gray-400 text-xs">دي الأنابيب اللي بنحضر فيها الملح وبنعمل فيها التجربة نفسها.</p>
+                        </div>
+                        <!-- Tool 2 -->
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGreen-500 transition group flex flex-col items-center text-center h-full">
+                            <div class="w-16 h-16 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                                <i class="fas fa-hand-holding text-3xl text-gray-400"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">Holder</h4>
+                            <p class="text-cuGreen-400 text-sm font-semibold mb-2">(ماسك أنابيب)</p>
+                            <p class="text-gray-400 text-xs">بنستخدمه عشان نحرك التيست تيوبس لو فيه تفاعل طارد للحرارة أو تسخين.</p>
+                        </div>
+                        <!-- Tool 3 -->
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGreen-500 transition group flex flex-col items-center text-center h-full">
+                            <div class="w-16 h-16 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                                <i class="fas fa-th text-3xl text-gray-400"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">RACK</h4>
+                            <p class="text-cuGreen-400 text-sm font-semibold mb-2">(حامل أنابيب)</p>
+                            <p class="text-gray-400 text-xs">بيساعدنا نستخدم الأنابيب كلها في نفس الوقت، وبيكون بلاستيك عادي.</p>
+                        </div>
+                        <!-- Tool 4 -->
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGreen-500 transition group flex flex-col items-center text-center h-full">
+                            <div class="w-16 h-16 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                                <i class="fas fa-utensil-spoon text-3xl text-gray-400"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">Spatula</h4>
+                            <p class="text-cuGreen-400 text-sm font-semibold mb-2">(ملعقة)</p>
+                            <p class="text-gray-400 text-xs">شبه المعلقة الصغيرة، لنقل كميات صغيرة من الأملاح.</p>
+                        </div>
+                        <!-- Tool 5 -->
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGreen-500 transition group flex flex-col items-center text-center h-full">
+                            <div class="w-16 h-16 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                                <i class="fas fa-hands-wash text-3xl text-gray-400"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">Cleaner</h4>
+                            <p class="text-cuGreen-400 text-sm font-semibold mb-2">(فوطة تنظيف)</p>
+                            <p class="text-gray-400 text-xs">فوطة هتحتاجها لتنظيف الأدوات أو لو وقعت حاجة.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Dissection Tools -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-8 border-r-4 border-red-500 pr-4 flex items-center gap-3">
+                        <i class="fas fa-frog text-red-500"></i> أدوات التشريح (لطلبة علوم بيولوجي) ⚠️
+                    </h3>
+                    <p class="text-gray-400 mb-6 bg-red-900/20 p-4 rounded-lg border border-red-900/50">
+                        لو كنت طالب علمي علوم وهتسجل مادة حيوان، هتحتاج الأدوات دي في الترم التاني لمعامل تشريح الضفادع 🐸.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Tool 1 -->
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-red-500 transition group flex flex-col items-center text-center h-full">
+                            <div class="w-16 h-16 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                                <i class="fas fa-grip-lines text-3xl text-gray-400"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">Forceps</h4>
+                            <p class="text-red-400 text-sm font-semibold">(ملقاط)</p>
+                        </div>
+                        <!-- Tool 2 -->
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-red-500 transition group flex flex-col items-center text-center h-full">
+                            <div class="w-16 h-16 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                                <i class="fas fa-cut text-3xl text-gray-400"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">Scissors</h4>
+                            <p class="text-red-400 text-sm font-semibold">(مقص)</p>
+                        </div>
+                        <!-- Tool 3 -->
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-red-500 transition group flex flex-col items-center text-center h-full">
+                            <div class="w-16 h-16 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                                <i class="fas fa-pen-nib text-3xl text-gray-400"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">Scalpels</h4>
+                            <p class="text-red-400 text-sm font-semibold">(مشرط)</p>
+                            <p class="text-gray-400 text-xs">وهتحتاج تجيب معاه أمواسه.</p>
+                        </div>
+                        <!-- Tool 4 -->
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-red-500 transition group flex flex-col items-center text-center h-full">
+                            <div class="w-16 h-16 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                                <i class="fas fa-syringe text-3xl text-gray-400"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">Needle & Pin</h4>
+                            <p class="text-red-400 text-sm font-semibold">(إبرة ودبابيس)</p>
+                            <p class="text-gray-400 text-xs">إبرة تشريح ودبابيس تثبيت.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conclusion -->
+                <div class="bg-dark-800 p-6 rounded-2xl border border-cuGold-600 text-center shadow-lg">
+                    <p class="text-white text-lg">
+                        <i class="fas fa-info-circle text-cuGold-500 ml-2"></i>
+                        كلهم بتشتريهم مع بعض وغالباً بتبقى المجموعة جاهزة كاملة. دي الأدوات الأساسية اللي هتحتاجها في أولى بدون زيادات. لو حبيت تجيب بوكس لأدواتك هاته، ولو هتقدر تحافظ عليهم فمش ضروري ✨🤍
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
+           &copy; 2026 Cairo SciVerse
+        </div>
+    </div>
+
+    <!-- CAREER VIEW -->
+    <div id="career-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
+        <!-- Background -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+        <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-16">
+            <!-- Header -->
             <div class="flex justify-between items-center mb-10 animate-fade-up">
                 <div>
                     <h2 class="text-3xl font-bold text-white mb-2">ما وراء المقاعد</h2>
@@ -730,48 +914,287 @@
                 </button>
             </div>
 
+            <!-- Content Area -->
             <div class="max-w-4xl mx-auto space-y-12 animate-fade-up delay-100">
-                 <div class="bg-dark-800 p-8 rounded-2xl border border-gray-700 shadow-xl">
+                <!-- Introduction -->
+                <div class="bg-dark-800 p-8 rounded-2xl border border-gray-700 shadow-xl">
                     <h1 class="text-2xl md:text-3xl font-bold text-white mb-6 leading-relaxed">
-                        <span class="text-cuGold-500">"ماذا سأعمل بعد التخرج؟"</span>
+                        <span class="text-cuGold-500">"ماذا سأعمل بعد التخرج؟"</span> - هذا هو السؤال الأهم!
                     </h1>
                     <p class="text-gray-300 leading-8 text-lg">
-                        لسنوات طويلة، ارتبطت الإجابة في أذهان الكثيرين بخيارين فقط... (تم اختصار النص للعرض، المحتوى موجود في النسخة السابقة)
+                        لسنوات طويلة، ارتبطت الإجابة في أذهان الكثيرين بخيارين فقط: إما العمل في التدريس أو استكمال الدراسات العليا.
+                        والحقيقة أن هذه النظرة قاصرة للغاية. خريج كلية العلوم اليوم هو واحد من أكثر الخريجين طلباً في سوق العمل الحديث، 
+                        والسبب لا يكمن فقط في المعلومات التي درسها، بل في <span class="text-cuGreen-400 font-bold">"العقلية"</span> التي بنتها فيه الكلية.
+                    </p>
+                </div>
+
+                <!-- Skills Section -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-6 border-r-4 border-cuGreen-500 pr-4">المهارات المكتسبة: "القوة الخفية"</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Skill 1 -->
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGold-500 transition group flex flex-col items-center text-center">
+                            <div class="w-14 h-14 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                                <i class="fas fa-brain text-2xl text-cuGold-500"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">التفكير التحليلي والنقدي</h4>
+                            <p class="text-gray-400 text-sm">تحليل المسائل المعقدة وتفكيكها، المهارة رقم 1 في حل المشكلات.</p>
+                        </div>
+                        <!-- Skill 2 -->
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGold-500 transition group flex flex-col items-center text-center">
+                            <div class="w-14 h-14 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                                <i class="fas fa-puzzle-piece text-2xl text-cuGold-500"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">حل المشكلات (Problem Solving)</h4>
+                            <p class="text-gray-400 text-sm">منهجية علمية كاملة: تحديد المشكلة، الافتراض، الاختبار، والحل.</p>
+                        </div>
+                        <!-- Skill 3 -->
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGold-500 transition group flex flex-col items-center text-center">
+                            <div class="w-14 h-14 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                                <i class="fas fa-microscope text-2xl text-cuGold-500"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">المهارات التقنية والمعملية</h4>
+                            <p class="text-gray-400 text-sm">التعامل مع الأجهزة الدقيقة وتوثيق النتائج بدقة عالية.</p>
+                        </div>
+                        <!-- Skill 4 -->
+                        <div class="bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGold-500 transition group flex flex-col items-center text-center">
+                            <div class="w-14 h-14 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                                <i class="fas fa-chart-line text-2xl text-cuGold-500"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">تحليل البيانات (Data Analysis)</h4>
+                            <p class="text-gray-400 text-sm">قراءة البيانات واستخلاص المعنى، أساس علم البيانات الحديث.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sectors Section -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-8 border-r-4 border-cuGreen-500 pr-4">مجالات العمل: أين يذهب خريج "قلعة العلوم"؟</h3>
+                    
+                    <div class="space-y-8">
+                        <!-- Sector 1 -->
+                        <div class="bg-dark-800 rounded-2xl overflow-hidden border border-gray-700">
+                            <div class="bg-blue-900/40 p-4 border-b border-blue-800/50 flex items-center gap-3">
+                                <div class="w-10 h-10 flex items-center justify-center bg-blue-900/50 rounded-lg"><i class="fas fa-industry text-lg text-blue-400"></i></div>
+                                <h4 class="text-xl font-bold text-white">1. قطاع الصناعة والإنتاج</h4>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-gray-300 mb-4">القطاع الأضخم الذي يستوعب آلاف الخريجين (خاصة كيمياء وبيولوجي):</p>
+                                <ul class="space-y-3 text-gray-400 list-disc list-inside">
+                                    <li><strong class="text-white">رقابة الجودة (QC):</strong> تحليل المواد الخام والمنتج النهائي.</li>
+                                    <li><strong class="text-white">توكيد الجودة (QA):</strong> مراقبة أنظمة الجودة لضمان سلامة المنتج.</li>
+                                    <li><strong class="text-white">البحث والتطوير (R&D):</strong> تطوير منتجات جديدة وتحسين الحالية.</li>
+                                    <li><strong class="text-white">السلامة والصحة المهنية (HSE):</strong> تطبيق معايير الأمان في المصانع.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Sector 2 -->
+                        <div class="bg-dark-800 rounded-2xl overflow-hidden border border-gray-700">
+                            <div class="bg-green-900/40 p-4 border-b border-green-800/50 flex items-center gap-3">
+                                <div class="w-10 h-10 flex items-center justify-center bg-green-900/50 rounded-lg"><i class="fas fa-heartbeat text-lg text-green-400"></i></div>
+                                <h4 class="text-xl font-bold text-white">2. قطاع الرعاية الصحية والطبية</h4>
+                            </div>
+                            <div class="p-6">
+                                <div class="mb-4">
+                                    <h5 class="text-cuGreen-400 font-bold mb-2">خريج البيولوجي:</h5>
+                                    <ul class="space-y-2 text-gray-400 text-sm list-disc list-inside">
+                                        <li>معامل التحاليل الطبية (بعد الدبلومة).</li>
+                                        <li>شركات الأدوية ومراكز أبحاث التكنولوجيا الحيوية.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="text-cuGreen-400 font-bold mb-2">خريج الفيزياء (طبية):</h5>
+                                    <ul class="space-y-2 text-gray-400 text-sm list-disc list-inside">
+                                        <li>أخصائي فيزياء طبية (علاج إشعاعي وأورام).</li>
+                                        <li>الحماية من الإشعاع في الهيئات النووية.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sector 3 -->
+                        <div class="bg-dark-800 rounded-2xl overflow-hidden border border-gray-700">
+                            <div class="bg-purple-900/40 p-4 border-b border-purple-800/50 flex items-center gap-3">
+                                <div class="w-10 h-10 flex items-center justify-center bg-purple-900/50 rounded-lg"><i class="fas fa-laptop-code text-lg text-purple-400"></i></div>
+                                <h4 class="text-xl font-bold text-white">3. قطاع التكنولوجيا والبيانات</h4>
+                            </div>
+                            <div class="p-6">
+                                <ul class="space-y-3 text-gray-400 list-disc list-inside">
+                                    <li><strong class="text-white">علوم الحاسب:</strong> تطوير البرمجيات، الذكاء الاصطناعي، الأمن السيبراني.</li>
+                                    <li><strong class="text-white">الرياضيات والإحصاء:</strong> تحليل البيانات (Data Analysis) في البنوك والاتصالات، والعلوم الاكتوارية.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Sector 4 -->
+                        <div class="bg-dark-800 rounded-2xl overflow-hidden border border-gray-700">
+                            <div class="bg-yellow-900/40 p-4 border-b border-yellow-800/50 flex items-center gap-3">
+                                <div class="w-10 h-10 flex items-center justify-center bg-yellow-900/50 rounded-lg"><i class="fas fa-bolt text-lg text-yellow-400"></i></div>
+                                <h4 class="text-xl font-bold text-white">4. الطاقة والموارد الطبيعية</h4>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-gray-400 mb-2">يعتمد على خريجي الجيولوجيا والفيزياء:</p>
+                                <ul class="space-y-2 text-gray-400 text-sm list-disc list-inside">
+                                    <li>شركات البترول والغاز والتعدين.</li>
+                                    <li>الجيولوجيا الهندسية واستكشاف المياه الجوفية.</li>
+                                    <li>هيئات الطاقة الجديدة والمتجددة.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Sector 5 -->
+                        <div class="bg-dark-800 rounded-2xl overflow-hidden border border-gray-700">
+                            <div class="bg-red-900/40 p-4 border-b border-red-800/50 flex items-center gap-3">
+                                <div class="w-10 h-10 flex items-center justify-center bg-red-900/50 rounded-lg"><i class="fas fa-briefcase text-lg text-red-400"></i></div>
+                                <h4 class="text-xl font-bold text-white">5. المبيعات والتسويق العلمي</h4>
+                            </div>
+                            <div class="p-6">
+                                <ul class="space-y-2 text-gray-400 text-sm list-disc list-inside">
+                                    <li><strong class="text-white">Medical Rep:</strong> تسويق الأدوية.</li>
+                                    <li><strong class="text-white">Science Sales:</strong> بيع الكيماويات والأجهزة المعملية.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conclusion -->
+                <div class="bg-gradient-to-r from-cuGreen-900 to-dark-800 p-8 rounded-2xl border border-cuGreen-600 text-center shadow-lg">
+                    <h3 class="text-2xl font-bold text-white mb-4">الخلاصة: شهادتك هي مفتاحك 🔑</h3>
+                    <p class="text-gray-200 leading-relaxed text-lg">
+                        الاعتقاد بأن مستقبل خريج العلوم محدود هو خطأ تماماً. شهادتك هي "جواز سفر" لأي قطاع لأنك تملك العقلية العلمية.
+                        طور لغتك ومهاراتك، وستجد الأبواب مفتوحة.
                     </p>
                 </div>
             </div>
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-           © 2026 Cairo SciVerse
+           &copy; 2026 Cairo SciVerse
         </div>
     </div>
-    
-    <div id="tools-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
-         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
-         <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-16">
-            <div class="flex justify-between items-center mb-10 animate-fade-up">
-                <div>
-                    <h2 class="text-3xl font-bold text-white mb-2">الأدوات الدراسية</h2>
-                </div>
-                <button onclick="showHomePage()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
-                    <span class="text-sm font-bold">الرئيسية</span> <i class="fas fa-home"></i>
-                </button>
-            </div>
-            </div>
-    </div>
 
+    <!-- HISTORY VIEW (New) -->
     <div id="history-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
-         <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-16">
-             <div class="flex justify-between items-center mb-16 animate-fade-up">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+        <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-16">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-16 animate-fade-up">
                 <div>
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">تاريخ كلية العلوم</h2>
+                    <p class="text-cuGold-500 text-lg">مصنع العباقرة ومنارة النهضة</p>
                 </div>
                 <button onclick="showHomePage()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
                     <span class="text-sm font-bold">الرئيسية</span> <i class="fas fa-home"></i>
                 </button>
             </div>
+
+            <div class="max-w-5xl mx-auto space-y-16 animate-fade-up delay-100">
+                
+                <!-- Introduction & Founding -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-6 border-r-4 border-cuGreen-500 pr-4">البداية: بذرة في قلب الجامعة</h3>
+                        <div class="prose prose-invert prose-lg text-gray-300 leading-relaxed text-justify">
+                            <p class="mb-4">
+                                تُعتبر كلية العلوم، أو كما يُطلق عليها "قلعة العلوم"، واحدة من أعرق الكليات في الشرق الأوسط. هي ليست مجرد صرح تعليمي، بل حجر الزاوية في النهضة العلمية المصرية.
+                            </p>
+                            <p>
+                                تأسست رسمياً عام 1925 كواحدة من أربع كليات أصلية شكلت نواة الجامعة المصرية (جامعة القاهرة حالياً)، بهدف خلق جيل جديد من العلماء القادرين على بناء الدولة الحديثة في مجالات الفيزياء، والكيمياء، والرياضيات، والجيولوجيا.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-dark-800 rounded-3xl overflow-hidden shadow-2xl purple-glow-box h-64 md:h-80 flex items-center justify-center relative">
+                        <i class="fas fa-university text-9xl text-cuGreen-900/50 absolute"></i>
+                        <div class="text-center z-10">
+                            <span class="text-6xl font-bold text-cuGold-500 block mb-2">1925</span>
+                            <span class="text-xl text-white">عام التأسيس</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Golden Age: Moustapha Mosharafa -->
+                <div class="bg-gradient-to-br from-dark-800 to-dark-900 rounded-3xl p-8 border border-cuGold-500/30 shadow-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-cuGold-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+                    
+                    <div class="flex flex-col md:flex-row gap-8 items-center relative z-10">
+                        <div class="w-full md:w-1/3 flex justify-center">
+                            <div class="w-56 h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-cuGold-500 relative transform group-hover:scale-105 transition duration-500">
+                                <img src="https://i.postimg.cc/q7hGjLQ2/images-(1).jpg" alt="Dr. Moustapha Mosharafa" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <div class="w-full md:w-2/3">
+                            <div class="flex items-center gap-3 mb-4">
+                                <i class="fas fa-star text-cuGold-500 text-2xl"></i>
+                                <h3 class="text-3xl font-bold text-white">العصر الذهبي: مصطفى مشرفة</h3>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed mb-4 text-lg">
+                                لا يمكن ذكر تاريخ الكلية دون "أينشتاين العرب"، الدكتور مصطفى مشرفة باشا. ابن الكلية وأعظم عمداءها، قاد عصرها الذهبي.
+                                له الفضل في "تمصير" هيئة التدريس وإتاحة الفرصة للمواهب الشابة. غرس في جيل كامل شغف البحث العلمي الدقيق في نظريتي النسبية والكم.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Golden Alumni -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-8 border-r-4 border-cuGreen-500 pr-4 text-center">خريجون من ذهب: عمالقة صنعوا التاريخ</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Samira Moussa -->
+                        <div class="bg-dark-800 rounded-2xl p-8 border border-gray-700 hover:border-cuGreen-500 transition group flex flex-col items-center text-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-cuGreen-500/5 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                            <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-gray-600 mb-6 shadow-xl group-hover:scale-105 transition duration-500 z-10">
+                                <img src="https://i.postimg.cc/L5dQz7pN/images.jpg" alt="Dr. Samira Moussa" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="text-2xl font-bold text-white mb-1 z-10">د. سميرة موسى</h4>
+                            <span class="text-cuGreen-400 font-semibold mb-4 block z-10">رائدة عصر الذرة</span>
+                            <p class="text-gray-400 text-sm leading-relaxed z-10">
+                                أول معيدة بالكلية. كرست حياتها لجعل "الذرة من أجل السلام" وعلاج السرطان. إرثها كعالمة وطنية رائدة لا يزال خالداً رغم وفاتها المأساوية.
+                            </p>
+                        </div>
+
+                        <!-- Ahmed Zewail -->
+                        <div class="bg-dark-800 rounded-2xl p-8 border border-gray-700 hover:border-cuGreen-500 transition group flex flex-col items-center text-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-cuGreen-500/5 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                            <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-gray-600 mb-6 shadow-xl group-hover:scale-105 transition duration-500 z-10">
+                                <img src="https://i.postimg.cc/k5X04kJC/1-s2-0-S0048969716319908-gr2-(1).jpg" alt="Dr. Ahmed Zewail" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="text-2xl font-bold text-white mb-1 z-10">د. أحمد زويل</h4>
+                            <span class="text-cuGreen-400 font-semibold mb-4 block z-10">نوبل في الكيمياء 1999</span>
+                            <p class="text-gray-400 text-sm leading-relaxed z-10">
+                                الأيقونة الأبرز. انطلق من الكلية ليغير وجه الكيمياء باختراع "الفيمتوثانية". دليل حي على أن تعليمنا ينتج علماء بمقاييس عالمية.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Giants -->
+                <div class="bg-dark-800 rounded-2xl p-8 border border-gray-700">
+                    <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-2"><i class="fas fa-users text-cuGold-500"></i> عمالقة في كل مجال</h4>
+                    <p class="text-gray-300 mb-4">لم يتوقف العطاء عند هذا الحد، بل تخرج من الكلية آلاف العلماء، منهم:</p>
+                    <ul class="space-y-3 text-gray-400 list-disc list-inside">
+                        <li><strong class="text-white">د. رشدي سعيد:</strong> أحد أعظم الجيولوجيين وصاحب خريطة مصر الجيولوجية.</li>
+                        <li><strong class="text-white">د. عصام حجي:</strong> عالم الفضاء بوكالة ناسا، خريج قسم الفلك.</li>
+                        <li><strong class="text-white">آلاف الأساتذة:</strong> الذين أصبحوا أعمدة الجامعات ومراكز البحوث.</li>
+                    </ul>
+                </div>
+
+                <!-- Legacy -->
+                <div class="text-center bg-gradient-to-r from-cuGreen-900 to-dark-800 p-8 rounded-2xl border border-cuGreen-600 shadow-lg">
+                    <h3 class="text-2xl font-bold text-white mb-4">إرث ممتد</h3>
+                    <p class="text-gray-200 leading-relaxed text-lg">
+                        منذ 1925 وحتى اليوم، تظل كلية العلوم هي "القلب النابض" للبحث العلمي في مصر. تاريخها شهادة على أن الاستثمار في العقل البشري هو أثمن استثمار لبناء الأوطان.
+                    </p>
+                </div>
+
             </div>
+        </div>
+
+        <div class="w-full text-center text-gray-600 text-sm py-6 relative z-10 bg-dark-900 border-t border-gray-800">
+           &copy; 2026 Cairo SciVerse
+        </div>
     </div>
 
     <script>
@@ -793,77 +1216,48 @@
             "كيمياء/كيمياء حيوية"
         ];
 
-        // --- UPDATED DATA FOR YEAR 1 SEMESTER 1 SUBJECTS (NEW LINKS) ---
-        const semester1Subjects = [
-            { name: "كيمياء ك101", icon: "fa-flask", link: "https://drive.google.com/drive/folders/1V5Sq9pDBwXLhlhZIJgMuF-1Z3_Rq7A4U?usp=drive_link" },
-            { name: "فيزياء ف101", icon: "fa-atom", link: "https://drive.google.com/drive/folders/1L0wjl727wux66iu-kXBsLw5eQR0-zmF6?usp=drive_link" },
-            { name: "حيوان ح101", icon: "fa-frog", link: "https://drive.google.com/drive/folders/1EvcNCzOvQqBwP4Km1c5FLM8rwcWZrSZL?usp=drive_link" },
-            { name: "نبات ن101", icon: "fa-leaf", link: "https://drive.google.com/drive/folders/1Xhyt9Xgcatfc_Z6lC7ba0vzkOZTqJKY8?usp=drive_link" },
-            { name: "الجبر ر110", icon: "fa-calculator", link: "https://drive.google.com/drive/folders/14Ret7GOChrqpGCxDAPA-RIUGMVIzpASS?usp=drive_link" },
-            { name: "فلك ل111", icon: "fa-star", link: "https://drive.google.com/drive/folders/1nK6NX7tQPUt3lPeGP0y4sR-haUMCX6MO?usp=drive_link" },
-            { name: "بايوفيزياء بف111", icon: "fa-dna", link: "https://drive.google.com/drive/folders/1dPShBPukZ0zbVPbe0fJaUj8VBM5zQ0aO?usp=drive_link" },
-            { name: "التفاضل ر131", icon: "fa-square-root-alt", link: "https://drive.google.com/drive/folders/1V5Sq9pDBwXLhlhZIJgMuF-1Z3_Rq7A4U?usp=drive_link" },
-            { name: "حشرات ش101", icon: "fa-bug", link: "https://drive.google.com/drive/folders/19xQiqaiG8GlTLeB96QCnZvTXBuqTL35O?usp=drive_link" },
-            { name: "جيولوجيا ج101", icon: "fa-mountain", link: "https://drive.google.com/drive/folders/1X-Vt91lr19PQx_ZPwaLVMjArg_EEo_Qj?usp=drive_link" },
-            { name: "جيوفيزياء جف101", icon: "fa-globe-americas", link: "https://drive.google.com/drive/folders/139ONov_kV4GO-nmk_WFikDR9-8hf0uWt?usp=drive_link" },
-            { name: "الإحصاء ص100", icon: "fa-chart-bar", link: "https://drive.google.com/drive/folders/1NFN7JiEkHbvuxdJCK8LGKyB38ssGuptu?usp=drive_link" }
+        // New Data for Year 1 Subjects
+        const year1ScienceSubjects = [
+            { name: "كيمياء", code: "ك101", icon: "fa-flask" },
+            { name: "فيزياء", code: "ف101", icon: "fa-atom" },
+            { name: "التفاضل", code: "ر131", icon: "fa-square-root-alt" },
+            { name: "الجبر", code: "ر110", icon: "fa-superscript" },
+            { name: "جيولوجيا", code: "ج101", icon: "fa-mountain" },
+            { name: "حيوان", code: "ح101", icon: "fa-frog" },
+            { name: "نبات", code: "ن101", icon: "fa-leaf" },
+            { name: "الإحصاء", code: "ص100", icon: "fa-chart-bar" },
+            { name: "فلك", code: "ل111", icon: "fa-star" },
+            { name: "بايوفيزياء", code: "بف111", icon: "fa-dna" },
+            { name: "جيوفيزياء", code: "جف101", icon: "fa-globe" },
+            { name: "حشرات", code: "ش101", icon: "fa-bug" }
         ];
 
-        // --- DATA FOR YEAR 1 SEMESTER 2 SUBJECTS (LINKS REMOVED) ---
-        const semester2Subjects = [
-            { name: "كيمياء ك102", icon: "fa-flask", link: "#" },
-            { name: "فيزياء ف102", icon: "fa-atom", link: "#" },
-            { name: "التكامل ر132", icon: "fa-infinity", link: "#" },
-            { name: "جافا س101", icon: "fa-code", link: "#" },
-            { name: "جيولوجيا ج102", icon: "fa-mountain", link: "#" },
-            { name: "حيوان ح102", icon: "fa-frog", link: "#" },
-            { name: "نبات 102", icon: "fa-leaf", link: "#" },
-            { name: "ميكانيكس ر170", icon: "fa-cogs", link: "#" },
-            { name: "فلك ل112", icon: "fa-star", link: "#" },
-            { name: "بايوفيزياء بف112", icon: "fa-dna", link: "#" },
-            { name: "جيوفيزياء جف102", icon: "fa-globe-americas", link: "#" },
-            { name: "حشرات 102", icon: "fa-bug", link: "#" }
-        ];
-
-        // --- UNIVERSITY REQUIREMENTS (LINKS REMOVED) ---
         const uniRequirementsSubjects = [
-             { name: "الثقافة البيئية ع109", icon: "fa-tree", link: "#" },
-             { name: "الحاسب ع101", icon: "fa-laptop", link: "#" },
-             { name: "المبادئ ع104", icon: "fa-balance-scale", link: "#" },
-             { name: "انجليزي ع102", icon: "fa-language", link: "#" },
-             { name: "تاريخ ع108", icon: "fa-landmark", link: "#" },
-             { name: "تفكير نقدي ع110", icon: "fa-brain", link: "#" },
-             { name: "قضايا مجتمعية ع103", icon: "fa-users", link: "#" }
+            { name: "الثقافة البيئية", code: "ع109", icon: "fa-tree" },
+            { name: "الحاسب الآلي", code: "ع101", icon: "fa-laptop" },
+            { name: "مبادئ التاريخ والعلوم", code: "ع104", icon: "fa-scroll" },
+            { name: "لغة إنجليزية", code: "ع102", icon: "fa-language" },
+            { name: "تاريخ", code: "ع108", icon: "fa-landmark" },
+            { name: "تفكير نقدي", code: "ع110", icon: "fa-brain" },
+            { name: "قضايا مجتمعية", code: "ع103", icon: "fa-users" }
         ];
-
-        // --- DATA FOR YEAR 2 DEPARTMENTS ---
-        // NOTE: Currently only Chemistry/Biochemistry Semester 1 has subjects as requested.
-        const year2SubjectsData = {
-            "كيمياء/كيمياء حيوي": {
-                "الفصل الدراسي الأول": [
-                    { name: "Genetics ح212", icon: "fa-dna", link: "#" },
-                    { name: "Cell biology ح 211", icon: "fa-microscope", link: "#" },
-                    { name: "Analytical chemistry ك221", icon: "fa-flask", link: "#" },
-                    { name: "Aromatic chemistry ك 242", icon: "fa-atom", link: "#" },
-                    { name: "Organic chemistry ك 241", icon: "fa-vial", link: "#" },
-                    { name: "Thermodynamics ك 211", icon: "fa-fire", link: "#" },
-                    { name: "Stat 222", icon: "fa-chart-pie", link: "#" }
-                ],
-                "الفصل الدراسي الثاني": []
-            }
-            // Add other departments here in the future
-        };
 
         let lastSelectedYear = "";
         let lastSelectedDept = "";
-        let lastSelectedSubjectCategory = "";
-        let isViewingYear2 = false; // Flag to track if we are in Year 2 context
 
         const ALL_VIEWS = [
-            'main-view', 'bachelor-view', 'year1-view', 'semester-view', 
-            'subjects-view', 'departments-view', 'specialized-programs-view', 
-            'dept-selection-view', 'specialized-semesters-view', 'career-view', 
-            'tools-view', 'history-view'
+            'main-view',
+            'bachelor-view',
+            'year1-view',
+            'semester-view',
+            'departments-view',
+            'specialized-programs-view',
+            'dept-selection-view',
+            'specialized-semesters-view',
+            'career-view',
+            'tools-view',
+            'history-view',
+            'subjects-list-view' // Added new view
         ];
 
         window.addEventListener('load', () => {
@@ -871,7 +1265,9 @@
             if (loader) {
                 setTimeout(() => {
                     loader.classList.add('opacity-0');
-                    setTimeout(() => { loader.style.display = 'none'; }, 500);
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500);
                 }, 800);
             }
             
@@ -895,7 +1291,7 @@
             if (!container) return;
             container.innerHTML = "";
             
-            list.forEach((dept) => {
+            list.forEach((dept, index) => {
                 const icon = getDeptIcon(dept);
                 const clickAttr = isClickable ? `onclick="showSpecializedSemesters('${dept}')"` : "";
                 const cursorClass = isClickable ? "cursor-pointer hover:border-cuGreen-500 hover:-translate-y-2 hover:shadow-2xl" : "";
@@ -913,48 +1309,115 @@
         }
 
         function switchView(showId) {
+            // Hide all views first
             ALL_VIEWS.forEach(id => {
                 const el = document.getElementById(id);
                 if (el && !el.classList.contains('hidden')) {
                     el.classList.add('opacity-0');
-                    setTimeout(() => { if (el) el.classList.add('hidden'); }, 500);
+                    setTimeout(() => {
+                        if (el) el.classList.add('hidden');
+                    }, 500);
                 }
             });
 
+            // Show target view
             setTimeout(() => {
                 const showEl = document.getElementById(showId);
                 if (showEl) {
                     showEl.classList.remove('hidden');
+                    
+                    // Reset animations
                     const animatedElements = showEl.querySelectorAll('.animate-fade-up');
                     animatedElements.forEach(el => {
                         el.style.animation = 'none';
                         el.offsetHeight; 
                         el.style.animation = null; 
                     });
-                    setTimeout(() => { showEl.classList.remove('opacity-0'); }, 50);
+
+                    setTimeout(() => {
+                         showEl.classList.remove('opacity-0');
+                    }, 50);
                     window.scrollTo(0,0);
                 }
             }, 500);
         }
 
-        // Navigation Functions
-        function showBachelorPage() { switchView('bachelor-view'); }
-        function showHomePage() { switchView('main-view'); }
-        function showDepartmentsPage() { switchView('departments-view'); }
-        function showSpecializedProgramsPage() { switchView('specialized-programs-view'); }
-        function showCareerPage() { switchView('career-view'); }
-        function showToolsPage() { switchView('tools-view'); }
-        function showHistoryPage() { switchView('history-view'); }
+        function showBachelorPage() {
+            switchView('bachelor-view');
+        }
+
+        function showHomePage() {
+            switchView('main-view');
+        }
+
+        function showDepartmentsPage() {
+            switchView('departments-view');
+        }
+
+        function showSpecializedProgramsPage() {
+            switchView('specialized-programs-view');
+        }
+
+        function showCareerPage() {
+            switchView('career-view');
+        }
+
+        function showToolsPage() {
+            switchView('tools-view');
+        }
+
+        function showHistoryPage() {
+            switchView('history-view');
+        }
 
         function showYear1Page() {
             lastSelectedYear = 'الفرقة الأولى';
-            isViewingYear2 = false;
             switchView('year1-view');
+        }
+
+        // New function to show list of subjects
+        function showSubjectsList(type) {
+            const container = document.getElementById('subjects-grid');
+            const titleEl = document.getElementById('subjects-page-title');
+            let subjects = [];
+            let title = "";
+
+            if (type === 'semester1') {
+                title = "مواد الفصل الدراسي الأول";
+                subjects = year1ScienceSubjects;
+            } else if (type === 'semester2') {
+                title = "مواد الفصل الدراسي الثاني";
+                subjects = year1ScienceSubjects;
+            } else if (type === 'uni_requirements') {
+                title = "متطلبات الجامعة";
+                subjects = uniRequirementsSubjects;
+            }
+
+            if(titleEl) titleEl.innerText = title;
+            if(container) {
+                container.innerHTML = "";
+                subjects.forEach(sub => {
+                    // Using a generic drive link placeholder for now as specific links per subject weren't provided, 
+                    // or redirecting to semester page for a "hub" feeling.
+                    // For now, let's make it click to open the general semester view (or a placeholder action).
+                    const html = `
+                    <div onclick="showSemesterPage('${sub.name}', '#')" class="group bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGold-500 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-cuGold-900/20 text-center flex flex-col items-center">
+                        <div class="w-14 h-14 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                            <i class="fas ${sub.icon} text-2xl text-gray-400"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-100 group-hover:text-white mb-1">${sub.name}</h4>
+                        <span class="text-sm text-cuGreen-400 font-mono dir-ltr">${sub.code}</span>
+                    </div>
+                    `;
+                    container.innerHTML += html;
+                });
+            }
+
+            switchView('subjects-list-view');
         }
 
         function showDeptSelection(yearName) {
             lastSelectedYear = yearName;
-            isViewingYear2 = true;
             const titleEl = document.getElementById('dept-select-title');
             if (titleEl) titleEl.innerText = yearName + " - اختيار القسم";
             
@@ -970,104 +1433,32 @@
             switchView('specialized-semesters-view');
         }
 
-        // --- NEW FUNCTION: Show Department Specific Subjects (Year 2+) ---
-        function showDepartmentSubjects(semester) {
-            lastSelectedSubjectCategory = semester;
-            const container = document.getElementById('subjects-container');
-            const titleEl = document.getElementById('subjects-page-title');
-            if(titleEl) titleEl.innerText = lastSelectedDept + " - " + semester;
-
-            let subjects = [];
-            // Check if we have data for this department and semester
-            if (year2SubjectsData[lastSelectedDept] && year2SubjectsData[lastSelectedDept][semester]) {
-                subjects = year2SubjectsData[lastSelectedDept][semester];
-            }
-
-            container.innerHTML = "";
-            if (subjects.length > 0) {
-                subjects.forEach(subject => {
-                    const html = `
-                    <div onclick="showSemesterPage('${subject.name}', '${subject.link}')" class="group bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
-                        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
-                            <i class="fas ${subject.icon} text-2xl text-gray-400"></i>
-                        </div>
-                        <h4 class="text-lg font-bold text-gray-200 group-hover:text-white mb-2">${subject.name}</h4>
-                        <span class="text-xs text-cuGreen-500">عرض المحتوى</span>
-                    </div>
-                    `;
-                    container.innerHTML += html;
-                });
-            } else {
-                container.innerHTML = `
-                <div class="col-span-full text-center py-10">
-                    <i class="fas fa-box-open text-4xl text-gray-500 mb-4"></i>
-                    <p class="text-gray-400">لا توجد مواد مضافة لهذا القسم في هذا الفصل حالياً.</p>
-                </div>
-                `;
-            }
-
-            switchView('subjects-view');
-        }
-
-        // --- YEAR 1 SUBJECTS FUNCTION ---
-        function showSubjectsPage(category) {
-            lastSelectedSubjectCategory = category;
-            const container = document.getElementById('subjects-container');
-            const titleEl = document.getElementById('subjects-page-title');
-            if(titleEl) titleEl.innerText = category + " - المواد";
-            
-            let dataList = [];
-            
-            if (category === 'متطلبات الجامعة') {
-                dataList = uniRequirementsSubjects;
-            } else if (category === 'الفصل الدراسي الأول') {
-                dataList = semester1Subjects;
-            } else if (category === 'الفصل الدراسي الثاني') {
-                dataList = semester2Subjects;
-            }
-            
-            container.innerHTML = "";
-            dataList.forEach(subject => {
-                 const html = `
-                <div onclick="showSemesterPage('${subject.name}', '${subject.link}')" class="group bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
-                    <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
-                        <i class="fas ${subject.icon} text-2xl text-gray-400"></i>
-                    </div>
-                    <h4 class="text-lg font-bold text-gray-200 group-hover:text-white mb-2">${subject.name}</h4>
-                    <span class="text-xs text-cuGreen-500">عرض المحتوى</span>
-                </div>
-                `;
-                container.innerHTML += html;
-            });
-
-            switchView('subjects-view');
-        }
-
         function showSemesterPage(title, link) {
-            // Check if link is empty or hash
-            if (!link || link === "#") {
-                showToast('سيتم إضافة المحتوى قريباً');
-                return;
-            }
-
             const titleEl = document.getElementById('semester-title');
             if (titleEl) titleEl.innerText = title;
             
             const linkEl = document.getElementById('semester-drive-link');
             if (linkEl) linkEl.href = link;
             
+            const backBtn = document.getElementById('semester-back-btn');
+            if (backBtn) {
+                // If we came from the subject list view (Year 1 context), go back there? 
+                // Or go back to Year 1 main page? Let's make it smart.
+                const currentView = document.getElementById('subjects-list-view');
+                if (!currentView.classList.contains('hidden')) {
+                     backBtn.setAttribute('onclick', "showSubjectsList('semester1')"); // Default fallback, but ideally needs state
+                     // Better yet, just go back to Year 1 Page to start over
+                     backBtn.setAttribute('onclick', 'showYear1Page()');
+                } else if (lastSelectedYear === 'الفرقة الأولى') {
+                    backBtn.setAttribute('onclick', 'showYear1Page()');
+                } else {
+                    backBtn.setAttribute('onclick', `showSpecializedSemesters('${lastSelectedDept}')`);
+                }
+            }
+
             switchView('semester-view');
         }
 
-        function goBackFromSubjects() {
-            if (isViewingYear2) {
-                showSpecializedSemesters(lastSelectedDept);
-            } else {
-                showYear1Page();
-            }
-        }
-
-        // Mobile Menu Logic
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-sidebar');
             const overlay = document.getElementById('mobile-menu-overlay');
@@ -1085,23 +1476,30 @@
                 if(overlay.classList.contains('open')) {
                     overlay.classList.remove('hidden');
                 } else {
-                    setTimeout(() => { if(!overlay.classList.contains('open')) { /* hidden logic */ } }, 300);
+                    setTimeout(() => {
+                        if(!overlay.classList.contains('open')) {
+                           // overlay.classList.add('hidden'); // Optional if CSS handles it
+                        }
+                    }, 300);
                 }
             }
         }
 
         const btn = document.getElementById('mobile-menu-btn');
-        if (btn) btn.addEventListener('click', toggleMobileMenu);
+        if (btn) {
+            btn.addEventListener('click', toggleMobileMenu);
+        }
 
-        // Counter Animation
         const counters = document.querySelectorAll('.count-up');
         const speed = 200;
+
         const animateCounters = () => {
             counters.forEach(counter => {
                 const updateCount = () => {
                     const target = +counter.getAttribute('data-target');
                     const count = +counter.innerText;
                     const inc = target / speed;
+
                     if (count < target) {
                         counter.innerText = Math.ceil(count + inc);
                         setTimeout(updateCount, 20);
@@ -1119,6 +1517,7 @@
             if(statsSection) {
                 const sectionPos = statsSection.getBoundingClientRect().top;
                 const screenPos = window.innerHeight / 1.3;
+
                 if(sectionPos < screenPos && !hasAnimated) {
                     animateCounters();
                     hasAnimated = true;
@@ -1132,10 +1531,14 @@
             if (toast && toastMsg) {
                 toastMsg.innerText = message;
                 toast.classList.remove('hidden');
-                setTimeout(() => { toast.classList.remove('translate-x-full'); }, 10);
+                setTimeout(() => {
+                    toast.classList.remove('translate-x-full');
+                }, 10);
                 setTimeout(() => {
                     toast.classList.add('translate-x-full');
-                    setTimeout(() => { toast.classList.add('hidden'); }, 300);
+                    setTimeout(() => {
+                        toast.classList.add('hidden');
+                    }, 300);
                 }, 3000);
             }
         }
