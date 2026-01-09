@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cairo SciVerse - جامعة القاهرة</title>
-    <meta name="description" content="Cairo SciVerse - البوابة الرسمية لكلية العلوم جامعة القاهرة">
+    <meta name="description" content="Cairo SciVerse - البوابة التعريفية لكلية العلوم جامعة القاهرة">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -218,7 +218,7 @@
         <div class="text-center">
             <div class="loader mx-auto mb-4"></div>
             <h2 class="text-cuGreen-400 font-bold text-xl">Cairo SciVerse</h2>
-            <p class="text-gray-400 text-sm">جامعة القاهرة</p>
+            <p class="text-gray-400 text-sm">البوابة التعريفية</p>
         </div>
     </div>
 
@@ -265,25 +265,9 @@
                         <span class="text-xs md:text-sm text-cuGold-500 font-semibold tracking-wide">جامعة القاهرة</span>
                     </div>
                 </a>
-
-                <div class="flex items-center gap-4">
-                    <div id="auth-container">
-                        <button id="login-btn" class="text-white hover:text-cuGreen-400 transition transform hover:scale-110" title="تسجيل الدخول">
-                            <i class="fas fa-user-circle text-2xl"></i>
-                        </button>
-                        
-                        <div id="user-profile" class="hidden relative group cursor-pointer" onclick="logout()">
-                            <img id="user-avatar" src="" alt="User" class="w-9 h-9 rounded-full border-2 border-cuGreen-500 shadow-md hover:shadow-cuGreen-500/50 transition">
-                            <div class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap pointer-events-none">
-                                تسجيل خروج
-                            </div>
-                        </div>
-                    </div>
-
-                    <button id="mobile-menu-btn" class="text-2xl text-white focus:outline-none hover:text-cuGreen-400 transition">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
+                <button id="mobile-menu-btn" class="text-2xl text-white focus:outline-none hover:text-cuGreen-400 transition">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -300,7 +284,7 @@
             <a href="#home" onclick="toggleMobileMenu(); showHomePage()" class="menu-item block p-3 rounded hover:bg-dark-700 text-gray-200 hover:text-cuGreen-400 font-semibold transition group" style="transition-delay: 50ms;">
                 <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-dark-900 group-hover:bg-cuGreen-900/50 ml-2 transition-colors"><i class="fas fa-home"></i></span> الرئيسية
             </a>
-            <a href="#" onclick="toggleMobileMenu(); showToast('سيتم إضافة المحتوى قريباً')" class="menu-item block p-3 rounded hover:bg-dark-700 text-gray-200 hover:text-cuGreen-400 font-semibold transition group" style="transition-delay: 100ms;">
+            <a href="#" onclick="toggleMobileMenu(); showToast('جاري تحضير المحتوى')" class="menu-item block p-3 rounded hover:bg-dark-700 text-gray-200 hover:text-cuGreen-400 font-semibold transition group" style="transition-delay: 100ms;">
                 <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-dark-900 group-hover:bg-cuGreen-900/50 ml-2 transition-colors"><i class="fas fa-book-open"></i></span> تعريف مواد سنة اولى
             </a>
             <a href="#" onclick="toggleMobileMenu(); showDepartmentsPage()" class="menu-item block p-3 rounded hover:bg-dark-700 text-gray-200 hover:text-cuGreen-400 font-semibold transition group" style="transition-delay: 150ms;">
@@ -334,7 +318,7 @@
                 <span class="bg-dark-900 text-cuGold-400 px-3 py-1 text-xs font-bold rounded z-10 whitespace-nowrap border border-cuGold-500">Notes</span>
                 <div class="flex-1 overflow-hidden">
                     <div class="news-ticker-content w-full font-semibold">
-                        <span class="mx-8">• أهلاً بكم في Cairo SciVerse - البوابة الجديدة لكلية العلوم</span>
+                        <span class="mx-8">• أهلاً بكم في Cairo SciVerse - البوابة التعريفية لكلية العلوم</span>
                         <span class="mx-8">• تواصل معنا عبر واتساب للمساعدة الفورية عن طريق ايقونة الواتس اب العلوية</span>
                     </div>
                 </div>
@@ -346,7 +330,7 @@
                 <h2 class="text-xl md:text-2xl font-light mb-4 text-cuGold-400 tracking-wider">أهلاً بكم في</h2>
                 <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg font-sans tracking-tight">Cairo SciVerse</h1>
                 <p class="text-lg md:text-xl mb-10 text-gray-300 max-w-2xl mx-auto drop-shadow-md">
-                    كلية العلوم - جامعة القاهرة
+                    البوابة التعريفية - كلية العلوم جامعة القاهرة
                 </p>
                 <div class="flex flex-col md:flex-row gap-4 justify-center">
                     <button onclick="showBachelorPage()" class="bg-cuGold-500 hover:bg-cuGold-600 text-black font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105 border-2 border-cuGold-500 group">
@@ -512,7 +496,7 @@
         </div>
         
         <div class="w-full text-center text-gray-600 text-sm py-6 relative z-10 bg-dark-900 border-t border-gray-800">
-            © 2026 Cairo SciVerse
+           © 2026 Cairo SciVerse
         </div>
     </div>
 
@@ -533,7 +517,7 @@
 
         <div class="container mx-auto px-4 relative z-10 flex-grow flex flex-col items-center justify-center gap-8 max-w-4xl">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-                <div onclick="showSubjectsList('semester1')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-100 flex flex-col items-center">
+                <div onclick="showSubjectsPage('الفصل الدراسي الأول')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-100 flex flex-col items-center">
                     <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
                         <i class="fas fa-book-open text-3xl text-gray-400"></i>
                     </div>
@@ -541,7 +525,7 @@
                     <span class="text-xs text-gray-500 group-hover:text-gray-300">عرض المواد</span>
                 </div>
 
-                <div onclick="showSubjectsList('semester2')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-200 flex flex-col items-center">
+                <div onclick="showSubjectsPage('الفصل الدراسي الثاني')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGreen-900/40 text-center animate-fade-up delay-200 flex flex-col items-center">
                     <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
                         <i class="fas fa-book-reader text-3xl text-gray-400"></i>
                     </div>
@@ -550,7 +534,7 @@
                 </div>
             </div>
 
-            <div onclick="showSubjectsList('uni_requirements')" class="w-full md:w-1/2 group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGold-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGold-900/40 text-center animate-fade-up delay-300 flex flex-col items-center">
+            <div onclick="showSubjectsPage('متطلبات الجامعة')" class="w-full md:w-1/2 group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGold-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGold-900/40 text-center animate-fade-up delay-300 flex flex-col items-center">
                 <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
                     <i class="fas fa-university text-3xl text-gray-400"></i>
                 </div>
@@ -560,11 +544,11 @@
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-            © 2026 Cairo SciVerse
+           © 2026 Cairo SciVerse
         </div>
     </div>
 
-    <div id="subjects-list-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
+    <div id="subjects-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
 
         <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-10">
@@ -577,13 +561,13 @@
                     <span class="text-sm font-bold">رجوع</span> <i class="fas fa-arrow-left"></i>
                 </button>
             </div>
-            
-            <div id="subjects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-up delay-100">
+
+            <div id="subjects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-fade-up delay-100">
                 </div>
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-            © 2026 Cairo SciVerse
+           © 2026 Cairo SciVerse
         </div>
     </div>
 
@@ -619,7 +603,7 @@
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-            © 2026 Cairo SciVerse
+           © 2026 Cairo SciVerse
         </div>
     </div>
 
@@ -642,7 +626,7 @@
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-            © 2026 Cairo SciVerse
+           © 2026 Cairo SciVerse
         </div>
     </div>
 
@@ -665,7 +649,7 @@
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-            © 2026 Cairo SciVerse
+           © 2026 Cairo SciVerse
         </div>
     </div>
 
@@ -688,7 +672,7 @@
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-            © 2026 Cairo SciVerse
+           © 2026 Cairo SciVerse
         </div>
     </div>
 
@@ -728,7 +712,7 @@
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-            © 2026 Cairo SciVerse
+           © 2026 Cairo SciVerse
         </div>
     </div>
 
@@ -854,7 +838,7 @@
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-            © 2026 Cairo SciVerse
+           © 2026 Cairo SciVerse
         </div>
     </div>
 
@@ -1015,7 +999,7 @@
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
-            © 2026 Cairo SciVerse
+           © 2026 Cairo SciVerse
         </div>
     </div>
 
@@ -1128,7 +1112,7 @@
         </div>
 
         <div class="w-full text-center text-gray-600 text-sm py-6 relative z-10 bg-dark-900 border-t border-gray-800">
-            © 2026 Cairo SciVerse
+           © 2026 Cairo SciVerse
         </div>
     </div>
 
@@ -1151,48 +1135,65 @@
             "كيمياء/كيمياء حيوية"
         ];
 
-        // New Data for Year 1 Subjects
-        const year1ScienceSubjects = [
-            { name: "كيمياء", code: "ك101", icon: "fa-flask" },
-            { name: "فيزياء", code: "ف101", icon: "fa-atom" },
-            { name: "التفاضل", code: "ر131", icon: "fa-square-root-alt" },
-            { name: "الجبر", code: "ر110", icon: "fa-superscript" },
-            { name: "جيولوجيا", code: "ج101", icon: "fa-mountain" },
-            { name: "حيوان", code: "ح101", icon: "fa-frog" },
-            { name: "نبات", code: "ن101", icon: "fa-leaf" },
-            { name: "الإحصاء", code: "ص100", icon: "fa-chart-bar" },
-            { name: "فلك", code: "ل111", icon: "fa-star" },
-            { name: "بايوفيزياء", code: "بف111", icon: "fa-dna" },
-            { name: "جيوفيزياء", code: "جف101", icon: "fa-globe" },
-            { name: "حشرات", code: "ش101", icon: "fa-bug" }
+        // --- DATA FOR YEAR 1 SEMESTER 1 SUBJECTS ---
+        const semester1Subjects = [
+            { name: "كيمياء ك101", icon: "fa-flask", link: "https://drive.google.com/drive/folders/1HVbRH3wWeDL0e0g7W6nJyE2Ytp9ObXEs?usp=drive_link" },
+            { name: "فيزياء ف101", icon: "fa-atom", link: "https://drive.google.com/drive/folders/1BEDrq1O5n-S8Lg16Ue9cHyIUnxmvMSsN?usp=drive_link" },
+            { name: "حيوان ح101", icon: "fa-frog", link: "https://drive.google.com/drive/folders/1ohLpop-XZl31QjGDbFTa_t1h8yQPZnbe?usp=drive_link" },
+            { name: "نبات ن101", icon: "fa-leaf", link: "https://drive.google.com/drive/folders/1dFeOXyFYrI0Pv_pSGEXkF-JB5a0b9DSo?usp=drive_link" },
+            { name: "الجبر ر110", icon: "fa-calculator", link: "https://drive.google.com/drive/folders/1TGuOnmPMkAphpqkQF3YUjAjOQ_FiopVU?usp=drive_link" },
+            { name: "فلك ل111", icon: "fa-star", link: "https://drive.google.com/drive/folders/1A7N4bbPkc0NxnkMnYTdSxA7FV-p-PMB0?usp=drive_link" },
+            { name: "بايوفيزياء بف111", icon: "fa-dna", link: "https://drive.google.com/drive/folders/163qTS34_0an3m7RGcx7vfo6urV7rTCAS?usp=drive_link" },
+            { name: "التفاضل ر131", icon: "fa-square-root-alt", link: "https://drive.google.com/drive/folders/17By2a0NMP8zThghq67RnnYBAdKf3o3uO?usp=drive_link" },
+            { name: "حشرات ش101", icon: "fa-bug", link: "https://drive.google.com/drive/folders/1WNrh0JIyScXVGJ2q2l9EWNlxmKKnHYP9?usp=drive_link" },
+            { name: "جيولوجيا ج101", icon: "fa-mountain", link: "https://drive.google.com/drive/folders/1Wpu75ZUIR1hPnAy1ERZTDhpnvCZJzA7r?usp=drive_link" },
+            { name: "جيوفيزياء جف101", icon: "fa-globe-americas", link: "https://drive.google.com/drive/folders/1jISANqevryna4u8glph29rTWorcTQ0mh?usp=drive_link" },
+            { name: "الإحصاء ص100", icon: "fa-chart-bar", link: "https://drive.google.com/drive/folders/1_ixUROt112a3axl7NR6mNoA-VV5M9Nno?usp=drive_link" }
+        ];
+
+        // --- DATA FOR YEAR 1 SEMESTER 2 SUBJECTS ---
+        const semester2Subjects = [
+            { name: "كيمياء ك102", icon: "fa-flask", link: "https://drive.google.com/drive/folders/1cXhDJsS0pKztdgWhY7vhPbj4li4Mmg_R?usp=drive_link" },
+            { name: "فيزياء ف102", icon: "fa-atom", link: "https://drive.google.com/drive/folders/1X8a58dQJsN0Y53rdYW_fvD1GBqQALDV1?usp=drive_link" },
+            { name: "التكامل ر132", icon: "fa-infinity", link: "https://drive.google.com/drive/folders/1oQNFONCz9yXQvMlvnOSEOH_UfW67DcAL?usp=drive_link" },
+            { name: "جافا س101", icon: "fa-code", link: "https://drive.google.com/drive/folders/1wPfU_ynGiGj-5KrL7Jd1-ZBySXmlnlm7?usp=drive_link" },
+            { name: "جيولوجيا ج102", icon: "fa-mountain", link: "https://drive.google.com/drive/folders/1jXi-a9HOGhksELw4cAHebO84n-hqPUd2?usp=drive_link" },
+            { name: "حيوان ح102", icon: "fa-frog", link: "https://drive.google.com/drive/folders/121azBbQVFxxftaTWFqlwHEDbkbUnz7aY?usp=drive_link" },
+            { name: "نبات 102", icon: "fa-leaf", link: "https://drive.google.com/drive/folders/1A3S1il36Ohp15OmdKjdh-0qduwGOy5Sf?usp=drive_link" },
+            { name: "ميكانيكس ر170", icon: "fa-cogs", link: "https://drive.google.com/drive/folders/1yZXglFtZTmI_Gp2GcgPoRM2IfdihQX3X?usp=drive_link" },
+            { name: "فلك ل112", icon: "fa-star", link: "https://drive.google.com/drive/folders/1x__zCp4nk3eVbtRyOLgwlQficUh2CyOQ?usp=drive_link" },
+            { name: "بايوفيزياء بف112", icon: "fa-dna", link: "https://drive.google.com/drive/folders/1AAlA4oJvSuHdQtQKL6V2IZemVRo7Zlfz?usp=drive_link" },
+            { name: "جيوفيزياء جف102", icon: "fa-globe-americas", link: "https://drive.google.com/drive/folders/1UXgi56kNjuw89CzMJPgqZsYS2nQw5_wR?usp=drive_link" },
+            { name: "حشرات 102", icon: "fa-bug", link: "https://drive.google.com/drive/folders/1e9mtqnQ4nW3mRTzT_fzmabLoVvZoyxXp?usp=drive_link" }
         ];
 
         const uniRequirementsSubjects = [
-            { name: "الثقافة البيئية", code: "ع109", icon: "fa-tree" },
-            { name: "الحاسب الآلي", code: "ع101", icon: "fa-laptop" },
-            { name: "مبادئ التاريخ والعلوم", code: "ع104", icon: "fa-scroll" },
-            { name: "لغة إنجليزية", code: "ع102", icon: "fa-language" },
-            { name: "تاريخ", code: "ع108", icon: "fa-landmark" },
-            { name: "تفكير نقدي", code: "ع110", icon: "fa-brain" },
-            { name: "قضايا مجتمعية", code: "ع103", icon: "fa-users" }
+             { name: "الثقافة البيئية ع109", icon: "fa-tree", link: "https://drive.google.com/drive/folders/1JoPuMG_ECBMw1gKO7ANxuFDWbJ3Nn394?usp=drive_link" },
+             { name: "الحاسب ع101", icon: "fa-laptop", link: "https://drive.google.com/drive/folders/1xoPzjfmqunl72bq3xekgqYLig8QbaeZ3?usp=drive_link" },
+             { name: "المبادئ ع104", icon: "fa-balance-scale", link: "https://drive.google.com/drive/folders/1UJOpR9svQyEPzHCkXrAtFxymJ0k_whYw?usp=drive_link" },
+             { name: "انجليزي ع102", icon: "fa-language", link: "https://drive.google.com/drive/folders/1TQqJN-sPJpHPYcRcY35XwXbKzhTOvaje?usp=drive_link" },
+             { name: "تاريخ ع108", icon: "fa-landmark", link: "https://drive.google.com/drive/folders/1Rv59CPKiQt7z_Ypf51BLUhqPDwRifzWl?usp=drive_link" },
+             { name: "تفكير نقدي ع110", icon: "fa-brain", link: "https://drive.google.com/drive/folders/1gUyxodalOhmvgTx858krHq55w_qXyyK3?usp=drive_link" },
+             { name: "قضايا مجتمعية ع103", icon: "fa-users", link: "https://drive.google.com/drive/folders/1R0-xgThRWq6FmX21eD_KjfZvPzrlE5qZ?usp=drive_link" }
         ];
 
         let lastSelectedYear = "";
         let lastSelectedDept = "";
+        let lastSelectedSubjectCategory = "";
 
         const ALL_VIEWS = [
             'main-view',
             'bachelor-view',
             'year1-view',
             'semester-view',
+            'subjects-view',
             'departments-view',
             'specialized-programs-view',
             'dept-selection-view',
             'specialized-semesters-view',
             'career-view',
             'tools-view',
-            'history-view',
-            'subjects-list-view' // Added new view
+            'history-view'
         ];
 
         window.addEventListener('load', () => {
@@ -1310,44 +1311,6 @@
             switchView('year1-view');
         }
 
-        // New function to show list of subjects
-        function showSubjectsList(type) {
-            const container = document.getElementById('subjects-grid');
-            const titleEl = document.getElementById('subjects-page-title');
-            let subjects = [];
-            let title = "";
-
-            if (type === 'semester1') {
-                title = "مواد الفصل الدراسي الأول";
-                subjects = year1ScienceSubjects;
-            } else if (type === 'semester2') {
-                title = "مواد الفصل الدراسي الثاني";
-                subjects = year1ScienceSubjects;
-            } else if (type === 'uni_requirements') {
-                title = "متطلبات الجامعة";
-                subjects = uniRequirementsSubjects;
-            }
-
-            if(titleEl) titleEl.innerText = title;
-            if(container) {
-                container.innerHTML = "";
-                subjects.forEach(sub => {
-                    const html = `
-                    <div onclick="showSemesterPage('${sub.name}', '#')" class="group bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGold-500 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-cuGold-900/20 text-center flex flex-col items-center">
-                        <div class="w-14 h-14 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
-                            <i class="fas ${sub.icon} text-2xl text-gray-400"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-100 group-hover:text-white mb-1">${sub.name}</h4>
-                        <span class="text-sm text-cuGreen-400 font-mono dir-ltr">${sub.code}</span>
-                    </div>
-                    `;
-                    container.innerHTML += html;
-                });
-            }
-
-            switchView('subjects-list-view');
-        }
-
         function showDeptSelection(yearName) {
             lastSelectedYear = yearName;
             const titleEl = document.getElementById('dept-select-title');
@@ -1365,6 +1328,40 @@
             switchView('specialized-semesters-view');
         }
 
+        // --- UPDATED LOGIC FOR SUBJECTS ---
+        function showSubjectsPage(category) {
+            lastSelectedSubjectCategory = category;
+            const container = document.getElementById('subjects-container');
+            const titleEl = document.getElementById('subjects-page-title');
+            if(titleEl) titleEl.innerText = category + " - المواد";
+            
+            let dataList = [];
+            
+            if (category === 'متطلبات الجامعة') {
+                dataList = uniRequirementsSubjects;
+            } else if (category === 'الفصل الدراسي الأول') {
+                dataList = semester1Subjects;
+            } else if (category === 'الفصل الدراسي الثاني') {
+                dataList = semester2Subjects;
+            }
+            
+            container.innerHTML = "";
+            dataList.forEach(subject => {
+                 const html = `
+                <div onclick="showSemesterPage('${subject.name}', '${subject.link}')" class="group bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
+                    <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                        <i class="fas ${subject.icon} text-2xl text-gray-400"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-200 group-hover:text-white mb-2">${subject.name}</h4>
+                    <span class="text-xs text-cuGreen-500">عرض المحتوى</span>
+                </div>
+                `;
+                container.innerHTML += html;
+            });
+
+            switchView('subjects-view');
+        }
+
         function showSemesterPage(title, link) {
             const titleEl = document.getElementById('semester-title');
             if (titleEl) titleEl.innerText = title;
@@ -1374,12 +1371,8 @@
             
             const backBtn = document.getElementById('semester-back-btn');
             if (backBtn) {
-                const currentView = document.getElementById('subjects-list-view');
-                if (!currentView.classList.contains('hidden')) {
-                     backBtn.setAttribute('onclick', "showSubjectsList('semester1')"); 
-                     backBtn.setAttribute('onclick', 'showYear1Page()');
-                } else if (lastSelectedYear === 'الفرقة الأولى') {
-                    backBtn.setAttribute('onclick', 'showYear1Page()');
+                if (lastSelectedYear === 'الفرقة الأولى') {
+                     backBtn.setAttribute('onclick', `showSubjectsPage('${lastSelectedSubjectCategory}')`);
                 } else {
                     backBtn.setAttribute('onclick', `showSpecializedSemesters('${lastSelectedDept}')`);
                 }
@@ -1407,7 +1400,7 @@
                 } else {
                     setTimeout(() => {
                         if(!overlay.classList.contains('open')) {
-                           // overlay.classList.add('hidden');
+                           // overlay.classList.add('hidden'); 
                         }
                     }, 300);
                 }
@@ -1471,78 +1464,6 @@
                 }, 3000);
             }
         }
-    </script>
-
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-        import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyCRP9gGEV5VcqXTDelYiuZOgNZkp7Fys-g",
-            authDomain: "sciverseeee.firebaseapp.com",
-            projectId: "sciverseeee",
-            storageBucket: "sciverseeee.firebasestorage.app",
-            messagingSenderId: "119079824144",
-            appId: "1:119079824144:web:45d9da947ae848206a9395",
-            measurementId: "G-YKCKBDM2DG"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const auth = getAuth(app);
-        const provider = new GoogleAuthProvider();
-
-        // UI Elements
-        const loginBtn = document.getElementById('login-btn');
-        const userProfile = document.getElementById('user-profile');
-        const userAvatar = document.getElementById('user-avatar');
-
-        // Login Logic
-        loginBtn.addEventListener('click', () => {
-            signInWithPopup(auth, provider)
-                .then((result) => {
-                    // This gives you a Google Access Token. You can use it to access the Google API.
-                    const credential = GoogleAuthProvider.credentialFromResult(result);
-                    const token = credential.accessToken;
-                    // The signed-in user info.
-                    const user = result.user;
-                    
-                    showToast(`مرحباً ${user.displayName.split(' ')[0]} 🚀`);
-                }).catch((error) => {
-                    // Handle Errors here.
-                    console.error(error);
-                    showToast('حدث خطأ في تسجيل الدخول');
-                });
-        });
-
-        // Logout Logic (Attached to window so onclick works)
-        window.logout = function() {
-            if(confirm('هل تريد تسجيل الخروج؟')) {
-                signOut(auth).then(() => {
-                    showToast('تم تسجيل الخروج');
-                }).catch((error) => {
-                    console.error(error);
-                });
-            }
-        }
-
-        // Monitor Auth State
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // User is signed in
-                loginBtn.classList.add('hidden');
-                userProfile.classList.remove('hidden');
-                userAvatar.src = user.photoURL;
-            } else {
-                // User is signed out
-                loginBtn.classList.remove('hidden');
-                userProfile.classList.add('hidden');
-            }
-        });
     </script>
 </body>
 </html>
