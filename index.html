@@ -2191,9 +2191,8 @@
             
             switchView('specialized-semesters-view');
         }
-
-        // --- CORE LOGIC FOR UPPER YEARS ---
-        function showDepartmentSemester(year, dept, semester) {
+// --- CORE LOGIC FOR UPPER YEARS ---
+function showDepartmentSemester(year, dept, semester) {
             const titleEl = document.getElementById('department-subjects-title');
             const subtitleEl = document.getElementById('department-subjects-subtitle');
             
@@ -2203,7 +2202,6 @@
             const container = document.getElementById('department-subjects-container');
             container.innerHTML = "";
 
-            // 1. Map UI strings to Database Keys
             let yearKey = "";
             if (year === "الفرقة الثانية") yearKey = "second_year";
             else if (year === "الفرقة الثالثة") yearKey = "third_year";
@@ -2213,7 +2211,6 @@
             if (semester === "الفصل الدراسي الأول") termKey = "term_1";
             else if (semester === "الفصل الدراسي الثاني") termKey = "term_2";
 
-            // 2. Fetch Subjects safely
             let subjectsList = [];
             if (departmentCurricula[dept] && 
                 departmentCurricula[dept][yearKey] && 
@@ -2221,7 +2218,6 @@
                 subjectsList = departmentCurricula[dept][yearKey][termKey];
             }
 
-            // 3. Render
             if (subjectsList.length === 0) {
                 container.innerHTML = `
                     <div class="col-span-full text-center py-12">
@@ -2229,14 +2225,13 @@
                             <i class="fas fa-exclamation-circle text-3xl text-cuGold-500"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2">لم يتم إضافة المواد بعد</h3>
-                        <p class="text-gray-400">سيتم إضافة مواد هذا القسم/الفصل قريباً</p>
                     </div>
                 `;
             } else {
                 subjectsList.forEach(subject => {
-                    // Determine Icon automatically
                     const iconClass = getIconByCode(subject.code);
                     
+                    // التعديل هنا: شيلنا جملة سيتم إضافته قريباً
                     const html = `
                     <div onclick="showSemesterPage('${subject.name}', '', false)" class="group bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
                         <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
@@ -2247,7 +2242,6 @@
                             <span class="text-xs bg-dark-900 px-2 py-1 rounded text-cuGold-500 border border-dark-700">${subject.code}</span>
                             ${subject.type === 'optional' ? '<span class="text-xs bg-dark-900 px-2 py-1 rounded text-blue-400 border border-dark-700">اختياري</span>' : ''}
                         </div>
-                        <span class="text-xs text-cuGreen-500">سيتم إضافته قريباً</span>
                     </div>
                     `;
                     container.innerHTML += html;
@@ -2275,13 +2269,13 @@
             
             container.innerHTML = "";
             dataList.forEach(subject => {
+                 // التعديل هنا: شيلنا جملة سيتم إضافته قريباً
                  const html = `
                  <div onclick="showSemesterPage('${subject.name}', '${subject.link}', ${subject.link ? 'true' : 'false'})" class="group bg-dark-800 p-6 rounded-xl border border-gray-700 hover:border-cuGreen-500 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl text-center">
-                     <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
-                         <i class="fas ${subject.icon} text-2xl text-gray-400"></i>
-                     </div>
-                     <h4 class="text-lg font-bold text-gray-200 group-hover:text-white mb-2">${subject.name}</h4>
-                     <span class="text-xs text-cuGreen-500">${subject.link ? 'عرض المحتوى' : 'سيتم إضافته قريباً'}</span>
+                      <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                          <i class="fas ${subject.icon} text-2xl text-gray-400"></i>
+                      </div>
+                      <h4 class="text-lg font-bold text-gray-200 group-hover:text-white mb-2">${subject.name}</h4>
                  </div>
                  `;
                  container.innerHTML += html;
@@ -2297,30 +2291,38 @@
             
             if (titleEl) titleEl.innerText = title;
             
-            if (hasLink && link) {
-                if (messageEl) messageEl.innerText = "ستجد هنا كنزك الدراسي! \nجميع المحاضرات والمراجع التي تحتاجها للتفوق متاحة الآن بين يديك.";
-                if (linkEl) {
+            // الرسالة ثابتة دائماً
+            if (messageEl) messageEl.innerText = "ستجد هنا كنزك الدراسي! \nجميع المحاضرات والمراجع التي تحتاجها للتفوق متاحة الآن بين يديك.";
+
+            if (linkEl) {
+                // التعديل هنا: الزر دائماً أخضر وشكله مفعل
+                linkEl.classList.remove('opacity-50', 'cursor-not-allowed');
+                linkEl.classList.add('cursor-pointer', 'bg-cuGreen-600', 'hover:bg-cuGreen-700', 'text-white', 'border-cuGreen-500');
+                
+                // النص والأيقونة دائماً (الدخول إلى المحتوى)
+                linkEl.innerHTML = '<i class="fab fa-google-drive text-xl"></i> الدخول إلى المحتوى (Google Drive)';
+
+                if (link && link.trim() !== "") {
+                    // الحالة الأولى: فيه لينك -> يفتح في تاب جديد
                     linkEl.href = link;
-                    linkEl.classList.remove('opacity-50', 'cursor-not-allowed');
-                    linkEl.classList.add('cursor-pointer');
-                    linkEl.innerHTML = '<i class="fab fa-google-drive text-xl"></i> الدخول إلى المحتوى (Google Drive)';
-                }
-            } else {
-                if (messageEl) messageEl.innerText = "جاري تحضير المحتوى لهذه المادة \nسيتم إضافة الروابط قريباً بإذن الله";
-                if (linkEl) {
-                    linkEl.href = "#";
-                    linkEl.classList.add('opacity-50', 'cursor-not-allowed');
-                    linkEl.classList.remove('cursor-pointer');
-                    linkEl.innerHTML = '<i class="fas fa-clock text-xl"></i> جاري التجهيز';
+                    linkEl.target = "_blank";
+                    linkEl.onclick = null; 
+                } else {
+                    // الحالة الثانية: مفيش لينك -> لا يحدث أي شيء عند الضغط
+                    linkEl.href = "javascript:void(0)";
+                    linkEl.target = "";
+                    linkEl.onclick = (e) => { 
+                        e.preventDefault(); 
+                        return false; 
+                    };
                 }
             }
             
             const backBtn = document.getElementById('semester-back-btn');
             if (backBtn) {
                 if (lastSelectedYear === 'الفرقة الأولى') {
-                     backBtn.setAttribute('onclick', `showSubjectsPage('${lastSelectedSubjectCategory}')`);
+                      backBtn.setAttribute('onclick', `showSubjectsPage('${lastSelectedSubjectCategory}')`);
                 } else {
-                    // For upper years, go back to the semester view of that department
                     let semName = "";
                     const deptTitle = document.getElementById('department-subjects-title');
                     if(deptTitle && deptTitle.innerText.includes('الأول')) semName = 'الفصل الدراسي الأول';
