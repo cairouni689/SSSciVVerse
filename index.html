@@ -1125,232 +1125,923 @@
              { name: "قضايا مجتمعية ع103", icon: "fa-users", link: "" }
         ];
 
-        // --- HUGE DATABASE FOR YEARS 2, 3, 4 ---
-        // This object maps the department name (key) to its curriculum.
-        // We match keys to the 'departments' array above.
+        // --- UPDATED DATABASE FOR YEAR 2 ---
         const departmentCurricula = {
             "رياضيات منفرد": {
                 "second_year": {
-                    "term_1": [ { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, { "code": "ر 231", "name": "تفاضل وتكامل وهندسة تحليلية (3)", "type": "mandatory" }, { "code": "ر 271", "name": "الميكانيكا النيوتونية (2)", "type": "mandatory" }, { "code": "س 201", "name": "البرمجة الموجهة", "type": "mandatory" }, { "code": "ص 201", "name": "مقدمة نظرية الاحتمالات", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" }, { "code": "ر 272", "name": "الميكانيكا التحليلية", "type": "mandatory" }, { "code": "س 202", "name": "هياكل البيانات والخوارزميات", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, 
+                        { "code": "ر 231", "name": "تفاضل وتكامل وهندسة تحليلية (3)", "type": "mandatory" }, 
+                        { "code": "ر 271", "name": "الميكانيكا النيوتونية (2)", "type": "mandatory" }, 
+                        { "code": "س 201", "name": "البرمجة الموجهة", "type": "mandatory" }, 
+                        { "code": "ص 201", "name": "مقدمة نظرية الاحتمالات", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, 
+                        { "code": "ر 213", "name": "الرياضيات المتقطعة", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, 
+                        { "code": "ر 235", "name": "تحليل المتجهات", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" }, 
+                        { "code": "ر 272", "name": "الميكانيكا التحليلية", "type": "mandatory" }
+                    ]
                 },
                 "third_year": {
-                    "term_1": [ { "code": "ر 311", "name": "الجبر المجرد (1)", "type": "mandatory" }, { "code": "ر 331", "name": "التحليل الحقيقي (1)", "type": "mandatory" }, { "code": "ر 351", "name": "التحليل العددي (1)", "type": "mandatory" }, { "code": "ر 371", "name": "ميكانيكا الأوساط المتصلة (1)", "type": "mandatory" }, { "code": "ر 373", "name": "الكهرومغناطيسية والنسبية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ر 312", "name": "الجبر المجرد (2)", "type": "mandatory" }, { "code": "ر 332", "name": "التحليل الحقيقي (2)", "type": "mandatory" }, { "code": "ر 335", "name": "التحليل الدالي", "type": "mandatory" }, { "code": "ر 352", "name": "التحليل العددي (2)", "type": "mandatory" }, { "code": "ر 372", "name": "ميكانيكا الأوساط المتصلة (2)", "type": "mandatory" }, { "code": "ر 374", "name": "الكهرومغناطيسية والنسبية (2)", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ر 311", "name": "الجبر المجرد (1)", "type": "mandatory" }, 
+                        { "code": "ر 331", "name": "التحليل الحقيقي (1)", "type": "mandatory" }, 
+                        { "code": "ر 351", "name": "التحليل العددي (1)", "type": "mandatory" }, 
+                        { "code": "ر 371", "name": "ميكانيكا الأوساط المتصلة (1)", "type": "mandatory" }, 
+                        { "code": "ر 373", "name": "الكهرومغناطيسية والنسبية (1)", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ر 312", "name": "الجبر المجرد (2)", "type": "mandatory" }, 
+                        { "code": "ر 332", "name": "التحليل الحقيقي (2)", "type": "mandatory" }, 
+                        { "code": "ر 335", "name": "التحليل الدالي", "type": "mandatory" }, 
+                        { "code": "ر 352", "name": "التحليل العددي (2)", "type": "mandatory" }, 
+                        { "code": "ر 372", "name": "ميكانيكا الأوساط المتصلة (2)", "type": "mandatory" }, 
+                        { "code": "ر 374", "name": "الكهرومغناطيسية والنسبية (2)", "type": "mandatory" } 
+                    ]
                 },
                 "fourth_year": {
-                    "term_1": [ { "code": "ر 421", "name": "الهندسة التفاضلية (1)", "type": "mandatory" }, { "code": "ر 431", "name": "التحليل المركب (1)", "type": "mandatory" }, { "code": "ر 441", "name": "المعادلات التفاضلية الجزئية (1)", "type": "mandatory" }, { "code": "ر 471", "name": "ميكانيكا الكم (1)", "type": "mandatory" }, { "code": "ر 481", "name": "نظرية التحكم الأمثل (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ر 422", "name": "الهندسة التفاضلية (2)", "type": "mandatory" }, { "code": "ر 432", "name": "التحليل المركب (2)", "type": "mandatory" }, { "code": "ر 472", "name": "ميكانيكا الكم (2)", "type": "mandatory" }, { "code": "ر 490", "name": "بحث ومقال", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ر 421", "name": "الهندسة التفاضلية (1)", "type": "mandatory" }, 
+                        { "code": "ر 431", "name": "التحليل المركب (1)", "type": "mandatory" }, 
+                        { "code": "ر 441", "name": "المعادلات التفاضلية الجزئية (1)", "type": "mandatory" }, 
+                        { "code": "ر 471", "name": "ميكانيكا الكم (1)", "type": "mandatory" }, 
+                        { "code": "ر 481", "name": "نظرية التحكم الأمثل (1)", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ر 422", "name": "الهندسة التفاضلية (2)", "type": "mandatory" }, 
+                        { "code": "ر 432", "name": "التحليل المركب (2)", "type": "mandatory" }, 
+                        { "code": "ر 472", "name": "ميكانيكا الكم (2)", "type": "mandatory" }, 
+                        { "code": "ر 490", "name": "بحث ومقال", "type": "mandatory" } 
+                    ]
                 }
             },
+            
+            "فيزياء منفرد": {
+                "second_year": {
+                    "term_1": [ 
+                        { "code": "ف 201", "name": "فيزياء عملية", "type": "mandatory" },
+                        { "code": "ف 221", "name": "كهرومغناطيسية", "type": "mandatory" },
+                        { "code": "ف 231", "name": "كهرومغناطيسية", "type": "mandatory" },
+                        { "code": "ف 241", "name": "فيزياء رياضية", "type": "mandatory" },
+                        { "code": "ف 245", "name": "علوم الكومبيوتر", "type": "mandatory" },
+                        { "code": "ف 251", "name": "ديناميكا حرارية", "type": "mandatory" },
+                        { "code": "ف 261", "name": "فيزياء حديثة", "type": "mandatory" }
+                    ],
+                    "term_2": [ 
+                        { "code": "ف 202", "name": "فيزياء عملية", "type": "mandatory" },
+                        { "code": "ف 222", "name": "ميكانيكا كلاسيكية", "type": "mandatory" },
+                        { "code": "ف 224", "name": "الموجات", "type": "mandatory" },
+                        { "code": "ف 232", "name": "كهرومغناطيسية", "type": "mandatory" },
+                        { "code": "ف 234", "name": "ميكانيكا النسبية", "type": "mandatory" },
+                        { "code": "ف 235", "name": "بصريات فيزيائية", "type": "mandatory" },
+                        { "code": "ف 242", "name": "فيزياء رياضية", "type": "mandatory" },
+                        { "code": "ف 247", "name": "كمبيوتر واتصالات", "type": "mandatory" }
+                    ]
+                },
+                "third_year": {
+                    "term_1": [ 
+                        { "code": "ف 301", "name": "فيزياء عملية", "type": "mandatory" },
+                        { "code": "ف 321", "name": "فيزياء الكم 1", "type": "mandatory" },
+                        { "code": "ف 331", "name": "فيزياء الجوامد 1", "type": "mandatory" }
+                    ],
+                    "term_2": [ 
+                        { "code": "ف 302", "name": "فيزياء عملية", "type": "mandatory" },
+                        { "code": "ف 322", "name": "فيزياء الكم 2", "type": "mandatory" },
+                        { "code": "ف 332", "name": "فيزياء الجوامد 2", "type": "mandatory" }
+                    ]
+                },
+                "fourth_year": {
+                    "term_1": [ 
+                        { "code": "ف 401", "name": "فيزياء نووية", "type": "mandatory" },
+                        { "code": "ف 411", "name": "فيزياء الليزر", "type": "mandatory" }
+                    ],
+                    "term_2": [ 
+                        { "code": "ف 402", "name": "فيزياء الجسيمات", "type": "mandatory" },
+                        { "code": "ف 490", "name": "بحث ومقال", "type": "mandatory" }
+                    ]
+                }
+            },
+            
+            "جيوفيزياء منفرد": {
+                "second_year": {
+                    "term_1": [ 
+                        { "code": "جف 201", "name": "الموجات السيزمية والسرعات", "type": "mandatory" },
+                        { "code": "جف 202", "name": "طرق تثاقلية", "type": "mandatory" },
+                        { "code": "جف 203", "name": "طرق مغناطيسية", "type": "mandatory" },
+                        { "code": "جف 204", "name": "طرق كهربية", "type": "mandatory" },
+                        { "code": "جف 205", "name": "طرق سيزمية", "type": "mandatory" },
+                        { "code": "جف 206", "name": "طرق حرارية أرضية وإشعاعية", "type": "mandatory" }
+                    ],
+                    "term_2": [ 
+                        { "code": "ج 224", "name": "معادن وصخور", "type": "mandatory" },
+                        { "code": "جف 207", "name": "مقدمة في تسجيلات الآبار", "type": "mandatory" },
+                        { "code": "جف 208", "name": "فيزياء الصخور", "type": "mandatory" },
+                        { "code": "جف 209", "name": "طرق حقلية سيزمية", "type": "mandatory" },
+                        { "code": "جف 210", "name": "المغناطيسية القديمة", "type": "mandatory" },
+                        { "code": "جف 211", "name": "جمع بيانات مجال جهد", "type": "mandatory" }
+                    ]
+                },
+                "third_year": {
+                    "term_1": [ 
+                        { "code": "جف 301", "name": "جيوفيزياء استكشافية 1", "type": "mandatory" },
+                        { "code": "جف 303", "name": "تطبيقات حاسوبية في الجيوفيزياء", "type": "mandatory" }
+                    ],
+                    "term_2": [ 
+                        { "code": "جف 302", "name": "جيوفيزياء استكشافية 2", "type": "mandatory" },
+                        { "code": "جف 304", "name": "تفسير بيانات جيوفيزيائية", "type": "mandatory" }
+                    ]
+                },
+                "fourth_year": {
+                    "term_1": [ 
+                        { "code": "جف 401", "name": "جيوفيزياء بترولية", "type": "mandatory" },
+                        { "code": "جف 403", "name": "جيوفيزياء بيئية", "type": "mandatory" }
+                    ],
+                    "term_2": [ 
+                        { "code": "جف 402", "name": "جيوفيزياء تعدينية", "type": "mandatory" },
+                        { "code": "جف 490", "name": "بحث ومقال", "type": "mandatory" }
+                    ]
+                }
+            },
+            
+            "بايوفيزياء منفرد": {
+                "second_year": {
+                    "term_1": [ 
+                        { "code": "بف 221", "name": "الكترونيات وكهربية في الأنظمة الحيوية", "type": "mandatory" },
+                        { "code": "بف 222", "name": "أطياف ذرية", "type": "mandatory" },
+                        { "code": "بف 231", "name": "فيزياء حيوية - الموجات", "type": "mandatory" },
+                        { "code": "بف 232", "name": "فيزياء حيوية بيئية", "type": "mandatory" },
+                        { "code": "بف 241", "name": "فيزياء حيوية عملي", "type": "mandatory" },
+                        { "code": "ح 213", "name": "بيولوجيا الخلية والوراثة", "type": "mandatory" },
+                        { "code": "ر 239", "name": "التكاملات المتعددة والمعادلات التفاضلية العادية", "type": "mandatory" },
+                        { "code": "ك 241", "name": "أسس الكيمياء العضوية", "type": "mandatory" }
+                    ],
+                    "term_2": [ 
+                        { "code": "بف 211", "name": "فيزياء حيوية عامة", "type": "mandatory" },
+                        { "code": "بف 212", "name": "ميكانيكا الكم وتطبيقاتها الحرارية", "type": "mandatory" },
+                        { "code": "بف 242", "name": "ديناميكا حرارية للأنظمة الحيوية", "type": "mandatory" },
+                        { "code": "بف 252", "name": "فيزياء حيوية عملي", "type": "mandatory" },
+                        { "code": "ح 202", "name": "مناعة وبيولوجيا جزيئية", "type": "mandatory" },
+                        { "code": "ك 212", "name": "الكيمياء الكهربية الاتزانية", "type": "mandatory" },
+                        { "code": "كح 253", "name": "كيمياء حيوية عامة", "type": "mandatory" },
+                        { "code": "ميك 210", "name": "ميكروبيولوجيا عامة", "type": "mandatory" }
+                    ]
+                },
+                "third_year": {
+                    "term_1": [ 
+                        { "code": "بف 321", "name": "فيزياء طبية حيوية 1", "type": "mandatory" },
+                        { "code": "بف 331", "name": "تطبيقات البيوفيزياء في التشخيص", "type": "mandatory" }
+                    ],
+                    "term_2": [ 
+                        { "code": "بف 322", "name": "فيزياء طبية حيوية 2", "type": "mandatory" },
+                        { "code": "بف 332", "name": "تطبيقات البيوفيزياء في العلاج", "type": "mandatory" }
+                    ]
+                },
+                "fourth_year": {
+                    "term_1": [ 
+                        { "code": "بف 421", "name": "بيوفيزياء الأشعة التشخيصية", "type": "mandatory" },
+                        { "code": "بف 431", "name": "بيوفيزياء الأشعة العلاجية", "type": "mandatory" }
+                    ],
+                    "term_2": [ 
+                        { "code": "بف 422", "name": "تطبيقات متقدمة في البيوفيزياء", "type": "mandatory" },
+                        { "code": "بف 490", "name": "بحث ومقال", "type": "mandatory" }
+                    ]
+                }
+            },
+            
+            "فيزياء/علوم جوية": {
+                "second_year": {
+                    "term_1": [ 
+                        { "code": "جو 201", "name": "تحليل الطقس", "type": "mandatory" },
+                        { "code": "جو 203", "name": "تطبيقات على الديناميكا الجوية", "type": "mandatory" },
+                        { "code": "جو 205", "name": "معمل فيزياء الجو", "type": "mandatory" },
+                        { "code": "جو 211", "name": "أرصاد جوية عامة", "type": "mandatory" },
+                        { "code": "جو 213", "name": "مقدمة الديناميكا الجوية", "type": "mandatory" },
+                        { "code": "جو 215", "name": "مقدمة الفيزياء الجوية", "type": "mandatory" },
+                        { "code": "ف 201", "name": "فيزياء عملية", "type": "mandatory" },
+                        { "code": "ف 221", "name": "كهرومغناطيسية", "type": "mandatory" },
+                        { "code": "ف 231", "name": "كهرومغناطيسية", "type": "mandatory" },
+                        { "code": "ف 241", "name": "فيزياء رياضية", "type": "mandatory" }
+                    ],
+                    "term_2": [ 
+                        { "code": "جو 202", "name": "تطبيقات سينوبتيكية (1)", "type": "mandatory" },
+                        { "code": "جو 204", "name": "تطبيقات على ديناميكا وفيزياء الغلاف الجوي", "type": "mandatory" },
+                        { "code": "جو 206", "name": "تطبيقات سينوبتيكية (2)", "type": "mandatory" },
+                        { "code": "جو 212", "name": "مناخ عام", "type": "mandatory" },
+                        { "code": "جو 214", "name": "ديناميكا الغلاف الجوي", "type": "mandatory" },
+                        { "code": "جو 216", "name": "فيزياء الغلاف الجوي", "type": "mandatory" },
+                        { "code": "ف 202", "name": "فيزياء عملية", "type": "mandatory" },
+                        { "code": "ف 222", "name": "ميكانيكا كلاسيكية", "type": "mandatory" },
+                        { "code": "ف 232", "name": "كهرومغناطيسية", "type": "mandatory" },
+                        { "code": "ف 251", "name": "ديناميكا حرارية", "type": "mandatory" }
+                    ]
+                },
+                "third_year": {
+                    "term_1": [ 
+                        { "code": "جو 301", "name": "ديناميكا الغلاف الجوي المتقدمة", "type": "mandatory" },
+                        { "code": "جو 303", "name": "فيزياء السحب والأمطار", "type": "mandatory" }
+                    ],
+                    "term_2": [ 
+                        { "code": "جو 302", "name": "تنبؤات جوية عددية", "type": "mandatory" },
+                        { "code": "جو 304", "name": "مناخ متقدم", "type": "mandatory" }
+                    ]
+                },
+                "fourth_year": {
+                    "term_1": [ 
+                        { "code": "جو 401", "name": "الأرصاد الجوية التطبيقية", "type": "mandatory" },
+                        { "code": "جو 403", "name": "تغير المناخ", "type": "mandatory" }
+                    ],
+                    "term_2": [ 
+                        { "code": "جو 402", "name": "الاستشعار عن بعد جوي", "type": "mandatory" },
+                        { "code": "جو 490", "name": "بحث ومقال", "type": "mandatory" }
+                    ]
+                }
+            },
+            
             "رياضيات/علوم حاسب": {
                 "second_year": {
-                    "term_1": [ { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, { "code": "ر 231", "name": "تفاضل وتكامل وهندسة تحليلية (3)", "type": "mandatory" }, { "code": "ر 271", "name": "الميكانيكا النيوتونية (2)", "type": "mandatory" }, { "code": "س 201", "name": "البرمجة الموجهة", "type": "mandatory" }, { "code": "ص 201", "name": "مقدمة نظرية الاحتمالات", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, { "code": "ر 213", "name": "الرياضيات المتقطعة", "type": "mandatory" }, { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" }, { "code": "ر 272", "name": "الميكانيكا التحليلية", "type": "mandatory" }, { "code": "س 202", "name": "هياكل البيانات والخوارزميات", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, 
+                        { "code": "ر 231", "name": "تفاضل وتكامل وهندسة تحليلية (3)", "type": "mandatory" }, 
+                        { "code": "ر 271", "name": "الميكانيكا النيوتونية (2)", "type": "mandatory" }, 
+                        { "code": "س 201", "name": "البرمجة الموجهة", "type": "mandatory" }, 
+                        { "code": "ص 201", "name": "مقدمة نظرية الاحتمالات", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, 
+                        { "code": "ر 213", "name": "الرياضيات المتقطعة", "type": "mandatory" }, 
+                        { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, 
+                        { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" }, 
+                        { "code": "ر 272", "name": "الميكانيكا التحليلية", "type": "mandatory" }, 
+                        { "code": "س 202", "name": "هياكل البيانات والخوارزميات", "type": "mandatory" } 
+                    ]
                 },
                 "third_year": {
-                    "term_1": [ { "code": "ر 311", "name": "الجبر المجرد (1)", "type": "mandatory" }, { "code": "ر 331", "name": "التحليل الحقيقي (1)", "type": "mandatory" }, { "code": "ر 351", "name": "التحليل العددي (1)", "type": "mandatory" }, { "code": "س 305", "name": "تحليل وتصميم خوارزميات", "type": "mandatory" }, { "code": "س 307", "name": "نظم قواعد البيانات", "type": "mandatory" }, { "code": "س 309", "name": "تحليل وتصميم نظم", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ر 306", "name": "المنطق الرياضي (2)", "type": "mandatory" }, { "code": "ر 312", "name": "الجبر المجرد (2)", "type": "mandatory" }, { "code": "ر 332", "name": "التحليل الحقيقي (2)", "type": "mandatory" }, { "code": "س 303", "name": "تطوير البرمجيات", "type": "mandatory" }, { "code": "س 306", "name": "نظم تشغيل الحاسب", "type": "mandatory" }, { "code": "س 308", "name": "تصميم قواعد البيانات", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ر 311", "name": "الجبر المجرد (1)", "type": "mandatory" }, 
+                        { "code": "ر 331", "name": "التحليل الحقيقي (1)", "type": "mandatory" }, 
+                        { "code": "ر 351", "name": "التحليل العددي (1)", "type": "mandatory" }, 
+                        { "code": "س 305", "name": "تحليل وتصميم خوارزميات", "type": "mandatory" }, 
+                        { "code": "س 307", "name": "نظم قواعد البيانات", "type": "mandatory" }, 
+                        { "code": "س 309", "name": "تحليل وتصميم نظم", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ر 306", "name": "المنطق الرياضي (2)", "type": "mandatory" }, 
+                        { "code": "ر 312", "name": "الجبر المجرد (2)", "type": "mandatory" }, 
+                        { "code": "ر 332", "name": "التحليل الحقيقي (2)", "type": "mandatory" }, 
+                        { "code": "س 303", "name": "تطوير البرمجيات", "type": "mandatory" }, 
+                        { "code": "س 306", "name": "نظم تشغيل الحاسب", "type": "mandatory" }, 
+                        { "code": "س 308", "name": "تصميم قواعد البيانات", "type": "mandatory" } 
+                    ]
                 },
                 "fourth_year": {
-                    "term_1": [ { "code": "ر 411", "name": "نظرية الأعداد", "type": "mandatory" }, { "code": "ر 441", "name": "المعادلات التفاضلية الجزئية (1)", "type": "mandatory" }, { "code": "ر 481", "name": "نظرية التحكم الأمثل (1)", "type": "mandatory" }, { "code": "س 403", "name": "الأتوماتيكية واللغات الشكلية", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ر 451", "name": "الحلول العددية للمعادلات التفاضلية", "type": "mandatory" }, { "code": "س 402", "name": "نظرية التشفير", "type": "mandatory" }, { "code": "س 407", "name": "تصميم لغات البرمجة", "type": "mandatory" }, { "code": "س 408", "name": "الذكاء الاصطناعي", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ر 411", "name": "نظرية الأعداد", "type": "mandatory" }, 
+                        { "code": "ر 441", "name": "المعادلات التفاضلية الجزئية (1)", "type": "mandatory" }, 
+                        { "code": "ر 481", "name": "نظرية التحكم الأمثل (1)", "type": "mandatory" }, 
+                        { "code": "س 403", "name": "الأتوماتيكية واللغات الشكلية", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ر 451", "name": "الحلول العددية للمعادلات التفاضلية", "type": "mandatory" }, 
+                        { "code": "س 402", "name": "نظرية التشفير", "type": "mandatory" }, 
+                        { "code": "س 407", "name": "تصميم لغات البرمجة", "type": "mandatory" }, 
+                        { "code": "س 408", "name": "الذكاء الاصطناعي", "type": "mandatory" } 
+                    ]
                 }
             },
+            
             "رياضيات/إحصاء": {
                 "second_year": {
-                    "term_1": [ { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, { "code": "ر 231", "name": "تفاضل وتكامل وهندسة تحليلية (3)", "type": "mandatory" }, { "code": "ر 271", "name": "الميكانيكا النيوتونية (2)", "type": "mandatory" }, { "code": "س 201", "name": "البرمجة الموجهة", "type": "mandatory" }, { "code": "ص 201", "name": "مقدمة نظرية الاحتمالات", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" }, { "code": "ر 272", "name": "الميكانيكا التحليلية", "type": "mandatory" }, { "code": "م 202", "name": "الاستدلال الإحصائي (1)", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, 
+                        { "code": "ر 231", "name": "تفاضل وتكامل وهندسة تحليلية (3)", "type": "mandatory" }, 
+                        { "code": "ر 271", "name": "الميكانيكا النيوتونية (2)", "type": "mandatory" }, 
+                        { "code": "س 201", "name": "البرمجة الموجهة", "type": "mandatory" }, 
+                        { "code": "ص 201", "name": "مقدمة نظرية الاحتمالات", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, 
+                        { "code": "ر 213", "name": "الرياضيات المتقطعة", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, 
+                        { "code": "ر 235", "name": "تحليل المتجهات", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" }, 
+                        { "code": "ر 272", "name": "الميكانيكا التحليلية", "type": "mandatory" },
+                        { "code": "س 202", "name": "هياكل البيانات والخوارزميات", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "م 202", "name": "الاستدلال الإحصائي (1)", "type": "mandatory" } 
+                    ]
                 },
                 "third_year": {
-                    "term_1": [ { "code": "ر 331", "name": "التحليل الحقيقي (1)", "type": "mandatory" }, { "code": "ر 351", "name": "التحليل العددي (1)", "type": "mandatory" }, { "code": "م 301", "name": "العمليات العشوائية", "type": "mandatory" }, { "code": "م 302", "name": "الاستدلال الإحصائي (2)", "type": "mandatory" }, { "code": "ص 326", "name": "نظرية الارتباط (1)", "type": "optional" } ],
-                    "term_2": [ { "code": "ر 332", "name": "التحليل الحقيقي (2)", "type": "mandatory" }, { "code": "ر 335", "name": "التحليل الدالي", "type": "mandatory" }, { "code": "س 303", "name": "تحليل الانحدار", "type": "mandatory" }, { "code": "م 304", "name": "برمجيات إحصائية", "type": "mandatory" }, { "code": "ص 327", "name": "نظرية الارتباط (2)", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ر 331", "name": "التحليل الحقيقي (1)", "type": "mandatory" }, 
+                        { "code": "ر 351", "name": "التحليل العددي (1)", "type": "mandatory" }, 
+                        { "code": "م 301", "name": "العمليات العشوائية", "type": "mandatory" }, 
+                        { "code": "م 302", "name": "الاستدلال الإحصائي (2)", "type": "mandatory" }, 
+                        { "code": "ص 326", "name": "نظرية الارتباط (1)", "type": "optional" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ر 332", "name": "التحليل الحقيقي (2)", "type": "mandatory" }, 
+                        { "code": "ر 335", "name": "التحليل الدالي", "type": "mandatory" }, 
+                        { "code": "س 303", "name": "تحليل الانحدار", "type": "mandatory" }, 
+                        { "code": "م 304", "name": "برمجيات إحصائية", "type": "mandatory" }, 
+                        { "code": "ص 327", "name": "نظرية الارتباط (2)", "type": "mandatory" } 
+                    ]
                 },
                 "fourth_year": {
-                    "term_1": [ { "code": "ر 431", "name": "التحليل المركب (1)", "type": "mandatory" }, { "code": "ر 481", "name": "نظرية التحكم الأمثل (1)", "type": "mandatory" }, { "code": "س 401", "name": "تصميم تجارب", "type": "mandatory" }, { "code": "م 402", "name": "إحصاء لا معلمي", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ر 432", "name": "التحليل المركب (2)", "type": "mandatory" }, { "code": "ر 482", "name": "نظرية التحكم الأمثل (2)", "type": "mandatory" }, { "code": "س 403", "name": "نظرية الموثوقية", "type": "mandatory" }, { "code": "ص 404", "name": "إحصاء متعدد المتغيرات", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ر 431", "name": "التحليل المركب (1)", "type": "mandatory" }, 
+                        { "code": "ر 481", "name": "نظرية التحكم الأمثل (1)", "type": "mandatory" }, 
+                        { "code": "س 401", "name": "تصميم تجارب", "type": "mandatory" }, 
+                        { "code": "م 402", "name": "إحصاء لا معلمي", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ر 432", "name": "التحليل المركب (2)", "type": "mandatory" }, 
+                        { "code": "ر 482", "name": "نظرية التحكم الأمثل (2)", "type": "mandatory" }, 
+                        { "code": "س 403", "name": "نظرية الموثوقية", "type": "mandatory" }, 
+                        { "code": "ص 404", "name": "إحصاء متعدد المتغيرات", "type": "mandatory" } 
+                    ]
                 }
             },
+            
             "رياضيات/فيزياء": {
                 "second_year": {
-                    "term_1": [ { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, { "code": "ر 231", "name": "تفاضل وتكامل (3)", "type": "mandatory" }, { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" }, { "code": "ف 201", "name": "فيزياء عملية", "type": "mandatory" }, { "code": "ف 221", "name": "كهرومغناطيسية (1)", "type": "mandatory" }, { "code": "ف 231", "name": "كهرومغناطيسية (1) [مكرر]", "type": "mandatory" }, { "code": "ف 241", "name": "فيزياء رياضية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, { "code": "ف 202", "name": "فيزياء عملية", "type": "mandatory" }, { "code": "ف 222", "name": "ميكانيكا كلاسيكية (2)", "type": "mandatory" }, { "code": "ف 232", "name": "كهرومغناطيسية (2)", "type": "mandatory" }, { "code": "ف 251", "name": "ديناميكا حرارية", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, 
+                        { "code": "ر 231", "name": "تفاضل وتكامل (3)", "type": "mandatory" }, 
+                        { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" }, 
+                        { "code": "ف 201", "name": "فيزياء عملية", "type": "mandatory" }, 
+                        { "code": "ف 221", "name": "كهرومغناطيسية (1)", "type": "mandatory" }, 
+                        { "code": "ف 231", "name": "كهرومغناطيسية (1) [مكرر]", "type": "mandatory" }, 
+                        { "code": "ف 241", "name": "فيزياء رياضية (1)", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, 
+                        { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, 
+                        { "code": "ف 202", "name": "فيزياء عملية", "type": "mandatory" }, 
+                        { "code": "ف 222", "name": "ميكانيكا كلاسيكية (2)", "type": "mandatory" }, 
+                        { "code": "ف 232", "name": "كهرومغناطيسية (2)", "type": "mandatory" }, 
+                        { "code": "ف 251", "name": "ديناميكا حرارية", "type": "mandatory" } 
+                    ]
                 },
                 "third_year": {
-                    "term_1": [ { "code": "ر 311", "name": "الجبر المجرد (1)", "type": "mandatory" }, { "code": "ر 331", "name": "التحليل الحقيقي (1)", "type": "mandatory" }, { "code": "ر 351", "name": "التحليل العددي (1)", "type": "mandatory" }, { "code": "ف 303", "name": "فيزياء عملية", "type": "mandatory" }, { "code": "ف 351", "name": "فيزياء إحصائية (1)", "type": "mandatory" }, { "code": "ف 362", "name": "ميكانيكا الكم (1)", "type": "mandatory" }, { "code": "ف 366", "name": "فيزياء الليزر", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ر 312", "name": "الجبر المجرد (2)", "type": "mandatory" }, { "code": "ر 332", "name": "التحليل الحقيقي (2)", "type": "mandatory" }, { "code": "ر 352", "name": "التحليل العددي (2)", "type": "mandatory" }, { "code": "ف 304", "name": "فيزياء عملية", "type": "mandatory" }, { "code": "ف 352", "name": "فيزياء إحصائية (2)", "type": "mandatory" }, { "code": "ف 363", "name": "ميكانيكا الكم (2)", "type": "mandatory" }, { "code": "ف 371", "name": "فيزياء الجوامد (1)", "type": "mandatory" }, { "code": "ف 381", "name": "فيزياء نووية (1)", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ر 311", "name": "الجبر المجرد (1)", "type": "mandatory" }, 
+                        { "code": "ر 331", "name": "التحليل الحقيقي (1)", "type": "mandatory" }, 
+                        { "code": "ر 351", "name": "التحليل العددي (1)", "type": "mandatory" }, 
+                        { "code": "ف 303", "name": "فيزياء عملية", "type": "mandatory" }, 
+                        { "code": "ف 351", "name": "فيزياء إحصائية (1)", "type": "mandatory" }, 
+                        { "code": "ف 362", "name": "ميكانيكا الكم (1)", "type": "mandatory" }, 
+                        { "code": "ف 366", "name": "فيزياء الليزر", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ر 312", "name": "الجبر المجرد (2)", "type": "mandatory" }, 
+                        { "code": "ر 332", "name": "التحليل الحقيقي (2)", "type": "mandatory" }, 
+                        { "code": "ر 352", "name": "التحليل العددي (2)", "type": "mandatory" }, 
+                        { "code": "ف 304", "name": "فيزياء عملية", "type": "mandatory" }, 
+                        { "code": "ف 352", "name": "فيزياء إحصائية (2)", "type": "mandatory" }, 
+                        { "code": "ف 363", "name": "ميكانيكا الكم (2)", "type": "mandatory" }, 
+                        { "code": "ف 371", "name": "فيزياء الجوامد (1)", "type": "mandatory" }, 
+                        { "code": "ف 381", "name": "فيزياء نووية (1)", "type": "mandatory" } 
+                    ]
                 },
                 "fourth_year": {
-                    "term_1": [ { "code": "ر 431", "name": "التحليل المركب (1)", "type": "mandatory" }, { "code": "ر 441", "name": "المعادلات التفاضلية الجزئية (1)", "type": "mandatory" }, { "code": "ف 371", "name": "فيزياء الجوامد (1) [مكرر]", "type": "mandatory" }, { "code": "ف 381", "name": "فيزياء نووية (1) [مكرر]", "type": "mandatory" }, { "code": "ف 401", "name": "فيزياء عملية (نووية)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ر 432", "name": "التحليل المركب (2)", "type": "mandatory" }, { "code": "ر 451", "name": "الحلول العددية", "type": "mandatory" }, { "code": "ف 402", "name": "فيزياء عملية (جوامد)", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ر 431", "name": "التحليل المركب (1)", "type": "mandatory" }, 
+                        { "code": "ر 441", "name": "المعادلات التفاضلية الجزئية (1)", "type": "mandatory" }, 
+                        { "code": "ف 371", "name": "فيزياء الجوامد (1) [مكرر]", "type": "mandatory" }, 
+                        { "code": "ف 381", "name": "فيزياء نووية (1) [مكرر]", "type": "mandatory" }, 
+                        { "code": "ف 401", "name": "فيزياء عملية (نووية)", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ر 432", "name": "التحليل المركب (2)", "type": "mandatory" }, 
+                        { "code": "ر 451", "name": "الحلول العددية", "type": "mandatory" }, 
+                        { "code": "ف 402", "name": "فيزياء عملية (جوامد)", "type": "mandatory" } 
+                    ]
                 }
             },
-            "فيزياء/فلك": {
+            
+            "جيولوجيا منفرد": {
                 "second_year": {
-                    "term_1": [ { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, { "code": "ر 231", "name": "تفاضل وتكامل (3)", "type": "mandatory" }, { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" }, { "code": "ل 201", "name": "معمل أرصاد شمسية", "type": "mandatory" }, { "code": "ل 211", "name": "فيزياء فلكية (1)", "type": "mandatory" }, { "code": "ل 213", "name": "فلك كروي (1)", "type": "mandatory" }, { "code": "ل 215", "name": "ميكانيكا سماوية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, { "code": "ل 202", "name": "معمل أرصاد نجمية", "type": "mandatory" }, { "code": "ل 212", "name": "فيزياء فلكية (2)", "type": "mandatory" }, { "code": "ل 214", "name": "فلك كروي (2)", "type": "mandatory" }, { "code": "ل 216", "name": "أجهزة فلكية", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ج 201", "name": "جيولوجيا تركيبية (1)", "type": "mandatory" }, 
+                        { "code": "ج 203", "name": "طبقات صخرية", "type": "mandatory" }, 
+                        { "code": "ج 205", "name": "حفريات كبيرة (1)", "type": "mandatory" }, 
+                        { "code": "ج 207", "name": "مجهرية المعادن", "type": "mandatory" }, 
+                        { "code": "ج 209", "name": "علم البللورات", "type": "mandatory" }, 
+                        { "code": "ج 211", "name": "تدريب حقلي 1", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ح 201", "name": "اللافقاريات والفقاريات", "type": "mandatory" }, 
+                        { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" },
+                        { "code": "ك 241", "name": "أسس الكيمياء العضوية", "type": "mandatory" } // تمت الإضافة
+                    ],
+                    "term_2": [ 
+                        { "code": "ج 202", "name": "حفريات دقيقة (1)", "type": "mandatory" }, 
+                        { "code": "ج 204", "name": "علم الصخور الرسوبية (1)", "type": "mandatory" }, 
+                        { "code": "ج 206", "name": "المعادن المكونة للصخور", "type": "mandatory" }, 
+                        { "code": "ج 208", "name": "طبقات حيوية", "type": "mandatory" }, 
+                        { "code": "ج 210", "name": "تضاريس وصور جوية", "type": "mandatory" }, 
+                        { "code": "ج 212", "name": "جيولوجيا تركيبية (2)", "type": "mandatory" }, 
+                        { "code": "ج 214", "name": "حفريات كبيرة (2)", "type": "mandatory" },
+                        { "code": "ج 216", "name": "تدريب حقلي 2", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ج 218", "name": "بيئة قديمة", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ج 220", "name": "حفريات فقارية", "type": "mandatory" } // تمت الإضافة
+                    ]
                 },
                 "third_year": {
-                    "term_1": [ { "code": "ر 311", "name": "الجبر المجرد (1)", "type": "mandatory" }, { "code": "ر 331", "name": "التحليل الحقيقي (1)", "type": "mandatory" }, { "code": "ر 351", "name": "التحليل العددي (1)", "type": "mandatory" }, { "code": "ل 301", "name": "حسابات فلكية", "type": "mandatory" }, { "code": "ل 303", "name": "الحسابات المدارية", "type": "mandatory" }, { "code": "ل 311", "name": "فيزياء شمسية", "type": "mandatory" }, { "code": "ل 313", "name": "انتقال الإشعاع", "type": "mandatory" }, { "code": "ل 315", "name": "ميكانيكا سماوية (2)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ر 312", "name": "الجبر المجرد (2)", "type": "mandatory" }, { "code": "ر 332", "name": "التحليل الحقيقي (2)", "type": "mandatory" }, { "code": "ر 352", "name": "التحليل العددي (2)", "type": "mandatory" }, { "code": "ل 302", "name": "معمل تحليل البيانات الفلكية", "type": "mandatory" }, { "code": "ل 304", "name": "معمل فلك فيزيائي", "type": "mandatory" }, { "code": "ل 312", "name": "تركيب وتطور النجوم", "type": "mandatory" }, { "code": "ل 322", "name": "فيزياء الكواكب", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ج 301", "name": "علم الصخور النارية (1)", "type": "mandatory" }, 
+                        { "code": "ج 303", "name": "جيوكيمياء", "type": "mandatory" }, 
+                        { "code": "ج 305", "name": "جيوفيزياء (1)", "type": "mandatory" }, 
+                        { "code": "ج 309", "name": "حفريات دقيقة (2)", "type": "mandatory" }, 
+                        { "code": "ج 311", "name": "علم الطبقات المتقدم", "type": "mandatory" }, 
+                        { "code": "ج 313", "name": "ميكانيكا الصخور", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ج 302", "name": "علم الصخور المتحولة (1)", "type": "mandatory" }, 
+                        { "code": "ج 304", "name": "جيولوجيا القاعدة بمصر", "type": "mandatory" }, 
+                        { "code": "ج 306", "name": "جيولوجيا الخامات", "type": "mandatory" }, 
+                        { "code": "ج 308", "name": "جيولوجيا حقلية ودراسات حقلية", "type": "mandatory" }, 
+                        { "code": "ج 310", "name": "علم الصخور الرسوبية (2)", "type": "mandatory" }, 
+                        { "code": "ج 312", "name": "علم الصخور النارية (2)", "type": "mandatory" }, 
+                        { "code": "ج 314", "name": "جيولوجيا تحت سطحية", "type": "mandatory" }, 
+                        { "code": "ج 316", "name": "مبادئ الجيولوجيا الهندسية", "type": "mandatory" } 
+                    ]
                 },
                 "fourth_year": {
-                    "term_1": [ { "code": "ر 431", "name": "التحليل المركب (1)", "type": "mandatory" }, { "code": "ر 441", "name": "المعادلات التفاضلية الجزئية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ر 432", "name": "التحليل المركب (2)", "type": "mandatory" }, { "code": "ر 451", "name": "الحلول العددية", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ج 401", "name": "جيولوجية الفانيروزوي بمصر (1)", "type": "mandatory" }, 
+                        { "code": "ج 403", "name": "جيولوجيا البترول (1)", "type": "mandatory" }, 
+                        { "code": "ج 405", "name": "جيولوجيا المياه (1)", "type": "mandatory" }, 
+                        { "code": "ج 407", "name": "لترسيب", "type": "mandatory" }, 
+                        { "code": "ج 409", "name": "معادن الخامات", "type": "mandatory" }, 
+                        { "code": "ج 411", "name": "الاستشعار عن بعد (1)", "type": "mandatory" }, 
+                        { "code": "ج 413", "name": "علم الجيولوجيا الهندسية", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ج 402", "name": "جيولوجيا تكتونية", "type": "mandatory" }, 
+                        { "code": "ج 404", "name": "تفريط حقلي ودراسات حقلية", "type": "mandatory" }, 
+                        { "code": "ج 406", "name": "جيولوجية الفانيروزوي بمصر (2)", "type": "mandatory" }, 
+                        { "code": "ج 408", "name": "الإحصاء الجيولوجي", "type": "mandatory" }, 
+                        { "code": "ج 410", "name": "جيولوجيا البيئة", "type": "mandatory" }, 
+                        { "code": "ج 490", "name": "بحث ومقال", "type": "mandatory" } 
+                    ]
                 }
             },
-            "علوم حاسب منفرد": {
+            
+            "علوم فضاء (فلك)": {
                 "second_year": {
-                    "term_1": [ { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, { "code": "ر 231", "name": "تفاضل وتكامل (3)", "type": "mandatory" }, { "code": "ر 271", "name": "الميكانيكا النيوتونية (2)", "type": "mandatory" }, { "code": "س 201", "name": "البرمجة الموجهة", "type": "mandatory" }, { "code": "ص 201", "name": "مقدمة نظرية الاحتمالات", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, { "code": "ر 213", "name": "الرياضيات المتقطعة", "type": "mandatory" }, { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" }, { "code": "ر 272", "name": "الميكانيكا التحليلية", "type": "mandatory" }, { "code": "س 202", "name": "هياكل البيانات والخوارزميات", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "جو 215", "name": "مقدمة الفيزياء الجوية", "type": "mandatory" }, 
+                        { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, 
+                        { "code": "ر 231", "name": "تفاضل وتكامل (3)", "type": "mandatory" }, 
+                        { "code": "م 201", "name": "معمل أرصاد", "type": "mandatory" }, 
+                        { "code": "م 211", "name": "مبادئ فيزياء الفضاء", "type": "mandatory" }, 
+                        { "code": "ع 213", "name": "إحداثيات سماوية وأرضية", "type": "mandatory" }, 
+                        { "code": "ف 221", "name": "كهرومغناطيسية (1)", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "جو 213", "name": "مقدمة الديناميكا الجوية", "type": "mandatory" }, 
+                        { "code": "ف 241", "name": "فيزياء رياضية", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ض 214", "name": "الميكانيكا المدارية", "type": "mandatory" }, 
+                        { "code": "ف 261", "name": "فيزياء حديثة", "type": "mandatory" }, 
+                        { "code": "ل 202", "name": "معمل أرصاد نجمية", "type": "mandatory" }, 
+                        { "code": "ل 211", "name": "فيزياء فلكية (1)", "type": "mandatory" } 
+                    ]
                 },
                 "third_year": {
-                    "term_1": [ { "code": "س 302", "name": "تنظيم الحاسب", "type": "mandatory" }, { "code": "س 304", "name": "رسومات الحاسب", "type": "mandatory" }, { "code": "س 305", "name": "تحليل وتصميم خوارزميات", "type": "mandatory" }, { "code": "س 307", "name": "نظم قواعد البيانات", "type": "mandatory" }, { "code": "س 309", "name": "تحليل وتصميم نظم", "type": "mandatory" } ],
-                    "term_2": [ { "code": "س 303", "name": "تطوير البرمجيات", "type": "mandatory" }, { "code": "س 306", "name": "نظم تشغيل الحاسب", "type": "mandatory" }, { "code": "س 308", "name": "تصميم قواعد البيانات", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ض 301", "name": "معمل تحليل وحاسب (1)", "type": "mandatory" }, 
+                        { "code": "م 303", "name": "حساب المدارات (1)", "type": "mandatory" }, 
+                        { "code": "م 305", "name": "معمل أطياف نسبة", "type": "mandatory" }, 
+                        { "code": "م 307", "name": "معمل تحليل وحاسب (2)", "type": "mandatory" }, 
+                        { "code": "ض 311", "name": "ديناميكا الفضاء", "type": "mandatory" }, 
+                        { "code": "ش 313", "name": "فيزياء الفضاء", "type": "mandatory" }, 
+                        { "code": "م 315", "name": "فيزياء وطاقة شمسية", "type": "mandatory" }, 
+                        { "code": "ف 242", "name": "فيزياء رياضية (2)", "type": "mandatory" }, 
+                        { "code": "ف 351", "name": "فيزياء إحصائية (1)", "type": "mandatory" }, 
+                        { "code": "ل 318", "name": "النسبية العامة وتطبيقاتها", "type": "mandatory" }, 
+                        { "code": "ف 321", "name": "ديناميكا الموائع", "type": "mandatory" }, 
+                        { "code": "ل 301", "name": "حسابات فلكية", "type": "mandatory" }, 
+                        { "code": "ل 313", "name": "انتقال الإشعاع", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ش 302", "name": "معمل تحليل وحاسب (2)", "type": "mandatory" }, 
+                        { "code": "ش 304", "name": "حساب المدارات (2)", "type": "mandatory" }, 
+                        { "code": "ش 306", "name": "معمل أطياف (2)", "type": "mandatory" }, 
+                        { "code": "ض 308", "name": "معمل فيزياء الفضاء (2)", "type": "mandatory" }, 
+                        { "code": "ش 310", "name": "معمل تحليل وحاسب (3)", "type": "mandatory" }, 
+                        { "code": "ف 352", "name": "فيزياء إحصائية (2)", "type": "mandatory" }, 
+                        { "code": "ف 362", "name": "ميكانيكا الكم (1)", "type": "mandatory" }, 
+                        { "code": "ل 322", "name": "فيزياء الكواكب", "type": "mandatory" }, 
+                        { "code": "ل 306", "name": "تطبيقات فلكية على الحاسب", "type": "mandatory" } 
+                    ]
                 },
                 "fourth_year": {
-                    "term_1": [ { "code": "ر 411", "name": "نظرية الأعداد", "type": "mandatory" }, { "code": "س 401", "name": "شبكات الحاسب", "type": "mandatory" }, { "code": "س 403", "name": "الأتوماتيكية واللغات الشكلية", "type": "mandatory" } ],
-                    "term_2": [ { "code": "س 402", "name": "نظرية التشفير", "type": "mandatory" }, { "code": "س 407", "name": "تصميم لغات البرمجة", "type": "mandatory" }, { "code": "س 408", "name": "الذكاء الاصطناعي", "type": "mandatory" }, { "code": "س 490", "name": "بحث ومقال", "type": "mandatory" } ]
-                }
-            },
-            "علوم فضاء (فلك)": { // Mapped from علوم_الفضاء_منفرد and فلك_منفرد
-                "second_year": {
-                    "term_1": [ { "code": "جو 215", "name": "مقدمة الفيزياء الجوية", "type": "mandatory" }, { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, { "code": "ر 231", "name": "تفاضل وتكامل (3)", "type": "mandatory" }, { "code": "م 201", "name": "معمل أرصاد", "type": "mandatory" }, { "code": "م 211", "name": "مبادئ فيزياء الفضاء", "type": "mandatory" }, { "code": "ع 213", "name": "إحداثيات سماوية وأرضية", "type": "mandatory" }, { "code": "ف 221", "name": "كهرومغناطيسية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "جو 213", "name": "مقدمة الديناميكا الجوية", "type": "mandatory" }, { "code": "ف 241", "name": "المعادلات التفاضلية العادية / فيزياء رياضية", "type": "mandatory" }, { "code": "ض 214", "name": "الميكانيكا المدارية", "type": "mandatory" }, { "code": "ف 261", "name": "فيزياء حديثة", "type": "mandatory" }, { "code": "ل 202", "name": "معمل أرصاد نجمية", "type": "mandatory" }, { "code": "211", "name": "فيزياء فلكية (1)", "type": "mandatory" } ]
-                },
-                "third_year": {
-                    "term_1": [ { "code": "ض 301", "name": "معمل تحليل وحاسب (1)", "type": "mandatory" }, { "code": "م 303", "name": "حساب المدارات (1)", "type": "mandatory" }, { "code": "م 305", "name": "معمل أطياف نسبة", "type": "mandatory" }, { "code": "م 307", "name": "معمل تحليل وحاسب (2)", "type": "mandatory" }, { "code": "ض 311", "name": "ديناميكا الفضاء", "type": "mandatory" }, { "code": "ش 313", "name": "فيزياء الفضاء", "type": "mandatory" }, { "code": "م 315", "name": "فيزياء وطاقة شمسية", "type": "mandatory" }, { "code": "ف 242", "name": "فيزياء رياضية (2)", "type": "mandatory" }, { "code": "ف 351", "name": "فيزياء إحصائية (1)", "type": "mandatory" }, { "code": "ل 318", "name": "النسبية العامة وتطبيقاتها", "type": "mandatory" }, { "code": "ف 321", "name": "ديناميكا الموائع", "type": "mandatory" }, { "code": "ل 301", "name": "حسابات فلكية", "type": "mandatory" }, { "code": "ل 313", "name": "انتقال الإشعاع", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ش 302", "name": "معمل تحليل وحاسب (2)", "type": "mandatory" }, { "code": "ش 304", "name": "حساب المدارات (2)", "type": "mandatory" }, { "code": "ش 306", "name": "معمل أطياف (2)", "type": "mandatory" }, { "code": "ض 308", "name": "معمل فيزياء الفضاء (2)", "type": "mandatory" }, { "code": "ش 310", "name": "معمل تحليل وحاسب (3)", "type": "mandatory" }, { "code": "ف 352", "name": "فيزياء إحصائية (2)", "type": "mandatory" }, { "code": "ف 362", "name": "ميكانيكا الكم (1)", "type": "mandatory" }, { "code": "ل 322", "name": "فيزياء الكواكب", "type": "mandatory" }, { "code": "ل 306", "name": "تطبيقات فلكية على الحاسب", "type": "mandatory" } ]
-                },
-                "fourth_year": {
-                    "term_1": [ { "code": "جو 413", "name": "فيزياء الغلاف الجوي العلوي", "type": "mandatory" }, { "code": "ش 490", "name": "بحث ومقال", "type": "mandatory" }, { "code": "417", "name": "النظم الديناميكية", "type": "mandatory" } ],
+                    "term_1": [ 
+                        { "code": "جو 413", "name": "فيزياء الغلاف الجوي العلوي", "type": "mandatory" }, 
+                        { "code": "ش 490", "name": "بحث ومقال", "type": "mandatory" }, 
+                        { "code": "ض 417", "name": "النظم الديناميكية", "type": "mandatory" } 
+                    ],
                     "term_2": []
                 }
             },
-            "جيولوجيا منفرد": {
+            
+            "علوم حاسب منفرد": {
                 "second_year": {
-                    "term_1": [ { "code": "ج 201", "name": "جيولوجيا تركيبية (1)", "type": "mandatory" }, { "code": "ج 203", "name": "طبقات صخرية", "type": "mandatory" }, { "code": "ج 205", "name": "حفريات كبيرة (1)", "type": "mandatory" }, { "code": "ج 207", "name": "مجهرية المعادن", "type": "mandatory" }, { "code": "ج 209", "name": "علم البللورات", "type": "mandatory" }, { "code": "ح 201", "name": "اللافقاريات والفقاريات", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ج 202", "name": "حفريات دقيقة (1)", "type": "mandatory" }, { "code": "ج 204", "name": "علم الصخور الرسوبية (1)", "type": "mandatory" }, { "code": "ج 206", "name": "المعادن المكونة للصخور", "type": "mandatory" }, { "code": "ج 208", "name": "طبقات حيوية", "type": "mandatory" }, { "code": "ج 210", "name": "تضاريس وصور جوية", "type": "mandatory" }, { "code": "ج 212", "name": "جيولوجيا تركيبية (2)", "type": "mandatory" }, { "code": "ج 214", "name": "حفريات كبيرة (2)", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, 
+                        { "code": "ر 231", "name": "تفاضل وتكامل (3)", "type": "mandatory" }, 
+                        { "code": "ر 271", "name": "الميكانيكا النيوتونية (2)", "type": "mandatory" }, 
+                        { "code": "س 201", "name": "البرمجة الموجهة", "type": "mandatory" }, 
+                        { "code": "ص 201", "name": "مقدمة نظرية الاحتمالات", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, 
+                        { "code": "ر 213", "name": "الرياضيات المتقطعة", "type": "mandatory" }, 
+                        { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, 
+                        { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" }, 
+                        { "code": "ر 272", "name": "الميكانيكا التحليلية", "type": "mandatory" }, 
+                        { "code": "س 202", "name": "هياكل البيانات والخوارزميات", "type": "mandatory" } 
+                    ]
                 },
                 "third_year": {
-                    "term_1": [ { "code": "ج 301", "name": "علم الصخور النارية (1)", "type": "mandatory" }, { "code": "ج 303", "name": "جيوكيمياء", "type": "mandatory" }, { "code": "ج 305", "name": "جيوفيزياء (1)", "type": "mandatory" }, { "code": "ج 309", "name": "حفريات دقيقة (2)", "type": "mandatory" }, { "code": "ج 311", "name": "علم الطبقات المتقدم", "type": "mandatory" }, { "code": "ج 313", "name": "ميكانيكا الصخور", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ج 302", "name": "علم الصخور المتحولة (1)", "type": "mandatory" }, { "code": "ج 304", "name": "جيولوجيا القاعدة بمصر", "type": "mandatory" }, { "code": "ج 306", "name": "جيولوجيا الخامات", "type": "mandatory" }, { "code": "ج 308", "name": "جيولوجيا حقلية ودراسات حقلية", "type": "mandatory" }, { "code": "ج 310", "name": "علم الصخور الرسوبية (2)", "type": "mandatory" }, { "code": "ج 312", "name": "علم الصخور النارية (2)", "type": "mandatory" }, { "code": "ج 314", "name": "جيولوجيا تحت سطحية", "type": "mandatory" }, { "code": "ج 316", "name": "مبادئ الجيولوجيا الهندسية", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "س 302", "name": "تنظيم الحاسب", "type": "mandatory" }, 
+                        { "code": "س 304", "name": "رسومات الحاسب", "type": "mandatory" }, 
+                        { "code": "س 305", "name": "تحليل وتصميم خوارزميات", "type": "mandatory" }, 
+                        { "code": "س 307", "name": "نظم قواعد البيانات", "type": "mandatory" }, 
+                        { "code": "س 309", "name": "تحليل وتصميم نظم", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "س 303", "name": "تطوير البرمجيات", "type": "mandatory" }, 
+                        { "code": "س 306", "name": "نظم تشغيل الحاسب", "type": "mandatory" }, 
+                        { "code": "س 308", "name": "تصميم قواعد البيانات", "type": "mandatory" } 
+                    ]
                 },
                 "fourth_year": {
-                    "term_1": [ { "code": "ج 401", "name": "جيولوجية الفانيروزوي بمصر (1)", "type": "mandatory" }, { "code": "ج 403", "name": "جيولوجيا البترول (1)", "type": "mandatory" }, { "code": "ج 405", "name": "جيولوجيا المياه (1)", "type": "mandatory" }, { "code": "ج 407", "name": "لترسيب", "type": "mandatory" }, { "code": "ج 409", "name": "معادن الخامات", "type": "mandatory" }, { "code": "ج 411", "name": "الاستشعار عن بعد (1)", "type": "mandatory" }, { "code": "ج 413", "name": "علم الجيولوجيا الهندسية", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ج 402", "name": "جيولوجيا تكتونية", "type": "mandatory" }, { "code": "ج 404", "name": "تفريط حقلي ودراسات حقلية", "type": "mandatory" }, { "code": "ج 406", "name": "جيولوجية الفانيروزوي بمصر (2)", "type": "mandatory" }, { "code": "ج 408", "name": "الإحصاء الجيولوجي", "type": "mandatory" }, { "code": "ج 410", "name": "جيولوجيا البيئة", "type": "mandatory" }, { "code": "ج 490", "name": "بحث ومقال", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ر 411", "name": "نظرية الأعداد", "type": "mandatory" }, 
+                        { "code": "س 401", "name": "شبكات الحاسب", "type": "mandatory" }, 
+                        { "code": "س 403", "name": "الأتوماتيكية واللغات الشكلية", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "س 402", "name": "نظرية التشفير", "type": "mandatory" }, 
+                        { "code": "س 407", "name": "تصميم لغات البرمجة", "type": "mandatory" }, 
+                        { "code": "س 408", "name": "الذكاء الاصطناعي", "type": "mandatory" }, 
+                        { "code": "س 490", "name": "بحث ومقال", "type": "mandatory" } 
+                    ]
                 }
             },
+            
             "كيمياء منفرد": {
                 "second_year": {
-                    "term_1": [ { "code": "م 221", "name": "إحصاء تطبيقي (1)", "type": "mandatory" }, { "code": "ك 249", "name": "علم البللورات والأشعة السينية", "type": "mandatory" }, { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, { "code": "ك 214", "name": "قاعدة الصنف", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" }, { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ك 212", "name": "الكيمياء الكهربية الإتزانية (1)", "type": "mandatory" }, { "code": "ك 213", "name": "كيمياء الكم (1)", "type": "mandatory" }, { "code": "ك 231", "name": "كيمياء العناصر الممثلة (1)", "type": "mandatory" }, { "code": "ك 243", "name": "الكيمياء الفراغية", "type": "mandatory" }, { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" }, { "code": "ك 251", "name": "أسس الكيمياء الحيوية (1)", "type": "mandatory" }, { "code": "ك 252", "name": "أسس الكيمياء الحيوية (2)", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "م 221", "name": "إحصاء تطبيقي (1)", "type": "mandatory" }, 
+                        { "code": "ك 249", "name": "علم البللورات والأشعة السينية", "type": "mandatory" }, 
+                        { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, 
+                        { "code": "ك 214", "name": "قاعدة الصنف", "type": "mandatory" }, 
+                        { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, 
+                        { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" }, 
+                        { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ك 212", "name": "الكيمياء الكهربية الإتزانية (1)", "type": "mandatory" }, 
+                        { "code": "ك 213", "name": "كيمياء الكم (1)", "type": "mandatory" }, 
+                        { "code": "ك 231", "name": "كيمياء العناصر الممثلة (1)", "type": "mandatory" }, 
+                        { "code": "ك 243", "name": "الكيمياء الفراغية", "type": "mandatory" }, 
+                        { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" }, 
+                        { "code": "ك 251", "name": "أسس الكيمياء الحيوية (1)", "type": "mandatory" }, 
+                        { "code": "ك 252", "name": "أسس الكيمياء الحيوية (2)", "type": "mandatory" } 
+                    ]
                 },
                 "third_year": {
-                    "term_1": [ { "code": "ك 311", "name": "كيمياء الكم (2)", "type": "mandatory" }, { "code": "ك 312", "name": "الكيمياء الكهربية الديناميكية", "type": "mandatory" }, { "code": "ك 313", "name": "حركية التفاعلات الكيميائية", "type": "mandatory" }, { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, { "code": "ك 331", "name": "كيمياء العناصر الانتقالية (1)", "type": "mandatory" }, { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" }, { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ك 314", "name": "الأطياف الجزيئية", "type": "mandatory" }, { "code": "ك 315", "name": "الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, { "code": "ك 322", "name": "طرق التحليل الكهربي", "type": "mandatory" }, { "code": "ك 333", "name": "كيمياء العناصر الانتقالية (3)", "type": "mandatory" }, { "code": "ك 343", "name": "كيمياء المنتجات الطبيعية", "type": "mandatory" }, { "code": "ك 344", "name": "الكيمياء الضوئية", "type": "mandatory" }, { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ك 311", "name": "كيمياء الكم (2)", "type": "mandatory" }, 
+                        { "code": "ك 312", "name": "الكيمياء الكهربية الديناميكية", "type": "mandatory" }, 
+                        { "code": "ك 313", "name": "حركية التفاعلات الكيميائية", "type": "mandatory" }, 
+                        { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, 
+                        { "code": "ك 331", "name": "كيمياء العناصر الانتقالية (1)", "type": "mandatory" }, 
+                        { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" }, 
+                        { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ك 314", "name": "الأطياف الجزيئية", "type": "mandatory" }, 
+                        { "code": "ك 315", "name": "الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, 
+                        { "code": "ك 322", "name": "طرق التحليل الكهربي", "type": "mandatory" }, 
+                        { "code": "ك 333", "name": "كيمياء العناصر الانتقالية (3)", "type": "mandatory" }, 
+                        { "code": "ك 343", "name": "كيمياء المنتجات الطبيعية", "type": "mandatory" }, 
+                        { "code": "ك 344", "name": "الكيمياء الضوئية", "type": "mandatory" }, 
+                        { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" } 
+                    ]
                 },
                 "fourth_year": {
-                    "term_1": [ { "code": "ك 481", "name": "كيمياء فيزيائية عملية (1)", "type": "mandatory" }, { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ك 483", "name": "كيمياء فيزيائية عملية (2)", "type": "mandatory" }, { "code": "ك 484", "name": "كيمياء عضوية عملية (2)", "type": "mandatory" }, { "code": "ك 490", "name": "بحث ومقال", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ك 481", "name": "كيمياء فيزيائية عملية (1)", "type": "mandatory" }, 
+                        { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ك 483", "name": "كيمياء فيزيائية عملية (2)", "type": "mandatory" }, 
+                        { "code": "ك 484", "name": "كيمياء عضوية عملية (2)", "type": "mandatory" }, 
+                        { "code": "ك 490", "name": "بحث ومقال", "type": "mandatory" } 
+                    ]
                 }
             },
-            "كيمياء/جيولوجيا": {
+            
+            "فيزياء/فلك": {
                 "second_year": {
-                    "term_1": [ { "code": "ج 201", "name": "جيولوجيا تركيبية (1)", "type": "mandatory" }, { "code": "ج 203", "name": "طبقات صخرية", "type": "mandatory" }, { "code": "ج 205", "name": "حفريات كبيرة (1)", "type": "mandatory" }, { "code": "ج 207", "name": "مجهرية المعادن", "type": "mandatory" }, { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ج 202", "name": "حفريات دقيقة (1)", "type": "mandatory" }, { "code": "ج 204", "name": "علم الصخور الرسوبية (1)", "type": "mandatory" }, { "code": "ج 206", "name": "المعادن المكونة للصخور", "type": "mandatory" }, { "code": "ج 208", "name": "طبقات حيوية", "type": "mandatory" }, { "code": "ج 210", "name": "تضاريس وصور جوية", "type": "mandatory" }, { "code": "ك 212", "name": "الكيمياء الكهربية الإتزانية (1)", "type": "mandatory" }, { "code": "ك 232", "name": "كيمياء العناصر الممثلة (2)", "type": "mandatory" }, { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ر 211", "name": "جبر خطي وهندسة (1)", "type": "mandatory" }, 
+                        { "code": "ر 231", "name": "تفاضل وتكامل (3)", "type": "mandatory" }, 
+                        { "code": "ر 241", "name": "المعادلات التفاضلية العادية", "type": "mandatory" },
+                        { "code": "ف 201", "name": "فيزياء عملية", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ف 221", "name": "كهرومغناطيسية (1)", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ف 231", "name": "كهرومغناطيسية (1)", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ف 241", "name": "فيزياء رياضية (1)", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ل 201", "name": "معمل أرصاد شمسية", "type": "mandatory" }, 
+                        { "code": "ل 211", "name": "فيزياء فلكية (1)", "type": "mandatory" }, 
+                        { "code": "ل 213", "name": "فلك كروي (1)", "type": "mandatory" }, 
+                        { "code": "ل 215", "name": "ميكانيكا سماوية (1)", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ر 212", "name": "جبر خطي وهندسة (2)", "type": "mandatory" }, 
+                        { "code": "ر 232", "name": "مبادئ التحليل الرياضي", "type": "mandatory" }, 
+                        { "code": "ف 202", "name": "فيزياء عملية", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ف 222", "name": "ميكانيكا كلاسيكية (2)", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ف 232", "name": "كهرومغناطيسية (2)", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ف 251", "name": "ديناميكا حرارية", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ل 202", "name": "معمل أرصاد نجمية", "type": "mandatory" }, 
+                        { "code": "ل 212", "name": "فيزياء فلكية (2)", "type": "mandatory" }, 
+                        { "code": "ل 214", "name": "فلك كروي (2)", "type": "mandatory" }, 
+                        { "code": "ل 216", "name": "أجهزة فلكية", "type": "mandatory" } 
+                    ]
                 },
                 "third_year": {
-                    "term_1": [ { "code": "ج 301", "name": "علم الصخور النارية (1)", "type": "mandatory" }, { "code": "ج 303", "name": "جيوكيمياء", "type": "mandatory" }, { "code": "ج 305", "name": "جيوفيزياء (1)", "type": "mandatory" }, { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, { "code": "ك 332", "name": "كيمياء العناصر الانتقالية (2)", "type": "mandatory" }, { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ج 302", "name": "علم الصخور المتحولة (1)", "type": "mandatory" }, { "code": "ج 304", "name": "جيولوجيا القاعدة بمصر", "type": "mandatory" }, { "code": "ج 306", "name": "جيولوجية الخامات", "type": "mandatory" }, { "code": "ج 308", "name": "جيولوجية حقلية", "type": "mandatory" }, { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ر 311", "name": "الجبر المجرد (1)", "type": "mandatory" }, 
+                        { "code": "ر 331", "name": "التحليل الحقيقي (1)", "type": "mandatory" }, 
+                        { "code": "ر 351", "name": "التحليل العددي (1)", "type": "mandatory" }, 
+                        { "code": "ل 301", "name": "حسابات فلكية", "type": "mandatory" }, 
+                        { "code": "ل 303", "name": "الحسابات المدارية", "type": "mandatory" }, 
+                        { "code": "ل 311", "name": "فيزياء شمسية", "type": "mandatory" }, 
+                        { "code": "ل 313", "name": "انتقال الإشعاع", "type": "mandatory" }, 
+                        { "code": "ل 315", "name": "ميكانيكا سماوية (2)", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ر 312", "name": "الجبر المجرد (2)", "type": "mandatory" }, 
+                        { "code": "ر 332", "name": "التحليل الحقيقي (2)", "type": "mandatory" }, 
+                        { "code": "ر 352", "name": "التحليل العددي (2)", "type": "mandatory" }, 
+                        { "code": "ل 302", "name": "معمل تحليل البيانات الفلكية", "type": "mandatory" }, 
+                        { "code": "ل 304", "name": "معمل فلك فيزيائي", "type": "mandatory" }, 
+                        { "code": "ل 312", "name": "تركيب وتطور النجوم", "type": "mandatory" }, 
+                        { "code": "ل 322", "name": "فيزياء الكواكب", "type": "mandatory" } 
+                    ]
                 },
                 "fourth_year": {
-                    "term_1": [ { "code": "ج 401", "name": "جيولوجية الفانيروزوي بمصر (1)", "type": "mandatory" }, { "code": "ج 403", "name": "جيولوجيا البترول (1)", "type": "mandatory" }, { "code": "ج 405", "name": "جيولوجيا المياه (1)", "type": "mandatory" }, { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ج 402", "name": "جيولوجيا تكتونية", "type": "mandatory" }, { "code": "ج 404", "name": "تفريط حقلي", "type": "mandatory" }, { "code": "ج 406", "name": "جيولوجية الفانيروزوي بمصر (2)", "type": "mandatory" }, { "code": "ج 408", "name": "الإحصاء الجيولوجي", "type": "mandatory" }, { "code": "ج 410", "name": "جيولوجيا البيئة", "type": "mandatory" }, { "code": "ك 490", "name": "بحث ومقال", "type": "mandatory" }, { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ر 431", "name": "التحليل المركب (1)", "type": "mandatory" }, 
+                        { "code": "ر 441", "name": "المعادلات التفاضلية الجزئية (1)", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ر 432", "name": "التحليل المركب (2)", "type": "mandatory" }, 
+                        { "code": "ر 451", "name": "الحلول العددية", "type": "mandatory" } 
+                    ]
                 }
             },
-            "كيمياء/فيزياء": {
-                "second_year": {
-                    "term_1": [ { "code": "ف 201", "name": "فيزياء عملية", "type": "mandatory" }, { "code": "ف 221", "name": "كهرومغناطيسية (1)", "type": "mandatory" }, { "code": "ف 231", "name": "كهرومغناطيسية (1) [مكرر]", "type": "mandatory" }, { "code": "ف 241", "name": "فيزياء رياضية (1)", "type": "mandatory" }, { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ف 202", "name": "فيزياء عملية", "type": "mandatory" }, { "code": "ف 222", "name": "ميكانيكا كلاسيكية (2)", "type": "mandatory" }, { "code": "ف 232", "name": "كهرومغناطيسية (2)", "type": "mandatory" }, { "code": "ف 251", "name": "ديناميكا حرارية", "type": "mandatory" }, { "code": "ك 215", "name": "الكيمياء الكهربية الإتزانية (2)", "type": "mandatory" }, { "code": "ك 232", "name": "كيمياء العناصر الممثلة (2)", "type": "mandatory" }, { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" } ]
-                },
-                "third_year": {
-                    "term_1": [ { "code": "ف 235", "name": "بصريات فيزيائية", "type": "mandatory" }, { "code": "245", "name": "علوم الكمبيوتر", "type": "mandatory" }, { "code": "ف 261", "name": "فيزياء حديثة", "type": "mandatory" }, { "code": "ف 301", "name": "فيزياء عملية", "type": "mandatory" }, { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, { "code": "ك 332", "name": "كيمياء العناصر الانتقالية (2)", "type": "mandatory" }, { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ف 302", "name": "فيزياء عملية", "type": "mandatory" }, { "code": "ف 351", "name": "فيزياء إحصائية (1)", "type": "mandatory" }, { "code": "ف 362", "name": "ميكانيكا الكم (1)", "type": "mandatory" }, { "code": "ف 366", "name": "فيزياء الليزر", "type": "mandatory" }, { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } ]
-                },
-                "fourth_year": {
-                    "term_1": [ { "code": "ف 371", "name": "فيزياء الجوامد (1)", "type": "mandatory" }, { "code": "ف 381", "name": "فيزياء نووية (1)", "type": "mandatory" }, { "code": "ف 401", "name": "فيزياء عملية (نووية)", "type": "mandatory" }, { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ف 402", "name": "فيزياء عملية (جوامد)", "type": "mandatory" }, { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" } ]
-                }
-            },
+            
             "كيمياء/حيوان": {
                 "second_year": {
-                    "term_1": [ { "code": "ح 211", "name": "بيولوجيا الخلية (1)", "type": "mandatory" }, { "code": "ح 221", "name": "لا فقاريات (1)", "type": "mandatory" }, { "code": "ح 261", "name": "أساسيات علم البيئة", "type": "mandatory" }, { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ح 212", "name": "وراثة", "type": "mandatory" }, { "code": "ح 231", "name": "الفقاريات", "type": "mandatory" }, { "code": "ك 215", "name": "الكيمياء الكهربية الإتزانية (2)", "type": "mandatory" }, { "code": "ك 232", "name": "كيمياء العناصر الممثلة (2)", "type": "mandatory" }, { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ح 211", "name": "بيولوجيا الخلية (1)", "type": "mandatory" }, 
+                        { "code": "ح 221", "name": "لا فقاريات (1)", "type": "mandatory" }, 
+                        { "code": "ح 261", "name": "أساسيات علم البيئة", "type": "mandatory" }, 
+                        { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, 
+                        { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, 
+                        { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ح 212", "name": "وراثة", "type": "mandatory" }, 
+                        { "code": "ح 231", "name": "الفقاريات", "type": "mandatory" }, 
+                        { "code": "ج 222", "name": "طبقة حيوية للبيولوجيين", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "جو 218", "name": "أساسيات الأرصاد الجوية", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ميك 210", "name": "ميكروبيولوجيا عامة", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ك 215", "name": "الكيمياء الكهربية الإتزانية (2)", "type": "mandatory" }, 
+                        { "code": "ك 232", "name": "كيمياء العناصر الممثلة (2)", "type": "mandatory" }, 
+                        { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, 
+                        { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" } 
+                    ]
                 },
                 "third_year": {
-                    "term_1": [ { "code": "ح 311", "name": "بيولوجيا الخلية (2)", "type": "mandatory" }, { "code": "ح 331", "name": "تشريح مقارن", "type": "mandatory" }, { "code": "ح 351", "name": "فسيولوجي (1)", "type": "mandatory" }, { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, { "code": "ك 332", "name": "كيمياء العناصر الانتقالية (2)", "type": "mandatory" }, { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ح 321", "name": "علم الأوليات والطفيليات", "type": "mandatory" }, { "code": "ح 341", "name": "مناعة (1)", "type": "mandatory" }, { "code": "ح 352", "name": "الفسيولوجي (2)", "type": "mandatory" }, { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ح 311", "name": "بيولوجيا الخلية (2)", "type": "mandatory" }, 
+                        { "code": "ح 331", "name": "تشريح مقارن", "type": "mandatory" }, 
+                        { "code": "ح 351", "name": "فسيولوجي (1)", "type": "mandatory" }, 
+                        { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, 
+                        { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, 
+                        { "code": "ك 332", "name": "كيمياء العناصر الانتقالية (2)", "type": "mandatory" }, 
+                        { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ح 321", "name": "علم الأوليات والطفيليات", "type": "mandatory" }, 
+                        { "code": "ح 341", "name": "مناعة (1)", "type": "mandatory" }, 
+                        { "code": "ح 352", "name": "الفسيولوجي (2)", "type": "mandatory" }, 
+                        { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, 
+                        { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, 
+                        { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } 
+                    ]
                 },
                 "fourth_year": {
-                    "term_1": [ { "code": "ح 411", "name": "بيولوجيا جزيئية", "type": "mandatory" }, { "code": "ح 431", "name": "علم الأجنة", "type": "mandatory" }, { "code": "ح 451", "name": "فسيولوجي (3)", "type": "mandatory" }, { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ح 400", "name": "سيمينار", "type": "mandatory" }, { "code": "ح 412", "name": "كيمياء الأنسجة", "type": "mandatory" }, { "code": "ح 452", "name": "فسيولوجي (4)", "type": "mandatory" }, { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ح 411", "name": "بيولوجيا جزيئية", "type": "mandatory" }, 
+                        { "code": "ح 431", "name": "علم الأجنة", "type": "mandatory" }, 
+                        { "code": "ح 451", "name": "فسيولوجي (3)", "type": "mandatory" }, 
+                        { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, 
+                        { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ح 400", "name": "سيمينار", "type": "mandatory" }, 
+                        { "code": "ح 412", "name": "كيمياء الأنسجة", "type": "mandatory" }, 
+                        { "code": "ح 452", "name": "فسيولوجي (4)", "type": "mandatory" }, 
+                        { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" } 
+                    ]
                 }
             },
-            "كيمياء/حشرات": {
-                "second_year": {
-                    "term_1": [ { "code": "ش 211", "name": "بيولوجيا الخلية", "type": "mandatory" }, { "code": "ش 212", "name": "تشريح وأنسجة الحشرات", "type": "mandatory" }, { "code": "ش 213", "name": "مورفولوجيا الحشرات", "type": "mandatory" }, { "code": "ش 214", "name": "مجموعات تنوعية وتحضيرات", "type": "mandatory" }, { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ش 215", "name": "علم الأجنة والتكوين", "type": "mandatory" }, { "code": "ش 216", "name": "المحيط الحيوي والعلاقات الحشرية", "type": "mandatory" }, { "code": "ش 281", "name": "مكافحة الآفات الحشرية", "type": "mandatory" }, { "code": "ك 215", "name": "الكيمياء الكهربية الإتزانية (2)", "type": "mandatory" }, { "code": "ك 232", "name": "كيمياء العناصر الممثلة (2)", "type": "mandatory" }, { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" } ]
-                },
-                "third_year": {
-                    "term_1": [ { "code": "ش 321", "name": "تصنيف وتقسيم الحشرات", "type": "mandatory" }, { "code": "ش 331", "name": "علم بيئة الحشرات والسلوك", "type": "mandatory" }, { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, { "code": "ك 332", "name": "كيمياء العناصر الانتقالية (2)", "type": "mandatory" }, { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ش 311", "name": "آفات النبات ونقل الأمراض", "type": "mandatory" }, { "code": "ش 341", "name": "علم الحشرات والأكاروسات الطبية", "type": "mandatory" }, { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } ]
-                },
-                "fourth_year": {
-                    "term_1": [ { "code": "ش 451", "name": "فسيولوجيا الحشرات", "type": "mandatory" }, { "code": "ش 481", "name": "السيطرة المتكاملة على الآفات", "type": "mandatory" }, { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ش 461", "name": "الكيمياء الحيوية للحشرات", "type": "mandatory" }, { "code": "ش 462", "name": "الأيض في الحشرات", "type": "mandatory" }, { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" } ]
-                }
-            },
+            
             "كيمياء/كيمياء حيوي": {
                 "second_year": {
-                    "term_1": [ { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" }, { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, { "code": "ك 251", "name": "أسس الكيمياء الحيوية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ك 212", "name": "الكيمياء الكهربية الإتزانية (1)", "type": "mandatory" }, { "code": "ك 231", "name": "كيمياء العناصر الممثلة (1)", "type": "mandatory" }, { "code": "ك 243", "name": "الكيمياء الفراغية", "type": "mandatory" }, { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" }, { "code": "ك 252", "name": "أسس الكيمياء الحيوية (2)", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, 
+                        { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, 
+                        { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" }, 
+                        { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, 
+                        { "code": "ك 251", "name": "أسس الكيمياء الحيوية (1)", "type": "mandatory" },
+                        { "code": "ح 211", "name": "بيولوجيا الخلية", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ح 212", "name": "وراثة", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ص 222", "name": "إحصاء تطبيقي", "type": "mandatory" } // تمت الإضافة
+                    ],
+                    "term_2": [ 
+                        { "code": "ك 212", "name": "الكيمياء الكهربية الإتزانية (1)", "type": "mandatory" }, 
+                        { "code": "ك 231", "name": "كيمياء العناصر الممثلة (1)", "type": "mandatory" }, 
+                        { "code": "ك 243", "name": "الكيمياء الفراغية", "type": "mandatory" }, 
+                        { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" }, 
+                        { "code": "ك 252", "name": "أسس الكيمياء الحيوية (2)", "type": "mandatory" } 
+                    ]
                 },
                 "third_year": {
-                    "term_1": [ { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" }, { "code": "ك 353", "name": "كيمياء حيوية فيزيائية", "type": "mandatory" }, { "code": "ك 354", "name": "إنزيمات", "type": "mandatory" }, { "code": "ك 355", "name": "أيض حيوي (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" }, { "code": "ك 356", "name": "أيض حيوي (2)", "type": "mandatory" }, { "code": "ك 357", "name": "بيولوجيا جزيئية (1)", "type": "mandatory" }, { "code": "ك 358", "name": "كيمياء حيوية عملية (1)", "type": "mandatory" }, { "code": "ك 362", "name": "تغذية", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, 
+                        { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, 
+                        { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" }, 
+                        { "code": "ك 353", "name": "كيمياء حيوية فيزيائية", "type": "mandatory" }, 
+                        { "code": "ك 354", "name": "إنزيمات", "type": "mandatory" }, 
+                        { "code": "ك 355", "name": "أيض حيوي (1)", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, 
+                        { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, 
+                        { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" }, 
+                        { "code": "ك 356", "name": "أيض حيوي (2)", "type": "mandatory" }, 
+                        { "code": "ك 357", "name": "بيولوجيا جزيئية (1)", "type": "mandatory" }, 
+                        { "code": "ك 358", "name": "كيمياء حيوية عملية (1)", "type": "mandatory" }, 
+                        { "code": "ك 362", "name": "تغذية", "type": "mandatory" } 
+                    ]
                 },
                 "fourth_year": {
-                    "term_1": [ { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, { "code": "ك 451", "name": "هرمونات", "type": "mandatory" }, { "code": "ك 452", "name": "بيولوجيا جزيئية (2)", "type": "mandatory" }, { "code": "ك 453", "name": "كيمياء حيوية عملية (2)", "type": "mandatory" }, { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ك 454", "name": "سوائل الجسم", "type": "mandatory" }, { "code": "ك 455", "name": "كيمياء حيوية اكلينيكية", "type": "mandatory" }, { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" }, { "code": "ك 490", "name": "بحث ومقال", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, 
+                        { "code": "ك 451", "name": "هرمونات", "type": "mandatory" }, 
+                        { "code": "ك 452", "name": "بيولوجيا جزيئية (2)", "type": "mandatory" }, 
+                        { "code": "ك 453", "name": "كيمياء حيوية عملية (2)", "type": "mandatory" }, 
+                        { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" },
+                        { "code": "بف 211", "name": "فيزياء حيوية عامة", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ميك 210", "name": "ميكروبيولوجيا عامة", "type": "mandatory" } // تمت الإضافة
+                    ],
+                    "term_2": [ 
+                        { "code": "ك 454", "name": "سوائل الجسم", "type": "mandatory" }, 
+                        { "code": "ك 455", "name": "كيمياء حيوية اكلينيكية", "type": "mandatory" }, 
+                        { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" }, 
+                        { "code": "ك 490", "name": "بحث ومقال", "type": "mandatory" } 
+                    ]
                 }
             },
+            
             "كيمياء/ميكروبيولوجي": {
                 "second_year": {
-                    "term_1": [ { "code": "ن 210", "name": "ميكروبيولوجيا عامة", "type": "mandatory" }, { "code": "ن 211", "name": "تنوع البكتيريا", "type": "mandatory" }, { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ن 212", "name": "فسيولوجيا البكتيريا", "type": "mandatory" }, { "code": "ن 213", "name": "ميكروبيولوجيا التربة والمياه", "type": "mandatory" }, { "code": "ك 212", "name": "الكيمياء الكهربية الإتزانية (1)", "type": "mandatory" }, { "code": "ك 231", "name": "كيمياء العناصر الممثلة (1)", "type": "mandatory" }, { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ن 210", "name": "ميكروبيولوجيا عامة", "type": "mandatory" }, 
+                        { "code": "ن 211", "name": "تنوع البكتيريا", "type": "mandatory" }, 
+                        { "code": "ميك 211", "name": "أساسيات البكتيريا", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ميك 212", "name": "اكتينوسيتات", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ن 252", "name": "وراثة", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, 
+                        { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, 
+                        { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ن 212", "name": "فسيولوجيا البكتيريا", "type": "mandatory" }, 
+                        { "code": "ن 213", "name": "ميكروبيولوجيا التربة والمياه", "type": "mandatory" }, 
+                        { "code": "ك 215", "name": "الكيمياء الكهربية الاتزانية", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ك 232", "name": "كيمياء العناصر الممثلة", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ميك 213", "name": "تقسيم الفطريات", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ميك 214", "name": "ميكروبيولوجيا البيئة", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ميك 291", "name": "البروتيستا", "type": "mandatory" } // تمت الإضافة
+                    ]
                 },
                 "third_year": {
-                    "term_1": [ { "code": "ن 311", "name": "وراثة ميكروبية", "type": "mandatory" }, { "code": "ن 312", "name": "ميكروبيولوجيا تطبيقية", "type": "mandatory" }, { "code": "ن 313", "name": "طحالب", "type": "mandatory" }, { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, { "code": "ك 332", "name": "كيمياء العناصر الانتقالية (2)", "type": "mandatory" }, { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ن 314", "name": "فطريات", "type": "mandatory" }, { "code": "ن 315", "name": "فيروسات", "type": "mandatory" }, { "code": "ن 316", "name": "مناعة", "type": "mandatory" }, { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ن 311", "name": "وراثة ميكروبية", "type": "mandatory" }, 
+                        { "code": "ن 312", "name": "ميكروبيولوجيا تطبيقية", "type": "mandatory" }, 
+                        { "code": "ن 313", "name": "طحالب", "type": "mandatory" }, 
+                        { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, 
+                        { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, 
+                        { "code": "ك 332", "name": "كيمياء العناصر الانتقالية (2)", "type": "mandatory" }, 
+                        { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ن 314", "name": "فطريات", "type": "mandatory" }, 
+                        { "code": "ن 315", "name": "فيروسات", "type": "mandatory" }, 
+                        { "code": "ن 316", "name": "مناعة", "type": "mandatory" }, 
+                        { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, 
+                        { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, 
+                        { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } 
+                    ]
                 },
                 "fourth_year": {
-                    "term_1": [ { "code": "ن 411", "name": "مضادات حيوية", "type": "mandatory" }, { "code": "ن 412", "name": "ميكروبيولوجيا الصناعات الغذائية", "type": "mandatory" }, { "code": "ن 413", "name": "امراض نبات", "type": "mandatory" }, { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ن 414", "name": "بيولوجيا جزيئية للميكروبات", "type": "mandatory" }, { "code": "ن 415", "name": "ميكروبيولوجيا بيئية", "type": "mandatory" }, { "code": "ن 416", "name": "ميكروبيولوجيا البترول", "type": "mandatory" }, { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ن 411", "name": "مضادات حيوية", "type": "mandatory" }, 
+                        { "code": "ن 412", "name": "ميكروبيولوجيا الصناعات الغذائية", "type": "mandatory" }, 
+                        { "code": "ن 413", "name": "امراض نبات", "type": "mandatory" }, 
+                        { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, 
+                        { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ن 414", "name": "بيولوجيا جزيئية للميكروبات", "type": "mandatory" }, 
+                        { "code": "ن 415", "name": "ميكروبيولوجيا بيئية", "type": "mandatory" }, 
+                        { "code": "ن 416", "name": "ميكروبيولوجيا البترول", "type": "mandatory" }, 
+                        { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" } 
+                    ]
                 }
             },
+            
             "كيمياء/نبات": {
                 "second_year": {
-                    "term_1": [ { "code": "ن 201", "name": "تشريح نبات", "type": "mandatory" }, { "code": "ن 203", "name": "تقسيم نبات (1)", "type": "mandatory" }, { "code": "ن 205", "name": "ميكروبيولوجيا عامة", "type": "mandatory" }, { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ن 202", "name": "فسيولوجيا نبات (1)", "type": "mandatory" }, { "code": "ن 204", "name": "وراثة", "type": "mandatory" }, { "code": "ن 206", "name": "طحالب", "type": "mandatory" }, { "code": "ك 212", "name": "الكيمياء الكهربية الإتزانية (1)", "type": "mandatory" }, { "code": "ك 231", "name": "كيمياء العناصر الممثلة (1)", "type": "mandatory" }, { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ن 201", "name": "تشريح نبات", "type": "mandatory" }, 
+                        { "code": "ن 203", "name": "تقسيم نبات (1)", "type": "mandatory" }, 
+                        { "code": "ن 205", "name": "ميكروبيولوجيا عامة", "type": "mandatory" }, 
+                        { "code": "ن 221", "name": "مقدمة علم البيئة", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ن 252", "name": "وراثة", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ك 211", "name": "الديناميكية الحرارية الكيميائية", "type": "mandatory" }, 
+                        { "code": "ك 221", "name": "أسس الكيمياء التحليلية", "type": "mandatory" }, 
+                        { "code": "ك 241", "name": "أسس الكيمياء العضوية (1)", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ن 202", "name": "فسيولوجيا نبات (1)", "type": "mandatory" }, 
+                        { "code": "ن 204", "name": "وراثة", "type": "mandatory" }, 
+                        { "code": "ن 206", "name": "طحالب", "type": "mandatory" }, 
+                        { "code": "ميك 210", "name": "ميكروبيولوجيا عامة", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ن 222", "name": "عوامل بيئية", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ن 232", "name": "تصنيف نبات", "type": "mandatory" }, // تمت الإضافة
+                        { "code": "ك 212", "name": "الكيمياء الكهربية الإتزانية (1)", "type": "mandatory" }, 
+                        { "code": "ك 231", "name": "كيمياء العناصر الممثلة (1)", "type": "mandatory" }, 
+                        { "code": "ك 242", "name": "أسس الكيمياء العضوية (2)", "type": "mandatory" }, 
+                        { "code": "ك 244", "name": "أسس الكيمياء العضوية (3)", "type": "mandatory" } 
+                    ]
                 },
                 "third_year": {
-                    "term_1": [ { "code": "ن 301", "name": "فسيولوجيا نبات (2)", "type": "mandatory" }, { "code": "ن 303", "name": "بيئة نباتية (1)", "type": "mandatory" }, { "code": "ن 305", "name": "فطريات", "type": "mandatory" }, { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, { "code": "ك 332", "name": "كيمياء العناصر الانتقالية (2)", "type": "mandatory" }, { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ن 302", "name": "بيئة نباتية (2)", "type": "mandatory" }, { "code": "ن 304", "name": "تقسيم نبات (2)", "type": "mandatory" }, { "code": "ن 306", "name": "أراضى واستصلاح", "type": "mandatory" }, { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ن 301", "name": "فسيولوجيا نبات (2)", "type": "mandatory" }, 
+                        { "code": "ن 303", "name": "بيئة نباتية (1)", "type": "mandatory" }, 
+                        { "code": "ن 305", "name": "فطريات", "type": "mandatory" }, 
+                        { "code": "ك 316", "name": "التركيب الجزيئي والطيفي", "type": "mandatory" }, 
+                        { "code": "ك 317", "name": "حركية التفاعلات", "type": "mandatory" }, 
+                        { "code": "ك 332", "name": "كيمياء العناصر الانتقالية (2)", "type": "mandatory" }, 
+                        { "code": "ك 341", "name": "الكيمياء العضوية الفيزيائية", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ن 302", "name": "بيئة نباتية (2)", "type": "mandatory" }, 
+                        { "code": "ن 304", "name": "تقسيم نبات (2)", "type": "mandatory" }, 
+                        { "code": "ن 306", "name": "أراضى واستصلاح", "type": "mandatory" }, 
+                        { "code": "ك 318", "name": "مدخل الكيمياء الفيزيائية للبلمرات", "type": "mandatory" }, 
+                        { "code": "ك 321", "name": "تحليل بصري", "type": "mandatory" }, 
+                        { "code": "ك 342", "name": "كيمياء الحلقات غير المتجانسة", "type": "mandatory" } 
+                    ]
                 },
                 "fourth_year": {
-                    "term_1": [ { "code": "ن 401", "name": "فسيولوجيا نبات (3)", "type": "mandatory" }, { "code": "ن 403", "name": "امراض نبات", "type": "mandatory" }, { "code": "ن 405", "name": "فيروسات", "type": "mandatory" }, { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } ],
-                    "term_2": [ { "code": "ن 402", "name": "نباتات اقتصادية وطبية", "type": "mandatory" }, { "code": "ن 404", "name": "بيولوجيا جزيئية وهندسة وراثية", "type": "mandatory" }, { "code": "ن 406", "name": "فلورا مصر", "type": "mandatory" }, { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" } ]
+                    "term_1": [ 
+                        { "code": "ن 401", "name": "فسيولوجيا نبات (3)", "type": "mandatory" }, 
+                        { "code": "ن 403", "name": "امراض نبات", "type": "mandatory" }, 
+                        { "code": "ن 405", "name": "فيروسات", "type": "mandatory" }, 
+                        { "code": "ك 345", "name": "كيمياء عضوية طيفية", "type": "mandatory" }, 
+                        { "code": "ك 482", "name": "كيمياء عضوية عملية (1)", "type": "mandatory" } 
+                    ],
+                    "term_2": [ 
+                        { "code": "ن 402", "name": "نباتات اقتصادية وطبية", "type": "mandatory" }, 
+                        { "code": "ن 404", "name": "بيولوجيا جزيئية وهندسة وراثية", "type": "mandatory" }, 
+                        { "code": "ن 406", "name": "فلورا مصر", "type": "mandatory" }, 
+                        { "code": "ك 481", "name": "كيمياء فيزيائية عملية", "type": "mandatory" } 
+                    ]
                 }
             }
         };
@@ -1403,7 +2094,9 @@
             if (['ل', 'ض'].includes(letter)) return "fa-star";  // Astronomy/Space
             if (['ش'].includes(letter)) return "fa-bug";        // Entomology
             if (['م', 'ص'].includes(letter)) return "fa-chart-bar"; // Stat/Micro? (Stat mainly)
-            if (['ج', 'و'].includes(letter)) return "fa-cloud"; // Atmos?
+            if (['جو', 'جو'].includes(letter.substring(0,2))) return "fa-cloud"; // Atmospheric
+            if (['بف'].includes(letter.substring(0,2))) return "fa-heartbeat"; // Biophysics
+            if (['جف'].includes(letter.substring(0,2))) return "fa-satellite"; // Geophysics
             return "fa-flask"; // Default
         }
 
