@@ -302,6 +302,9 @@
             <a href="#" onclick="toggleMobileMenu(); showHistoryPage()" class="menu-item block p-3 rounded hover:bg-dark-700 text-gray-200 hover:text-cuGreen-400 font-semibold transition group" style="transition-delay: 350ms;">
                 <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-dark-900 group-hover:bg-cuGreen-900/50 ml-2 transition-colors"><i class="fas fa-history"></i></span> تاريخ الكلية
             </a>
+            <a href="#" onclick="toggleMobileMenu(); showAboutPage()" class="menu-item block p-3 rounded hover:bg-dark-700 text-gray-200 hover:text-cuGreen-400 font-semibold transition group" style="transition-delay: 400ms;">
+                <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-dark-900 group-hover:bg-cuGreen-900/50 ml-2 transition-colors"><i class="fas fa-users"></i></span> عن فريق Cairo SciVerse
+            </a>
         </div>
         <div class="mt-auto p-6 border-t border-gray-700">
              <div class="flex justify-center gap-6 text-xl">
@@ -1462,6 +1465,68 @@
         </div>
         <div class="w-full text-center text-gray-600 text-sm py-6 relative z-10 bg-dark-900 border-t border-gray-800">© 2026 Cairo SciVerse</div>
     </div>
+    <div id="about-us-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#eab308 1px, transparent 1px); background-size: 30px 30px;"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-16">
+            <div class="flex justify-between items-center mb-10 animate-fade-up">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2"S>فريق Cairo SciVerse</h2>
+                    <p class="text-cuGold-500 text-lg">حكاية شغف 💡</p>
+                </div>
+                <button onclick="showHomePage()" class="bg-dark-800 border border-gray-600 hover:border-cuGold-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
+                    <span class="text-sm font-bold">الرئيسية</span> <i class="fas fa-home"></i>
+                </button>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-12 animate-fade-up delay-100">
+                <div class="text-center bg-dark-800/80 p-8 rounded-3xl border border-gray-700 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-cuGold-500/10 rounded-full blur-2xl"></div>
+                    <h1 class="text-3xl font-bold text-white mb-6">من نحن؟ .. حكاية شغف بدأت بفكرة 💡</h1>
+                    <p class="text-gray-300 text-lg leading-loose text-justify">
+                        نحن لسنـا مجرد مطورين.. نحن <span class="text-cuGreen-400 font-bold">طلاب مثلك تماماً</span> في كلية العلوم جامعة القاهرة.
+                        عشنا نفس التحديات، تهنا في البحث عن المصادر، وشعرنا بصعوبة الوصول للمعلومة.. لذلك قررنا أن نغير الواقع!
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-dark-800 p-6 rounded-2xl border-r-4 border-cuGreen-500">
+                        <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-2"><i class="fas fa-compass text-cuGreen-500"></i> رؤيتنا</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            أن نجمع شتات العلم في مكان واحد. ألا يضيع طالب في البحث عن محاضرة. أن يكون SciVerse هو البوصلة التي توجهك نحو التفوق.
+                        </p>
+                    </div>
+                    <div class="bg-dark-800 p-6 rounded-2xl border-r-4 border-cuGold-500">
+                        <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-2"><i class="fas fa-heart text-cuGold-500"></i> روح الفريق</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            نؤمن أن "زكاة العلم نشره". هذا العمل قائم بالجهود الذاتية والتعاون الطلابي. لا نهدف للربح، بل نهدف لترك أثر طيب وصدقة جارية.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800/50 p-8 rounded-3xl border border-gray-700 text-center">
+                    <h3 class="text-2xl font-bold text-white mb-6">ماذا نفعل؟</h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <span class="px-6 py-3 bg-dark-900 rounded-full text-cuGreen-400 border border-cuGreen-500/30">نُبرمج منصة سلسة 💻</span>
+                        <span class="px-6 py-3 bg-dark-900 rounded-full text-blue-400 border border-blue-500/30">نُصمم لراحة عينيك 🎨</span>
+                        <span class="px-6 py-3 bg-dark-900 rounded-full text-pink-400 border border-pink-500/30">نُجمع المحتوى بدقة 📚</span>
+                    </div>
+                </div>
+
+                <div class="relative bg-gradient-to-r from-red-900/20 to-dark-800 p-8 rounded-3xl border border-red-500/30 text-center">
+                    <h3 class="text-2xl font-bold text-white mb-4">❤️ إهداء من القلب</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        هذا العمل إهداء لكل طالب علم في كليتنا العريقة.
+                        لا نرجو منكم سوى دعوة بظهر الغيب، وأن يكون هذا الموقع عوناً لكم في رحلتكم الدراسية.
+                    </p>
+                    <div class="mt-6 inline-block px-8 py-2 bg-dark-900 rounded-full text-white font-bold border border-gray-600">
+                        دمتم متفوقين! 🎓
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">© 2026 Cairo SciVerse Team</div>
+    </div>
 
     <script>
         // --- DATA CONFIGURATION ---
@@ -2448,8 +2513,10 @@
             'career-view',
             'tools-view',
             'history-view',
-            'subject-definitions-view'
+            'subject-definitions-view',
+            'about-us-view'
         ];
+        
 
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
@@ -2554,6 +2621,7 @@
         function showCareerPage() { switchView('career-view'); }
         function showToolsPage() { switchView('tools-view'); }
         function showHistoryPage() { switchView('history-view'); }
+        function showAboutPage() { switchView('about-us-view'); }
         function showSubjectDefinitionsPage() {
             switchView('subject-definitions-view');
         }
