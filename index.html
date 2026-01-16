@@ -725,9 +725,9 @@
                     <button onclick="showBachelorPage()" class="bg-cuGold-500 hover:bg-cuGold-600 text-black font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105 border-2 border-cuGold-500 group">
                         <i class="fas fa-graduation-cap ml-2 group-hover:rotate-12 transition-transform"></i> General
                     </button>
-                    <button onclick="showSpecializedProgramsPage()" class="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white font-bold py-3 px-8 rounded-full transition flex items-center justify-center gap-2 backdrop-blur-sm">
-                        <i class="fas fa-dna"></i> البرامج النوعية المتخصصه
-                    </button>
+                   <button onclick="showSpecializedYears()" class="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white font-bold py-3 px-8 rounded-full transition flex items-center justify-center gap-2 backdrop-blur-sm">
+    <i class="fas fa-dna"></i> البرامج النوعية المتخصصه
+</button>
                 </div>
             </div>
             <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
@@ -889,6 +889,60 @@
         </div>
     </div>
 
+<div id="specialized-years-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#eab308 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+        <div class="container mx-auto px-4 relative z-10 flex-grow">
+            <div class="flex justify-between items-center mb-16 pt-10 animate-fade-up">
+                <div>
+                    <h2 class="text-4xl font-bold text-white mb-2">البرامج النوعية</h2>
+                    <p class="text-cuGold-500 text-lg">اختر المستوى الدراسي</p>
+                </div>
+                <button onclick="showHomePage()" class="bg-dark-800 border border-gray-600 hover:border-cuGold-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
+                    <span class="text-sm font-bold">الرئيسية</span> <i class="fas fa-home"></i>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div onclick="showSpecializedProgramsList('المستوى الأول')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-cuGold-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cuGold-900/40 text-center animate-fade-up delay-100 flex flex-col items-center">
+                    <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                        <i class="fas fa-flask text-3xl text-gray-400"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-100 group-hover:text-white mb-2">المستوى الأول</h4>
+                    <span class="text-xs text-gray-500 group-hover:text-gray-300">اضغط للاستمرار</span>
+                </div>
+
+                <div onclick="showSpecializedProgramsList('المستوى الثاني')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-blue-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-900/40 text-center animate-fade-up delay-200 flex flex-col items-center">
+                    <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                        <i class="fas fa-microscope text-3xl text-gray-400"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-100 group-hover:text-white mb-2">المستوى الثاني</h4>
+                    <span class="text-xs text-gray-500 group-hover:text-gray-300">اضغط للاستمرار</span>
+                </div>
+
+                <div onclick="showSpecializedProgramsList('المستوى الثالث')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-purple-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-purple-900/40 text-center animate-fade-up delay-300 flex flex-col items-center">
+                    <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                        <i class="fas fa-atom text-3xl text-gray-400"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-100 group-hover:text-white mb-2">المستوى الثالث</h4>
+                    <span class="text-xs text-gray-500 group-hover:text-gray-300">اضغط للاستمرار</span>
+                </div>
+
+                <div onclick="showSpecializedProgramsList('المستوى الرابع')" class="group bg-dark-800 p-8 rounded-2xl border border-gray-700 hover:border-green-500 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-green-900/40 text-center animate-fade-up delay-400 flex flex-col items-center">
+                    <div class="w-20 h-20 mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                        <i class="fas fa-user-graduate text-3xl text-gray-400"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-100 group-hover:text-white mb-2">المستوى الرابع</h4>
+                    <span class="text-xs text-gray-500 group-hover:text-gray-300">اضغط للاستمرار</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="w-full text-center text-gray-600 text-sm py-6 relative z-10 bg-dark-900 border-t border-gray-800">
+           © 2026 Cairo SciVerse
+        </div>
+    </div>
+
     <div id="dept-selection-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
 
@@ -898,9 +952,9 @@
                     <h2 class="text-4xl font-bold text-white mb-2" id="dept-select-title">اختيار القسم</h2>
                     <p class="text-cuGreen-400 text-lg">اختر التخصص العلمي</p>
                 </div>
-                <button onclick="showBachelorPage()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
-                    <span class="text-sm font-bold">رجوع</span> <i class="fas fa-arrow-left"></i>
-                </button>
+               <button id="dept-back-btn" onclick="showBachelorPage()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
+    <span class="text-sm font-bold">رجوع</span> <i class="fas fa-arrow-left"></i>
+</button>
             </div>
             
             <div id="dept-selection-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-up delay-100">
@@ -2498,7 +2552,7 @@
         let lastSelectedDept = "";
         let lastSelectedSubjectCategory = "";
 
-        const ALL_VIEWS = [
+  const ALL_VIEWS = [
             'main-view',
             'bachelor-view',
             'year1-view',
@@ -2513,9 +2567,9 @@
             'tools-view',
             'history-view',
             'subject-definitions-view',
-            'about-us-view'
+            'about-us-view',
+            'specialized-years-view' // <-- ده السطر الجديد اللي ضفناه
         ];
-        
 
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
@@ -2628,21 +2682,41 @@
             lastSelectedYear = 'الفرقة الأولى';
             switchView('year1-view');
         }
-
-        function showDeptSelection(yearName) {
+ function showDeptSelection(yearName) {
             lastSelectedYear = yearName;
             const titleEl = document.getElementById('dept-select-title');
             if (titleEl) titleEl.innerText = yearName + " - اختيار القسم";
             
+            // تعديل زر الرجوع ليوجه إلى البكالوريوس العام
+            const backBtn = document.getElementById('dept-back-btn');
+            if(backBtn) backBtn.setAttribute('onclick', 'showBachelorPage()');
+
             renderDepartments('dept-selection-container', departments, true);
             switchView('dept-selection-view');
         }
 
+    // تعديل دالة عرض الفصول للأقسام العامة (إصلاح مشكلة التداخل)
         function showSpecializedSemesters(deptName) {
             lastSelectedDept = deptName;
             const titleEl = document.getElementById('specialized-title');
             if (titleEl) titleEl.innerText = deptName;
+
+            // ============================================================
+            // هنا التصحيح: إعادة ضبط الأزرار لتعمل بنظام الأقسام العامة
+            // ============================================================
             
+            // 1. إمساك الأزرار
+            const sem1Btn = document.querySelector('#specialized-semesters-view div[onclick*="الفصل الدراسي الأول"]');
+            const sem2Btn = document.querySelector('#specialized-semesters-view div[onclick*="الفصل الدراسي الثاني"]');
+            const backBtn = document.querySelector('#specialized-semesters-view button');
+
+            // 2. إجبار الأزرار على الذهاب لدالة المواد العامة (showDepartmentSemester)
+            if(sem1Btn) sem1Btn.setAttribute('onclick', "showDepartmentSemester(lastSelectedYear, lastSelectedDept, 'الفصل الدراسي الأول')");
+            if(sem2Btn) sem2Btn.setAttribute('onclick', "showDepartmentSemester(lastSelectedYear, lastSelectedDept, 'الفصل الدراسي الثاني')");
+            
+            // 3. إجبار زر الرجوع أن يعود لاختيار الأقسام العامة
+            if(backBtn) backBtn.setAttribute('onclick', "showDeptSelection(lastSelectedYear)");
+
             switchView('specialized-semesters-view');
         }
 // --- CORE LOGIC FOR UPPER YEARS ---
@@ -2872,6 +2946,119 @@ function showDepartmentSemester(year, dept, semester) {
                 }, 3000);
             }
         }
+// ==========================================
+        // بداية دوال البرامج النوعية الجديدة
+        // ==========================================
+
+        // 1. الوظيفة اللي بتفتح صفحة السنين لما تدوس الزرار في الصفحة الرئيسية
+        function showSpecializedYears() {
+            switchView('specialized-years-view');
+        }
+
+     // 2. الوظيفة اللي بتفتح صفحة الأقسام بعد ما تختار السنة (مستوى 1، 2، 3...)
+        function showSpecializedProgramsList(yearLevel) {
+            lastSelectedYear = yearLevel; 
+            
+            const titleEl = document.getElementById('dept-select-title');
+            if (titleEl) titleEl.innerText = `${yearLevel} - البرامج النوعية`;
+            
+            // تعديل زر الرجوع ليوجه إلى سنوات البرامج النوعية
+            const backBtn = document.getElementById('dept-back-btn');
+            if(backBtn) backBtn.setAttribute('onclick', 'showSpecializedYears()');
+            
+            renderDepartments('dept-selection-container', specializedPrograms, true, true); 
+            
+            switchView('dept-selection-view');
+        }
+        // 3. تحديث دالة رسم الأقسام (Render Function)
+        // الدالة دي موجودة عندك قديمة، الكود الجديد ده "أذكى" بيعرف يفرق بين العام والخاص
+        function renderDepartments(containerId, list, isClickable, isSpecialized = false) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            container.innerHTML = "";
+            
+            list.forEach((dept) => {
+                const icon = getDeptIcon(dept);
+                
+                // هنا الذكاء: لو "خاص" هيروح لدالة الخاص، ولو "عام" هيروح لدالة العام
+                let clickAction = "";
+                if (isClickable) {
+                    if (isSpecialized) {
+                        clickAction = `onclick="showSpecializedProgramSemesters('${dept}')"`;
+                    } else {
+                        clickAction = `onclick="showSpecializedSemesters('${dept}')"`;
+                    }
+                }
+                
+                const cursorClass = isClickable ? "cursor-pointer hover:border-cuGreen-500 hover:-translate-y-2 hover:shadow-2xl" : "";
+                
+                const html = `
+                <div ${clickAction} class="group bg-dark-800 p-6 rounded-xl border border-gray-700 transition-all duration-300 ${cursorClass} text-center flex flex-col items-center justify-center h-48">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600">
+                        <i class="fas ${icon} text-3xl text-gray-400"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-200 group-hover:text-white transition">${dept}</h4>
+                </div>
+                `;
+                container.innerHTML += html;
+            });
+        }
+
+        // 4. الوظيفة اللي بتفتح صفحة الترمات (ترم أول / ترم تاني) للبرامج النوعية
+        function showSpecializedProgramSemesters(programName) {
+            lastSelectedDept = programName;
+            
+            // بنكتب اسم البرنامج اللي اخترته فوق كعنوان
+            const titleEl = document.getElementById('specialized-title');
+            if (titleEl) titleEl.innerText = programName;
+            
+            // بنغير وظيفة زراير "الترم الأول" و "الترم التاني" عشان يفتحوا صفحة المواد الخاصة بالبرامج النوعية
+            const sem1Btn = document.querySelector('#specialized-semesters-view div[onclick*="الفصل الدراسي الأول"]');
+            const sem2Btn = document.querySelector('#specialized-semesters-view div[onclick*="الفصل الدراسي الثاني"]');
+            const backBtn = document.querySelector('#specialized-semesters-view button[onclick*="showDeptSelection"]');
+
+            // تعديل زرار الترم الأول
+            if(sem1Btn) sem1Btn.setAttribute('onclick', `showSpecializedProgramSubjects('${lastSelectedYear}', '${programName}', 'الفصل الدراسي الأول')`);
+            
+            // تعديل زرار الترم التاني
+            if(sem2Btn) sem2Btn.setAttribute('onclick', `showSpecializedProgramSubjects('${lastSelectedYear}', '${programName}', 'الفصل الدراسي الثاني')`);
+            
+            // تعديل زرار الرجوع عشان يرجعك لاختيار البرامج (مش الأقسام العامة)
+            if(backBtn) backBtn.setAttribute('onclick', `showSpecializedProgramsList('${lastSelectedYear}')`);
+
+            switchView('specialized-semesters-view');
+        }
+
+        // 5. الوظيفة اللي بتفتح صفحة المواد (وهتظهر رسالة قيد التجهيز)
+        function showSpecializedProgramSubjects(year, program, semester) {
+            const titleEl = document.getElementById('department-subjects-title');
+            const subtitleEl = document.getElementById('department-subjects-subtitle');
+            const container = document.getElementById('department-subjects-container');
+            
+            if(titleEl) titleEl.innerText = `${program} - ${semester}`;
+            if(subtitleEl) subtitleEl.innerText = "قائمة المواد الدراسية";
+            
+            // زرار الرجوع يرجعك لصفحة الترمات
+            const backBtn = document.querySelector('#department-subjects-view button');
+            if(backBtn) backBtn.setAttribute('onclick', `showSpecializedProgramSemesters('${program}')`);
+
+            // هنا بنحط "الرسالة" إن المحتوى لسه بيجهز
+            container.innerHTML = `
+                <div class="col-span-full text-center py-12">
+                    <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center pro-icon-container rounded-2xl border border-gray-600 animate-pulse-slow">
+                        <i class="fas fa-tools text-3xl text-cuGold-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">المحتوى قيد التجهيز</h3>
+                    <p class="text-gray-400">سيتم رفع مواد ${program} قريباً</p>
+                    <div class="mt-4 inline-block px-4 py-2 bg-dark-800 rounded border border-gray-700 text-xs text-gray-500">
+                        ${year} - ${semester}
+                    </div>
+                </div>
+            `;
+
+            switchView('department-subjects-view');
+        }
+
     </script>
 </body>
 </html>
