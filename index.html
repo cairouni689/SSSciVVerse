@@ -284,7 +284,7 @@
             <a href="#home" onclick="toggleMobileMenu(); showHomePage()" class="menu-item block p-3 rounded hover:bg-dark-700 text-gray-200 hover:text-cuGreen-400 font-semibold transition group" style="transition-delay: 50ms;">
                 <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-dark-900 group-hover:bg-cuGreen-900/50 ml-2 transition-colors"><i class="fas fa-home"></i></span> الرئيسية
             </a>
-            <a href="#" onclick="toggleMobileMenu(); showToast('جاري تحضير المحتوى')" class="menu-item block p-3 rounded hover:bg-dark-700 text-gray-200 hover:text-cuGreen-400 font-semibold transition group" style="transition-delay: 100ms;">
+            <a href="#" onclick="toggleMobileMenu(); showSubjectDefinitionsPage()" class="menu-item block p-3 rounded hover:bg-dark-700 text-gray-200 hover:text-cuGreen-400 font-semibold transition group" style="transition-delay: 100ms;">
                 <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-dark-900 group-hover:bg-cuGreen-900/50 ml-2 transition-colors"><i class="fas fa-book-open"></i></span> تعريف مواد سنة اولى
             </a>
             <a href="#" onclick="toggleMobileMenu(); showDepartmentsPage()" class="menu-item block p-3 rounded hover:bg-dark-700 text-gray-200 hover:text-cuGreen-400 font-semibold transition group" style="transition-delay: 150ms;">
@@ -311,7 +311,393 @@
              </div>
         </div>
     </div>
+    <div id="subject-definitions-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-16">
+            <div class="flex justify-between items-center mb-10 animate-fade-up">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2">تعريف مواد سنة أولى</h2>
+                    <p class="text-cuGreen-400 text-lg">دليلك الشامل لكل المواد المقررة ✨</p>
+                </div>
+                <button onclick="showHomePage()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
+                    <span class="text-sm font-bold">الرئيسية</span> <i class="fas fa-home"></i>
+                </button>
+            </div>
 
+            <div class="grid grid-cols-1 gap-8 animate-fade-up delay-100 max-w-4xl mx-auto">
+                
+                <div class="bg-dark-800 rounded-2xl p-6 md:p-8 border border-gray-700 hover:border-blue-500 transition-all duration-300 shadow-xl">
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-700 pb-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-blue-900/30 rounded-xl text-blue-400 border border-blue-900"><i class="fas fa-flask text-2xl"></i></div>
+                        <h3 class="text-2xl font-bold text-white">الكيمياء العامة ١ <span class="text-gray-500 text-lg mx-2">|</span> <span class="text-blue-400">ك١٠١</span></h3>
+                    </div>
+                    <div class="text-gray-300 leading-relaxed space-y-4 text-justify">
+                        <p>هنتكلم النهاردة عن محبوبة الجماهير🥰🤍 الكيمياء العامة١ (كود المقر: ك١٠١). نوع المادة: متطلبات كلية-إجباري لكل الطلبة.</p>
+                        
+                        <div class="bg-dark-900/50 p-4 rounded-lg border-r-4 border-blue-500">
+                            <h4 class="text-blue-400 font-bold mb-2">👩‍🔬 الجزء العملي</h4>
+                            <p class="mb-2">في العملي هندرس كيمياء تحليلية (Analytical) ودي شبه الفصل اللي اخدناه في ثانوية عامة ولكن المرة دي مش مجرد معادلات على الورق احنا بنجرب عملي بنفسنا ونكشف عن مكونات العينة ونكتشف ألوان جديدة في الشقوق الحمضية والقاعدية 🧪.</p>
+                            <p>العملي هنا بيكون عليه ٣٠ درجة بيتقسمو على الحضور والفاينال، والفاينال العمل بيكون فيه شيت "اسئلة نظري" وكمان فيه عينة Unknown بتكشف عن الشق القاعدي والحامضي ليها🔴🔵. دا معمل سهل ومش محتاج منك اكتر من شوية التزام ودقة في نتائج كل تجربة أثناء الترم.</p>
+                        </div>
+
+                        <div class="bg-dark-900/50 p-4 rounded-lg border-r-4 border-purple-500">
+                            <h4 class="text-purple-400 font-bold mb-2">👀 الجزء النظري</h4>
+                            <p class="mb-2">دا بيتقسم لجزءين وبيشرحه دكتورين مختلفين:</p>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>1. الكيمياء العضوية (Organic Chem):</strong> هتدرس فيها المركبات العضوية وخواصها وتسميتها وتفاعلات كتير خاصة بيها، ولكن فيه قواعد كتير جديدة عليك هتسمعها في التسمية، محتاج تحل وتسمي المركبات بنفسك 🗒️.</li>
+                                <li><strong>2. الكيمياء الفيزيائية (Physical Chem):</strong> واللي فيها هتدرس العناصر وتكافؤها وتوزيعها الالكتروني، فاكر أول فصل قابلته في ثانوية ؟ 🤕 الجزء دا فيه بس شوية حسابات زيادة ولكن سهلة جدا ومنطقية ✖️➕.</li>
+                            </ul>
+                        </div>
+
+                        <div class="flex items-center gap-2 text-cuGold-500 font-bold bg-dark-900 p-3 rounded text-sm">
+                            <i class="fas fa-star"></i>
+                            <span>توزيع الدرجات: الجزء النظري كامل عليه ٧٠ درجة: ٦٠ فاينال (متقسمة بالتساوي) + ١٠ ميد ترم (متقسمة بالتساوي).</span>
+                        </div>
+                        <p class="text-cuGreen-400 font-bold text-center mt-4">مادتنا النهاردة مادة ممتعة جدا سهل تجيب فيها امتياز وتعلي الGPA ركز بس في حضورك واسئلة دكاترتك ومبروك عليك الامتياز يا صديقي 🌟</p>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-2xl p-6 md:p-8 border border-gray-700 hover:border-red-500 transition-all duration-300 shadow-xl">
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-700 pb-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-red-900/30 rounded-xl text-red-400 border border-red-900"><i class="fas fa-square-root-alt text-2xl"></i></div>
+                        <h3 class="text-2xl font-bold text-white">التفاضل <span class="text-gray-500 text-lg mx-2">|</span> <span class="text-red-400">ر١٣١</span></h3>
+                    </div>
+                    <div class="text-gray-300 leading-relaxed space-y-4 text-justify">
+                        <p>المادة ديه اجباري لكل الطلاب سواء كنت علمي رياضة او علمي علوم 🎓. التفاضل مش مجرد قوانين رياضية على ورق، لكنه أداة قوية بتخلينا نفهم التغير في كل حاجة حوالينا ونستخدمه عشان نحل مشاكل حقيقية في الطب 🧑‍⚕️، الاقتصاد 💰، الهندسة 🏗️، والتكنولوجيا 💻. المادة ديه لازم تعديها علشان تفتحلك التكامل (ر١٣٢) ✅، وهي شرط أساسي لكل اقسام رياضة.</p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-dark-900/50 p-4 rounded-lg">
+                                <h4 class="text-cuGold-500 font-bold mb-2">💯 توزيع الدرجات (⚠️ المادة كلها مقالي)</h4>
+                                <ul class="list-none space-y-1 text-sm">
+                                    <li>📝 ٦٠ درجة فاينل</li>
+                                    <li>📊 ٣٠ درجة كويزات</li>
+                                    <li>✍️ ١٠ درجات ميدترم</li>
+                                </ul>
+                            </div>
+                            <div class="bg-dark-900/50 p-4 rounded-lg">
+                                <h4 class="text-cuGreen-400 font-bold mb-2">🌟 إزاي تجيب تقدير عالي؟</h4>
+                                <ul class="list-disc list-inside space-y-1 text-sm">
+                                    <li>حضور المحاضرات وكتابة كل المعلومات ورا الدكتور 🖊️.</li>
+                                    <li>حضور السكشن وحل المسائل بنفسك والسؤال عن ما لا تعرفه 🙋.</li>
+                                    <li>لازم تحل كتير واول بأول وكل ما تاخد جزء جديد حل على القديم والجديد 🔄.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-900 p-4 rounded-lg">
+                            <h4 class="text-white font-bold mb-2">📚 محتوى المادة</h4>
+                            <div class="text-xs text-gray-400 grid grid-cols-1 md:grid-cols-2 gap-2 font-mono" dir="ltr">
+                                <div>- Types of functions</div>
+                                <div>- How to graph a function</div>
+                                <div>- Transformation of functions</div>
+                                <div>- Limits & Squeeze theorem</div>
+                                <div>- Continuity & Intermediate value theorem</div>
+                                <div>- The precise definition of limit</div>
+                                <div>- Derivative of functions (Higher, Trigonometric, Implicit)</div>
+                                <div>- Inverse trigonimetric functions</div>
+                                <div>- Hyperbolic functions & Inverse hyperbolic</div>
+                                <div>- Hyperbolic identities</div>
+                                <div>- Rolle's theorem & Mean value theorem</div>
+                                <div>- L'hopital's rule</div>
+                            </div>
+                        </div>
+                        <p class="text-center italic text-gray-400">لو في حاجة واقفة معاك، تيم Cairo SciVerse موفرلك تيم علمي يساعدك 👥🤝. مادة التفاضل من السهل جدا تجيب فيها امتياز بإذن الله، كل المطلوب منك تركيز + حل كتير 💪.</p>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-2xl p-6 md:p-8 border border-gray-700 hover:border-purple-500 transition-all duration-300 shadow-xl">
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-700 pb-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-purple-900/30 rounded-xl text-purple-400 border border-purple-900"><i class="fas fa-atom text-2xl"></i></div>
+                        <h3 class="text-2xl font-bold text-white">الفيزياء <span class="text-gray-500 text-lg mx-2">|</span> <span class="text-purple-400">ف١٠١</span></h3>
+                    </div>
+                    <div class="text-gray-300 leading-relaxed space-y-4 text-justify">
+                        <p>المادة ديه اجباري لكل الطلاب 🎓. لو هدفك تدخل قسم من أقسام الفيزياء سواء منفرد أو مزدوج ف لازم تكون معدي ف١٠١ وبعض الأقسام بتشترط فيها تقدير معين 🎯.</p>
+
+                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-dark-900/50 p-4 rounded-lg">
+                                <h4 class="text-cuGold-500 font-bold mb-2">💯 توزيع الدرجات</h4>
+                                <ul class="list-none space-y-1 text-sm">
+                                    <li>📝 ٦٠ درجة فاينل</li>
+                                    <li>🌡️ ٣٠ درجة معمل</li>
+                                    <li>✍️ ١٠ درجات ميدترم</li>
+                                </ul>
+                            </div>
+                            <div class="bg-dark-900/50 p-4 rounded-lg">
+                                <h4 class="text-red-400 font-bold mb-2">⚠️ إزاي تجيب تقدير عالي؟</h4>
+                                <ul class="list-disc list-inside space-y-1 text-sm">
+                                    <li>احضر المحاضرات وركز اوي لأن أفكار الأسئلة شبه بعض 🧠.</li>
+                                    <li>ركز في المعمل عشان تجيب الـ ٣٠ درجة كاملين لان دي أكتر درجات مضمونة 🔬.</li>
+                                    <li>حل كتير وراجع أول بأول علشان متنساش اللي فات 🔄.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                             <div class="bg-dark-900 p-4 rounded-lg">
+                                <h4 class="text-white font-bold mb-2">📚 النظري</h4>
+                                <ul class="text-xs text-gray-400 space-y-1 font-mono" dir="ltr">
+                                    <li>- Units and vector analysis 📐</li>
+                                    <li>- Kinematics 🚗</li>
+                                    <li>- Laws of motion ⚖️</li>
+                                    <li>- Work, Energy, and Power ⚡</li>
+                                    <li>- Linear momentum and collisions 💥</li>
+                                    <li>- Properties of solids and fluids 🧱🌊</li>
+                                    <li>- Heat and the first law of thermodynamics 🔥</li>
+                                    <li>- Heat energies and the second law of thermodynamics ♨️</li>
+                                </ul>
+                            </div>
+                            <div class="bg-dark-900 p-4 rounded-lg">
+                                <h4 class="text-white font-bold mb-2">🌡️ تجارب العملي (٨ تجارب)</h4>
+                                <ul class="text-xs text-gray-400 space-y-1 font-mono" dir="ltr">
+                                    <li>- Simple pendulum ⏳</li>
+                                    <li>- Joule's law of heating 🔥</li>
+                                    <li>- Ohm's law ⚡</li>
+                                    <li>- Specific heat of solid 🔥</li>
+                                    <li>- Convex (converging) lens 🔍</li>
+                                    <li>- Resonance tube 🎶</li>
+                                    <li>- Hooke's law 🪢</li>
+                                    <li>- Kirchhoff's law 🔌</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="text-center text-sm text-gray-400 mt-2">لو في حاجة واقفة معاك، تيم Cairo SciVerse موجود لمساعدتك 👥🤝. مادة الفيزياء لذيذة ومن السهل تجيب فيها تقدير كويس بإذن الله ✨.</p>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-2xl p-6 md:p-8 border border-gray-700 hover:border-pink-500 transition-all duration-300 shadow-xl">
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-700 pb-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-pink-900/30 rounded-xl text-pink-400 border border-pink-900"><i class="fas fa-frog text-2xl"></i></div>
+                        <h3 class="text-2xl font-bold text-white">علم الحيوان <span class="text-gray-500 text-lg mx-2">|</span> <span class="text-pink-400">Z101</span></h3>
+                    </div>
+                    <div class="text-gray-300 leading-relaxed space-y-4 text-justify">
+                        <p>الماده بتفتح لينا اقسام مهمه زاي: الكميا الحيوي، كميا حيوان، بايوفزيا. المادة دي بتتقسم لجزئين: 🔹 نظري (70 درجة) 👉 10 ميدترم + 60 فاينل. 🔹 عملي (30 درجة).</p>
+                        
+                        <div class="bg-dark-900/50 p-4 rounded-lg border-r-4 border-pink-500">
+                            <h4 class="text-pink-400 font-bold mb-2">🧠 أولاً: النظري (Theory)</h4>
+                            <p class="mb-2 text-sm">النظري بيتقسم لـ 3 أجزاء رئيسية:</p>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li><strong>Embryology 👶🧬:</strong> هتدرسي التفاصيل الأولية للجنين في مراحله الأولى، تكوين الـ Ovary والـ Sperm. جزء ممتع جدًا.</li>
+                                <li><strong>Cell Biology 🔬🧫:</strong> هتدرسي مكونات الخلية في الإنسان، زي الـ Mitochondria: شكلها إيه؟ بتعمل إيه؟ تفاصيل كتير لذيذة.</li>
+                                <li><strong>Invertebrates & Chordata 🐚🐟 (أكبر وأهم جزء):</strong> هتدرسي الكائنات كلها: من أول الكائنات وحيدة الخلية زي Amoeba 🦠 لحد الإنسان. هتعدي على: Sponge 🧽 – Obelia 🌊 – الديدان زي Ascaris 🪱 – لحد السمك الغضروفي والعظمي.</li>
+                            </ul>
+                            <p class="mt-2 text-xs text-yellow-400 font-bold">أهم حاجة: ذاكر أول بأول ✍️، واعملي مقارنات بين الأنواع علشان المعلومة تثبت وتكون منظمة.</p>
+                        </div>
+
+                         <div class="bg-dark-900/50 p-4 rounded-lg border-r-4 border-green-500">
+                            <h4 class="text-green-400 font-bold mb-2">🔬 ثانياً: العملي (Practical)</h4>
+                            <p class="mb-2 text-sm">العملي برضه في نفس التلت أجزاء بتوع النظري. الدكتور بيعيد الشرح + بتشوفي العينات تحت الميكروسكوب 🔬 وبتتعلمي تشتغلي عليه.</p>
+                            <p class="text-sm font-bold mb-2">درجات العملي (30): الحضور والرسم (حوالي 5 درجات). فاينل عملي (25 درجة) وبيتقسم لـ:</p>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>Spot:</strong> عينات شوفتيها في المعمل، يجيبوها وتتعرفي عليها باسمها.</li>
+                                <li><strong>Detail:</strong> عينة تشوفيها وتكتبي اسمها + ترسميها + بياناتها + تصنيفها. أو عينة رسمتها جاهزة وإنتي تكتبي التصنيف والبيانات.</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-4 bg-gradient-to-r from-pink-900/50 to-dark-900 rounded-lg">
+                            <h4 class="text-white font-bold mb-1"><i class="fas fa-lightbulb text-yellow-400 ml-2"></i> نصيحتي:</h4>
+                            <p class="text-sm">المادة فعلًا لطيفة 🥰، بس محتاجة مذاكرة وحفظ أول بأول. لو ركّمتِها مش هتعرفي تلميها 😵. حضور المحاضرات مهم جدًا.</p>
+                            <p class="text-sm mt-2 font-bold text-pink-300">💡 خلاصة: مادة Z101 ممتعة جدًا لو ذاكرتي بنظام. خلي المذاكرة step by step وهتضمني درجات عالية بإذن الله 🌸💪.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-2xl p-6 md:p-8 border border-gray-700 hover:border-yellow-500 transition-all duration-300 shadow-xl">
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-700 pb-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-yellow-900/30 rounded-xl text-yellow-400 border border-yellow-900"><i class="fas fa-chart-bar text-2xl"></i></div>
+                        <h3 class="text-2xl font-bold text-white">الاحصاء <span class="text-gray-500 text-lg mx-2">|</span> <span class="text-yellow-400">ص100</span></h3>
+                    </div>
+                    <div class="text-gray-300 leading-relaxed space-y-4 text-justify">
+                        <p>الماده ديه اختياري لطلاب علمي رياضه 🧠. لو ناوي على قسم حاسب او حاسب ورياضه 💻 أو قسم رياضه احصاء يبقى لازم تاخد احصاء الترم الاول.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-dark-900/50 p-4 rounded-lg">
+                                <h4 class="text-white font-bold mb-2">🔄 أقسام المادة</h4>
+                                <ul class="list-disc list-inside space-y-2 text-sm">
+                                    <li><strong>الاحصاء الوصفي (Descriptive):</strong> هدفها وصف وتلخيص طبيعه مجموعه بيانات واحده زي المتوسط (Mean)، الوسيط (Median)، والمنوال (Mode) 📊.</li>
+                                    <li><strong>الاحصاء الاستدلالي (Inferential):</strong> باخد عينه صغيره من البيانات واتكلم عليها بشكل عام على مجتمع كبير. هنا بنستخدم نظرية الاحتمالات 🎲 واختبارات الفرضية ❓ والتنبؤ 📉.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-dark-900/50 p-4 rounded-lg">
+                                <h4 class="text-white font-bold mb-2">🤔 هستفاد ايه؟</h4>
+                                <ul class="list-disc list-inside space-y-2 text-sm">
+                                    <li><strong>منهجيه علميه 🧪:</strong> تفكيرك هينتقل من "اعتقد أن" إلى "متأكد من" باستخدام البيانات.</li>
+                                    <li><strong>اتخاذ قرار في ظل عدم اليقين ⚖️:</strong> مهارة مهمة جداً في سوق العمل.</li>
+                                    <li><strong>نقطة قوية في الـ CV 💼:</strong> كل الشركات دلوقتي عايزه حد يعرف يحلل بيانات (Data Analysis).</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-900/50 p-4 rounded-lg border-r-4 border-yellow-500">
+                            <h4 class="text-yellow-400 font-bold mb-2">🤓 امتحان الإحصاء بيجي إزاي؟</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li><strong>أسئلة نظرية (20-30%)🧠:</strong> زي "ليه بنستخدم الوسيط بدل المتوسط؟"</li>
+                                <li><strong>مسائل عملية (70-80%) 📝:</strong> هيدولك جدول بيانات وعليك تحسب المتوسط، الوسيط، الانحراف، ترسم رسوم بيانية، وتعمل اختبار فرضية.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-dark-900/50 p-4 rounded-lg">
+                             <h4 class="text-green-400 font-bold mb-2">🎯 ازاي تذاكرها باحسن طريقه</h4>
+                             <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>اهم حاجه تكون بتحضر المحاضرات والسكاشن وتسجل الـ notes 📝.</li>
+                                <li>ما تحفظش ❌: اهم حاجه تكون فاهم وتسأل نفسك ليه استخدمت الطريقة دي.</li>
+                                <li>ذاكر من ال pdf بتاع الماده وافهمه كويس اوي 📖.</li>
+                                <li>الخطوه الأهم: الحل 💪 (لازم تحل كتير اوي وتغلط وتعرف سبب الغلط).</li>
+                             </ul>
+                        </div>
+                         <p class="text-center font-bold text-yellow-400 mt-2">🎉 مادتنا النهارده لذيذه جدا تقدر تجيب فيها تقدير عالي لو فهمت وعرفت ازاي تتعامل مع البيانات اللي قدامك 📊✨.</p>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-2xl p-6 md:p-8 border border-gray-700 hover:border-green-600 transition-all duration-300 shadow-xl">
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-700 pb-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-green-900/30 rounded-xl text-green-400 border border-green-900"><i class="fas fa-bug text-2xl"></i></div>
+                        <h3 class="text-2xl font-bold text-white">علم الحشرات <span class="text-gray-500 text-lg mx-2">|</span> <span class="text-green-400">Entomology</span></h3>
+                    </div>
+                    <div class="text-gray-300 leading-relaxed space-y-4 text-justify">
+                        <p>انبسطوا يا شباب علشان ده بوست مادة الامتياز اللي كل طالب بيتمناها! مادة Entomology أو علم الحشرات من المواد الكويسة جدًا جدًا، سواء من ناحية المحتوى أو الدكاترة.</p>
+                        
+                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-dark-900/50 p-4 rounded-lg">
+                                <h4 class="text-white font-bold mb-2">📍 الترم الأول: أساسيات</h4>
+                                <ul class="list-disc list-inside space-y-1 text-sm">
+                                    <li>دراسة تركيب جسم الحشرة (مورفولوجيا) وتفاصيلها.</li>
+                                    <li>تصنيف الحشرات لأسر وطوائف مختلفة.</li>
+                                    <li>العملي: رسم العينات تحت الميكروسكوب ودراسة عينات مختلفة.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-dark-900/50 p-4 rounded-lg">
+                                <h4 class="text-white font-bold mb-2">📍 الترم الثاني: آفات ومكافحة</h4>
+                                <ul class="list-disc list-inside space-y-1 text-sm">
+                                    <li>دراسة الآفات الحشرية وأنواعها.</li>
+                                    <li>معرفة طرق مكافحة الآفات الحيوية والكيميائية.</li>
+                                    <li>العملي: بدون رسم، تركيز على التطبيق والعينات.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-2 text-cuGold-500 font-bold bg-dark-900 p-3 rounded text-sm justify-between">
+                            <div><i class="fas fa-star"></i> توزيع الدرجات: 10 ميد ترم | 30 عملي | 60 فاينل</div>
+                        </div>
+
+                         <div class="bg-dark-900/50 p-4 rounded-lg border-r-4 border-green-600">
+                             <h4 class="text-green-400 font-bold mb-2">💡 نصائح</h4>
+                             <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>المادة دي ضامنة GPA عالي لو ذاكرتها أول بأول.</li>
+                                <li>العملي سهل جدًا ومضمون، احضر السكاشن ومتفوتش حاجة.</li>
+                                <li>فكر كويس قبل ما تختارها لأنها بتقفل أقسام نبات وحيوان.</li>
+                             </ul>
+                        </div>
+                        <p class="text-center font-bold text-white mt-2">✨ مادة علم الحشرات ممتعة وسهلة لو ذاكرتها بنظام ومتابعة، امتياز مضمون بإذن الله.</p>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-2xl p-6 md:p-8 border border-gray-700 hover:border-green-400 transition-all duration-300 shadow-xl">
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-700 pb-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-green-900/30 rounded-xl text-green-400 border border-green-900"><i class="fas fa-leaf text-2xl"></i></div>
+                        <h3 class="text-2xl font-bold text-white">النبات <span class="text-gray-500 text-lg mx-2">|</span> <span class="text-green-400">B101</span></h3>
+                    </div>
+                    <div class="text-gray-300 leading-relaxed space-y-4 text-justify">
+                        <p>مادة اختيارية ممتعة وسهلة جدًا، مهمة جدًا لو ناوي تدخل تخصص Microbiology أو Botany & Chemistry.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-dark-900/50 p-4 rounded-lg border-t-4 border-green-400">
+                                <h4 class="text-white font-bold mb-2">🔬 العملي</h4>
+                                <p class="text-sm">هتبدأ بـ Morphology (الشكل الخارجي للنبات) من الجذر للورقة. هتعرف الفرق بين البطاطس والبطاطا 😂 والأنسجة وأنواعها. وبتعمل رسومات جميلة جدًا ومضمونة لو اهتميت بالرسم 🖊️.</p>
+                            </div>
+                            <div class="bg-dark-900/50 p-4 rounded-lg border-t-4 border-green-600">
+                                <h4 class="text-white font-bold mb-2">📖 النظري</h4>
+                                <p class="text-sm">بيكمل العملي بنفس الترتيب: Plant Morphology وبعدها Anatomy (الأنسجة الداخلية). بتدرس الخشب واللحاء وكل الأنسجة اللي بتكوّن النبات 🌳.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-900 p-3 rounded text-sm text-center">
+                            <span class="text-cuGold-500 font-bold">📊 توزيع الدرجات:</span> 10 ميد ترم | 5 درجات اسكتش وحضور | 25 فاينل عملي | 60 فاينل نظري
+                        </div>
+                         <p class="text-center font-bold text-white mt-2">🌟 مادة جميلة وممتعة وسهلة جدًا تجيب فيها امتياز وتزود GPA بإذن الله.</p>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-2xl p-6 md:p-8 border border-gray-700 hover:border-indigo-500 transition-all duration-300 shadow-xl">
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-700 pb-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-indigo-900/30 rounded-xl text-indigo-400 border border-indigo-900"><i class="fas fa-calculator text-2xl"></i></div>
+                        <h3 class="text-2xl font-bold text-white">الجبر <span class="text-gray-500 text-lg mx-2">|</span> <span class="text-indigo-400">R110</span></h3>
+                    </div>
+                    <div class="text-gray-300 leading-relaxed space-y-4 text-justify">
+                        <p>مادة أساسية لطلاب رياضة، بتفتح أقسام رياضة مع الإحصاء في الترم الأول. مش صعبة، لكن محتاجة حل كتير وتطبيق مستمر.</p>
+                        
+                        <div class="bg-dark-900/50 p-4 rounded-lg">
+                            <h4 class="text-white font-bold mb-2">📚 فصول المادة</h4>
+                            <ul class="text-sm text-gray-400 grid grid-cols-1 md:grid-cols-2 gap-2">
+                                <li>- مبادئ الاستنتاج</li>
+                                <li>- المجموعات وعملياتها</li>
+                                <li>- Mathematical Induction</li>
+                                <li>- العلاقات التكافؤية</li>
+                            </ul>
+                        </div>
+
+                         <div class="bg-dark-900 p-3 rounded text-sm text-center">
+                            <span class="text-cuGold-500 font-bold">📊 توزيع الدرجات:</span> 30 كويزات | 10 ميد ترم | 60 فاينل
+                        </div>
+                        <p class="text-center italic text-gray-400">💡 الحل بإيدك هو المفتاح! احضر المحاضرات والسكاشن، حل كتير، واسأل على كل نقطة. المادة جديدة لكن ممتعة جدًا لو فهمت فكرتها 💪.</p>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-2xl p-6 md:p-8 border border-gray-700 hover:border-yellow-700 transition-all duration-300 shadow-xl">
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-700 pb-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-yellow-900/30 rounded-xl text-yellow-600 border border-yellow-800"><i class="fas fa-globe-americas text-2xl"></i></div>
+                        <h3 class="text-2xl font-bold text-white">الجيوفيزياء <span class="text-gray-500 text-lg mx-2">|</span> <span class="text-yellow-600">GPH 101</span></h3>
+                    </div>
+                    <div class="text-gray-300 leading-relaxed space-y-4 text-justify">
+                        <p>مادة اختيارية لطلاب علمي علوم ورياضة. بتركز على الطرق الجيوفيزيائية الخاصة بالجاذبية والمغناطيسية.</p>
+                        
+                        <div class="bg-dark-900/50 p-4 rounded-lg border-l-4 border-yellow-700">
+                             <h4 class="text-white font-bold mb-2">📘 المحتوى</h4>
+                             <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Gravity & Magnetism methods</li>
+                                <li>طرق المسح الجاذبي وتصحيح البيانات</li>
+                                <li>الـ Bouguer Anomaly وتفسيرها</li>
+                                <li>الـ Magnetic anomalies واستخدامها</li>
+                             </ul>
+                        </div>
+                         <div class="bg-dark-900 p-3 rounded text-sm text-center">
+                            <span class="text-cuGold-500 font-bold">📊 توزيع الدرجات:</span> 60 فاينل | 30 عملي | 10 ميد ترم
+                        </div>
+                        <p class="text-center font-bold text-white mt-2">💪 مادة الجيوفيزياء سهلة وممتعة جدًا لو ركزت وحضرت، امتياز مضمون إن شاء الله.</p>
+                    </div>
+                </div>
+
+                 <div class="bg-dark-800 rounded-2xl p-6 md:p-8 border border-gray-700 hover:border-rose-500 transition-all duration-300 shadow-xl">
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-700 pb-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-rose-900/30 rounded-xl text-rose-400 border border-rose-900"><i class="fas fa-heartbeat text-2xl"></i></div>
+                        <h3 class="text-2xl font-bold text-white">الفيزياء الحيوية <span class="text-gray-500 text-lg mx-2">|</span> <span class="text-rose-400">BPH 111</span></h3>
+                    </div>
+                    <div class="text-gray-300 leading-relaxed space-y-4 text-justify">
+                        <p>مادة تخصص لعلمي علوم، أساسية لو ناوي تكمل في الفيزياء الحيوية. محتواها جديد وممتع وبيشرح العلاقة بين الفيزياء والجسم البشري.</p>
+                        
+                        <div class="bg-dark-900/50 p-4 rounded-lg border-l-4 border-rose-500">
+                             <h4 class="text-white font-bold mb-2">📖 المحتوى</h4>
+                             <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Electricity within the Body</li>
+                                <li>Medical Uses of X-rays</li>
+                                <li>Physics of Nuclear Medicine</li>
+                                <li>Heat and Cold in Medicine</li>
+                             </ul>
+                        </div>
+                         <div class="bg-dark-900 p-3 rounded text-sm text-center">
+                            <span class="text-cuGold-500 font-bold">📊 توزيع الدرجات:</span> 30 عملي (10 كشكول - 20 فاينل) | 10 ميد ترم | 60 فاينل نظري
+                        </div>
+                        <p class="text-center font-bold text-white mt-2">🧠 احضر المحاضرات وركز، العملي سهل ومضمون، والمعيدين متعاونين جدًا. مادة هتستمتع بيها فعلًا 💯.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">
+            © 2026 Cairo SciVerse
+        </div>
+    </div>
     <div id="main-view" class="transition-opacity duration-500">
         <div class="bg-cuGold-600 text-white py-2 overflow-hidden relative shadow-lg">
             <div class="container mx-auto flex items-center gap-4">
@@ -2063,7 +2449,8 @@
             'department-subjects-view',
             'career-view',
             'tools-view',
-            'history-view'
+            'history-view',
+            'subject-definitions-view'
         ];
 
         window.addEventListener('load', () => {
@@ -2169,7 +2556,9 @@
         function showCareerPage() { switchView('career-view'); }
         function showToolsPage() { switchView('tools-view'); }
         function showHistoryPage() { switchView('history-view'); }
-        
+        function showSubjectDefinitionsPage() {
+            switchView('subject-definitions-view');
+        }
         function showYear1Page() {
             lastSelectedYear = 'الفرقة الأولى';
             switchView('year1-view');
