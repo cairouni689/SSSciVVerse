@@ -307,6 +307,9 @@
             <a href="#" onclick="toggleMobileMenu(); showToolsPage()" class="menu-item block p-3 rounded hover:bg-dark-700 text-gray-200 hover:text-cuGreen-400 font-semibold transition group" style="transition-delay: 300ms;">
                 <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-dark-900 group-hover:bg-cuGreen-900/50 ml-2 transition-colors"><i class="fas fa-tools"></i></span> الادوات
             </a>
+            <a href="#" onclick="toggleMobileMenu(); showGpaPage()" class="menu-item block p-3 rounded hover:bg-dark-700 text-gray-200 hover:text-cuGreen-400 font-semibold transition group" style="transition-delay: 325ms;">
+                <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-dark-900 group-hover:bg-cuGreen-900/50 ml-2 transition-colors"><i class="fas fa-calculator"></i></span> حساب الـ GPA
+            </a>
             <a href="#" onclick="toggleMobileMenu(); showHistoryPage()" class="menu-item block p-3 rounded hover:bg-dark-700 text-gray-200 hover:text-cuGreen-400 font-semibold transition group" style="transition-delay: 350ms;">
                 <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-dark-900 group-hover:bg-cuGreen-900/50 ml-2 transition-colors"><i class="fas fa-history"></i></span> تاريخ الكلية
             </a>
@@ -1589,7 +1592,99 @@
         </div>
         <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">© 2026 Cairo SciVerse Team</div>
     </div>
-
+    <div id="gpa-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col justify-between">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 30px 30px;"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-16">
+            <div class="flex justify-between items-center mb-10 animate-fade-up">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2">حساب المعدل التراكمي</h2>
+                    <p class="text-cuGreen-400 text-lg">GPA Calculator 📊</p>
+                </div>
+                <button onclick="showHomePage()" class="bg-dark-800 border border-gray-600 hover:border-cuGreen-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
+                    <span class="text-sm font-bold">الرئيسية</span> <i class="fas fa-home"></i>
+                </button>
+            </div>
+    
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-up delay-100">
+                
+                <div class="bg-dark-800 p-6 rounded-2xl border border-gray-700 shadow-xl h-fit">
+                    <h3 class="text-xl font-bold text-white mb-6 border-b border-gray-700 pb-3">إضافة مادة</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-gray-400 text-sm mb-2">اسم المادة (اختياري)</label>
+                            <input type="text" id="gpa-subject-name" placeholder="مثال: كيمياء" class="w-full bg-dark-900 border border-gray-600 rounded-lg p-3 text-white focus:border-cuGreen-500 focus:outline-none transition">
+                        </div>
+    
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-400 text-sm mb-2">التقدير</label>
+                                <select id="gpa-grade" class="w-full bg-dark-900 border border-gray-600 rounded-lg p-3 text-white focus:border-cuGreen-500 focus:outline-none transition appearance-none">
+                                    <option value="4.0">A+</option>
+                                    <option value="3.7">A</option>
+                                    <option value="3.3">B+</option>
+                                    <option value="3.0">B</option>
+                                    <option value="2.7">C+</option>
+                                    <option value="2.4">C</option>
+                                    <option value="2.2">D+</option>
+                                    <option value="2.0">D</option>
+                                    <option value="0.0">F</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-400 text-sm mb-2">الساعات</label>
+                                <input type="number" id="gpa-hours" value="3" min="1" max="6" class="w-full bg-dark-900 border border-gray-600 rounded-lg p-3 text-white focus:border-cuGreen-500 focus:outline-none transition">
+                            </div>
+                        </div>
+    
+                        <button onclick="addGpaCourse()" class="w-full bg-cuGreen-600 hover:bg-cuGreen-700 text-white font-bold py-3 rounded-lg transition shadow-lg transform hover:scale-[1.02] flex items-center justify-center gap-2">
+                            <i class="fas fa-plus"></i> إضافة للمواد
+                        </button>
+                    </div>
+                </div>
+    
+                <div class="flex flex-col gap-6">
+                    <div class="bg-gradient-to-br from-dark-800 to-dark-900 p-6 rounded-2xl border border-cuGold-500/50 shadow-2xl relative overflow-hidden text-center">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-cuGreen-500/10 rounded-full blur-2xl"></div>
+                        
+                        <h3 class="text-gray-400 text-sm mb-2 uppercase tracking-widest">المعدل الفصلي (GPA)</h3>
+                        <div class="text-5xl font-bold text-white mb-2" id="gpa-result">0.00</div>
+                        
+                        <div class="flex justify-center gap-4 text-sm text-gray-400 mt-4 border-t border-gray-700 pt-4">
+                            <div>
+                                <span class="block font-bold text-cuGold-500" id="total-hours">0</span>
+                                ساعات معتمدة
+                            </div>
+                            <div>
+                                <span class="block font-bold text-cuGreen-400" id="total-points">0</span>
+                                مجموع النقاط
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="bg-dark-800 p-6 rounded-2xl border border-gray-700 flex-grow">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-bold text-white">المواد المضافة</h3>
+                            <button onclick="resetGpa()" class="text-red-400 hover:text-red-300 text-xs flex items-center gap-1">
+                                <i class="fas fa-trash"></i> مسح الكل
+                            </button>
+                        </div>
+                        <div class="overflow-y-auto max-h-[300px] pr-2 custom-scrollbar">
+                            <table class="w-full text-right">
+                                <tbody id="courses-list" class="text-sm text-gray-300 space-y-2">
+                                    </tbody>
+                            </table>
+                            <p id="empty-msg" class="text-center text-gray-500 text-sm py-4">لم يتم إضافة مواد بعد</p>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        
+        <div class="w-full text-center text-gray-600 text-sm py-6 bg-dark-900 border-t border-gray-800 relative z-10">© 2026 Cairo SciVerse</div>
+    </div>
     <script>
         // --- DATA CONFIGURATION ---
         const departments = [
@@ -2560,7 +2655,7 @@
         let lastSelectedDept = "";
         let lastSelectedSubjectCategory = "";
 
-  const ALL_VIEWS = [
+        const ALL_VIEWS = [
             'main-view',
             'bachelor-view',
             'year1-view',
@@ -2576,7 +2671,8 @@
             'history-view',
             'subject-definitions-view',
             'about-us-view',
-            'specialized-years-view' // <-- ده السطر الجديد اللي ضفناه
+            'specialized-years-view',
+            'gpa-view' 
         ];
 
         window.addEventListener('load', () => {
@@ -3067,6 +3163,115 @@ function showDepartmentSemester(year, dept, semester) {
             switchView('department-subjects-view');
         }
 
+// --- GPA Calculator Logic ---
+let gpaCourses = [];
+
+function showGpaPage() {
+    switchView('gpa-view');
+}
+
+function addGpaCourse() {
+    const nameInput = document.getElementById('gpa-subject-name');
+    const gradeSelect = document.getElementById('gpa-grade');
+    const hoursInput = document.getElementById('gpa-hours');
+
+    const name = nameInput.value || `مادة ${gpaCourses.length + 1}`;
+    const gradePoints = parseFloat(gradeSelect.value);
+    const hours = parseFloat(hoursInput.value);
+    
+    const gradeText = gradeSelect.options[gradeSelect.selectedIndex].text;
+
+    if (hours <= 0 || isNaN(hours)) {
+        showToast("برجاء إدخال عدد ساعات صحيح");
+        return;
+    }
+
+    gpaCourses.push({
+        id: Date.now(),
+        name: name,
+        points: gradePoints,
+        hours: hours,
+        gradeText: gradeText
+    });
+
+    renderGpaList();
+    calculateGpaResult();
+    
+    nameInput.value = '';
+    showToast("تم إضافة المادة");
+}
+
+function removeGpaCourse(id) {
+    gpaCourses = gpaCourses.filter(c => c.id !== id);
+    renderGpaList();
+    calculateGpaResult();
+}
+
+function resetGpa() {
+    gpaCourses = [];
+    renderGpaList();
+    calculateGpaResult();
+    showToast("تم مسح جميع المواد");
+}
+
+function renderGpaList() {
+    const list = document.getElementById('courses-list');
+    const emptyMsg = document.getElementById('empty-msg');
+    
+    list.innerHTML = '';
+    
+    if (gpaCourses.length === 0) {
+        emptyMsg.classList.remove('hidden');
+    } else {
+        emptyMsg.classList.add('hidden');
+        gpaCourses.forEach(course => {
+            const row = `
+                <tr class="border-b border-gray-700/50 hover:bg-dark-700/50 transition">
+                    <td class="py-3 px-2 font-bold text-white">${course.name}</td>
+                    <td class="py-3 px-2 text-cuGold-500 font-mono">${course.gradeText}</td>
+                    <td class="py-3 px-2 text-gray-400 text-xs">${course.hours} ساعات</td>
+                    <td class="py-3 px-2 text-left">
+                        <button onclick="removeGpaCourse(${course.id})" class="text-red-500 hover:text-red-400 p-1">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </td>
+                </tr>
+            `;
+            list.innerHTML += row;
+        });
+    }
+}
+
+function calculateGpaResult() {
+    let totalPoints = 0;
+    let totalHours = 0;
+
+    gpaCourses.forEach(course => {
+        totalPoints += (course.points * course.hours);
+        totalHours += course.hours;
+    });
+
+    const gpaResultEl = document.getElementById('gpa-result');
+    const hoursResultEl = document.getElementById('total-hours');
+    const pointsResultEl = document.getElementById('total-points');
+
+    hoursResultEl.innerText = totalHours;
+    pointsResultEl.innerText = totalPoints.toFixed(2);
+
+    if (totalHours === 0) {
+        gpaResultEl.innerText = "0.00";
+        gpaResultEl.classList.remove('text-green-400', 'text-yellow-400', 'text-red-400');
+        gpaResultEl.classList.add('text-white');
+    } else {
+        const gpa = totalPoints / totalHours;
+        gpaResultEl.innerText = gpa.toFixed(2);
+        
+        gpaResultEl.classList.remove('text-white', 'text-green-400', 'text-yellow-400', 'text-red-400');
+        if (gpa >= 3.0) gpaResultEl.classList.add('text-green-400'); 
+        else if (gpa >= 2.0) gpaResultEl.classList.add('text-yellow-400'); 
+        else gpaResultEl.classList.add('text-red-400'); 
+    }
+}
     </script>
 </body>
 </html>
