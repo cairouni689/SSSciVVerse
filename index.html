@@ -1635,18 +1635,8 @@
     
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-gray-400 text-sm mb-2">التقدير</label>
-                                <select id="gpa-grade" class="w-full bg-dark-900 border border-gray-600 rounded-lg p-3 text-white focus:border-cuGreen-500 focus:outline-none transition appearance-none">
-                                    <option value="4.0">A+</option>
-                                    <option value="3.7">A</option>
-                                    <option value="3.3">B+</option>
-                                    <option value="3.0">B</option>
-                                    <option value="2.7">C+</option>
-                                    <option value="2.4">C</option>
-                                    <option value="2.2">D+</option>
-                                    <option value="2.0">D</option>
-                                    <option value="0.0">F</option>
-                                </select>
+                                <label class="block text-gray-400 text-sm mb-2">الدرجة (من 100)</label>
+                                <input type="number" id="gpa-degree" placeholder="مثال: 84" min="0" max="100" class="w-full bg-dark-900 border border-gray-600 rounded-lg p-3 text-white focus:border-cuGreen-500 focus:outline-none transition">
                             </div>
                             <div>
                                 <label class="block text-gray-400 text-sm mb-2">الساعات</label>
@@ -3186,34 +3176,64 @@ function showGpaPage() {
     switchView('gpa-view');
 }
 
+/* --- الكود الجديد --- */
 function addGpaCourse() {
     const nameInput = document.getElementById('gpa-subject-name');
-    const gradeSelect = document.getElementById('gpa-grade');
+    const degreeInput = document.getElementById('gpa-degree');
     const hoursInput = document.getElementById('gpa-hours');
 
     const name = nameInput.value || `مادة ${gpaCourses.length + 1}`;
-    const gradePoints = parseFloat(gradeSelect.value);
+    const degree = parseFloat(degreeInput.value);
     const hours = parseFloat(hoursInput.value);
-    
-    const gradeText = gradeSelect.options[gradeSelect.selectedIndex].text;
 
+    // التحقق من صحة المدخلات
+    if (isNaN(degree) || degree < 0 || degree > 100) {
+        showToast("برجاء إدخال درجة صحيحة من 0 لـ 100");
+        return;
+    }
     if (hours <= 0 || isNaN(hours)) {
         showToast("برجاء إدخال عدد ساعات صحيح");
         return;
     }
 
+    // معادلة حساب النقاط (Linear Scale)
+    let points = 0;
+    let gradeText = "F";
+
+    if (degree >= 90) {
+        points = 4.0;
+        gradeText = "A+";
+    } else if (degree >= 60) {
+        // المعادلة الدقيقة لكلية العلوم
+        points = 1.0 + (degree - 60) * 0.1;
+        points = Math.round(points * 100) / 100; // تقريب لأقرب رقمين عشريين
+
+        // تحديد الرمز للعرض فقط
+        if (degree >= 85) gradeText = "A";
+        else if (degree >= 80) gradeText = "B+";
+        else if (degree >= 75) gradeText = "B";
+        else if (degree >= 70) gradeText = "C+";
+        else if (degree >= 65) gradeText = "C";
+        else if (degree >= 60) gradeText = "D";
+    } else {
+        points = 0.0;
+        gradeText = "F";
+    }
+
     gpaCourses.push({
         id: Date.now(),
         name: name,
-        points: gradePoints,
+        points: points,
         hours: hours,
-        gradeText: gradeText
+        gradeText: `${gradeText} (${degree})`
     });
 
     renderGpaList();
     calculateGpaResult();
     
+    // تفريغ الحقول
     nameInput.value = '';
+    degreeInput.value = '';
     showToast("تم إضافة المادة");
 }
 
