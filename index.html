@@ -1567,7 +1567,7 @@
         <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-16">
             <div class="flex justify-between items-center mb-10 animate-fade-up">
                 <div>
-                    <h2 class="text-3xl font-bold text-white mb-2">فريق Cairo SciVerse</h2>
+                    <h2 class="text-3xl font-bold text-white mb-2"S>فريق Cairo SciVerse</h2>
                     <p class="text-cuGold-500 text-lg">حكاية شغف 💡</p>
                 </div>
                 <button onclick="showHomePage()" class="bg-dark-800 border border-gray-600 hover:border-cuGold-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
@@ -1709,12 +1709,10 @@
     <div id="profile-view" class="hidden opacity-0 transition-opacity duration-500 min-h-screen bg-dark-900 relative flex flex-col">
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#3b82f6 1px, transparent 1px); background-size: 30px 30px;"></div>
         
-        <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-24">
-            
-            <div class="flex justify-between items-center mb-10 animate-fade-up">
+        <div class="container mx-auto px-4 relative z-10 flex-grow pt-10 pb-24"> <div class="flex justify-between items-center mb-10 animate-fade-up">
                 <div>
                     <h2 class="text-3xl font-bold text-white mb-2">الملف الشخصي</h2>
-                    <p class="text-blue-400 text-lg">بياناتك وملاحظاتك 🎓</p>
+                    <p class="text-blue-400 text-lg">بياناتك الأكاديمية 🎓</p>
                 </div>
                 <button onclick="showHomePage()" class="bg-dark-800 border border-gray-600 hover:border-blue-500 text-white px-6 py-2 rounded-full transition flex items-center gap-2">
                     <span class="text-sm font-bold">الرئيسية</span> <i class="fas fa-home"></i>
@@ -1727,64 +1725,75 @@
                     <div class="bg-dark-800 p-6 rounded-2xl border border-gray-700 shadow-xl text-center relative overflow-hidden">
                         <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-blue-700"></div>
                         <div id="profile-avatar-big" class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-blue-600 to-blue-900 rounded-full flex items-center justify-center text-white text-4xl font-bold border-4 border-dark-900 shadow-2xl shadow-blue-900/50">U</div>
-                        <h3 id="profile-name" class="text-xl font-bold text-white mb-1">...</h3>
-                        <p id="profile-email" class="text-gray-400 text-sm mb-6 font-mono">...</p>
+                        <h3 id="profile-name" class="text-xl font-bold text-white mb-1">طالب علم</h3>
+                        <p id="profile-email" class="text-gray-400 text-sm mb-6 font-mono">student@example.com</p>
                         <button onclick="signOut()" class="w-full bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/50 py-2 rounded-lg transition flex items-center justify-center gap-2">
                             <i class="fas fa-sign-out-alt"></i> تسجيل خروج
                         </button>
                     </div>
 
-                    <div class="bg-dark-800 p-6 rounded-2xl border border-gray-700 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-1 h-full bg-cuGreen-500"></div>
-                        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                            <i class="fas fa-fingerprint text-cuGreen-400"></i> الكود المدرسي
-                        </h3>
-                        
-                        <div id="code-edit-container">
-                            <p class="text-xs text-gray-400 mb-3 bg-red-900/20 p-2 rounded border border-red-900/50">
-                                ⚠️ هام: لن يمكنك تعديل الكود بعد الحفظ!
-                            </p>
-                            <div class="flex gap-2">
-                                <input type="text" id="student-code-input" placeholder="اكتب الكود..." class="flex-1 bg-dark-900 border border-gray-600 rounded-lg p-2 text-white text-sm focus:border-cuGreen-500 focus:outline-none transition">
-                                <button onclick="saveStudentCode()" class="bg-cuGreen-600 hover:bg-cuGreen-700 text-white px-4 py-2 rounded-lg font-bold text-xs transition shadow-lg">
-                                    حفظ
-                                </button>
+                    <a href="https://www.science-cairo.com" target="_blank" class="block bg-dark-800 p-6 rounded-2xl border border-gray-700 hover:border-cuGold-500 group transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-cuGold-500/5 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                        <div class="flex items-center gap-4 relative z-10">
+                            <div class="w-12 h-12 flex items-center justify-center bg-white rounded-lg overflow-hidden p-1 shadow-lg">
+                                <img src="https://www.science-cairo.com/favicon.ico" onerror="this.src='https://cdn-icons-png.flaticon.com/512/167/167707.png'" class="w-full h-full object-contain">
                             </div>
+                            <div>
+                                <h4 class="text-white font-bold group-hover:text-cuGold-500 transition">الموقع الرسمي للكلية</h4>
+                                <p class="text-xs text-gray-400">Science Cairo Official</p>
+                            </div>
+                            <i class="fas fa-external-link-alt text-gray-500 ml-auto group-hover:text-white"></i>
                         </div>
+                    </a>
 
-                        <div id="code-display-container" class="hidden animate-fade-up">
-                            <div class="bg-dark-900 p-4 rounded-lg border border-gray-600 flex justify-between items-center group">
-                                <div class="flex flex-col">
-                                    <span class="text-[10px] text-gray-500 mb-1">الكود المسجل</span>
-                                    <span id="saved-code-value" class="text-2xl font-mono font-bold text-cuGreen-400 tracking-wider"></span>
-                                </div>
-                                <i class="fas fa-lock text-gray-600 text-xl" title="مقفول"></i>
-                            </div>
-                        </div>
+                    <div class="bg-blue-900/20 p-4 rounded-xl border border-blue-500/30 backdrop-blur-sm">
+                        <p class="text-xs text-blue-200 text-center leading-relaxed">
+                            <i class="fas fa-info-circle mb-2 block text-xl text-blue-400"></i>
+                            تنويه: Cairo SciVerse هي منصة طلابية لمساعدة الزملاء، وليست الموقع الرسمي للكلية.
+                        </p>
                     </div>
                 </div>
 
                 <div class="lg:col-span-2 space-y-6">
-                    <div class="bg-dark-800 p-6 rounded-2xl border border-gray-700 min-h-[500px] flex flex-col relative z-20">
-                        <h3 class="text-lg font-bold text-white flex items-center gap-2 mb-4">
-                            <i class="fas fa-pen-fancy text-yellow-400"></i> تدوين الملاحظات
+                    
+                    <div class="bg-dark-800 p-6 rounded-2xl border border-gray-700 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-1 h-full bg-cuGreen-500"></div>
+                        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                            <i class="fas fa-fingerprint text-cuGreen-400"></i> كود الطالب
                         </h3>
                         
-                        <div class="mb-6">
-                            <textarea id="new-note-input" class="w-full bg-dark-900 border border-gray-600 rounded-xl p-4 text-white focus:border-yellow-500 focus:outline-none transition custom-scrollbar leading-relaxed mb-3" placeholder="اكتب ملاحظة جديدة هنا..." rows="3"></textarea>
-                            
-                            <div class="flex justify-end"> <button onclick="saveNewNote()" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-lg font-bold transition shadow-lg flex items-center gap-2 transform hover:scale-105 active:scale-95">
-                                    <i class="fas fa-save"></i> حفظ الملاحظة
+                        <div id="code-edit-container">
+                            <p class="text-sm text-gray-400 mb-3 bg-dark-900/50 p-2 rounded border-r-2 border-red-500">
+                                ⚠️ هام: تأكد من صحة الكود، <b>لن يمكنك تعديله بعد الحفظ!</b>
+                            </p>
+                            <div class="flex gap-3">
+                                <input type="text" id="student-code-input" placeholder="اكتب الكود هنا..." class="flex-1 bg-dark-900 border border-gray-600 rounded-lg p-3 text-white focus:border-cuGreen-500 focus:outline-none focus:ring-1 focus:ring-cuGreen-500/50 transition">
+                                <button onclick="saveStudentCode()" class="bg-cuGreen-600 hover:bg-cuGreen-700 text-white px-6 rounded-lg font-bold transition shadow-lg shadow-cuGreen-600/20">
+                                    حفظ وتثبيت
                                 </button>
                             </div>
                         </div>
 
-                        <div class="border-t border-gray-700 my-2"></div>
-
-                        <h4 class="text-sm text-gray-400 mb-4 mt-2 font-bold">الملاحظات المحفوظة:</h4>
-                        <div id="saved-notes-list" class="space-y-3 flex-grow overflow-y-auto custom-scrollbar pr-2 max-h-[400px]">
-                            <p class="text-center text-gray-600 text-sm py-4">لا توجد ملاحظات محفوظة حتى الآن</p>
+                        <div id="code-display-container" class="hidden">
+                            <div class="bg-dark-900 p-4 rounded-lg border border-gray-600 flex justify-between items-center group">
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-gray-500 mb-1">الكود المسجل</span>
+                                    <span id="saved-code-value" class="text-2xl font-mono font-bold text-cuGreen-400 tracking-wider"></span>
+                                </div>
+                                <div class="w-10 h-10 rounded-full bg-dark-800 flex items-center justify-center border border-gray-700">
+                                    <i class="fas fa-lock text-gray-500" title="تم القفل"></i>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="bg-dark-800 p-6 rounded-2xl border border-gray-700 min-h-[400px] flex flex-col relative z-20"> <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                <i class="fas fa-pen-fancy text-yellow-400"></i> ملاحظاتي
+                            </h3>
+                            <span id="notes-status" class="text-xs text-cuGreen-400 font-bold transition-opacity duration-300 opacity-0">تم الحفظ ✓</span>
+                        </div>
+                        <textarea id="user-notes" class="flex-grow w-full bg-dark-900 border border-gray-600 rounded-xl p-4 text-white focus:border-yellow-500 focus:outline-none resize-none transition custom-scrollbar leading-relaxed" placeholder="مكانك الخاص.. اكتب ملاحظات المحاضرات، مواعيد الامتحانات، أو أفكارك هنا 📝"></textarea>
                     </div>
                 </div>
             </div>
@@ -3503,7 +3512,17 @@ function calculateGpaResult() {
             if(document.getElementById('profile-name')) document.getElementById('profile-name').innerText = name;
             if(document.getElementById('profile-email')) document.getElementById('profile-email').innerText = currentUser.email;
 
- 
+            fetchProfileData();
+        } else {
+            // حالة: غير مسجل
+            currentUser = null;
+            if(loginBtn) {
+                loginBtn.style.display = '';
+                loginBtn.classList.add('md:flex');
+            }
+            if(profileIcon) profileIcon.classList.add('hidden');
+        }
+    }
 
     // 5. زر الدخول بجوجل
     async function loginWithGoogle() {
@@ -3584,8 +3603,77 @@ function calculateGpaResult() {
         }
     }
 
+   // دالة حفظ الكود (المعدلة للتحديث الفوري)
+   async function saveStudentCode() {
+        const codeInput = document.getElementById('student-code-input');
+        const code = codeInput.value.trim();
+        
+        // التأكد إن الحقل مش فاضي
+        if (!code) return showToast("⚠️ يرجى كتابة الكود أولاً");
 
- 
+        // رسالة التأكيد
+        if (confirm("⚠️ تنبيه هام:\nهل أنت متأكد من هذا الكود؟\nلن تتمكن من تعديله بعد الحفظ!")) {
+            
+            // 1. تغيير شكل الزرار عشان يحس إن في حاجة بتحصل
+            const btn = document.querySelector('#code-edit-container button');
+            const originalText = btn.innerText;
+            btn.innerText = "جاري الحفظ...";
+            btn.disabled = true; // نقفل الزرار عشان ميدوسش مرتين
+
+            // 2. إرسال البيانات لـ Supabase
+            const { error } = await sbClient
+                .from('profiles')
+                .update({ student_code: code })
+                .eq('id', currentUser.id);
+
+            // 3. التحقق من النتيجة
+            if (!error) {
+                // ✅ نجح الحفظ: نغير الشكل فوراً يدوياً
+                const editCont = document.getElementById('code-edit-container');
+                const dispCont = document.getElementById('code-display-container');
+                const codeVal = document.getElementById('saved-code-value');
+
+                // إخفاء مربع الكتابة
+                editCont.classList.add('hidden');
+                // إظهار مربع العرض
+                dispCont.classList.remove('hidden');
+                // وضع القيمة الجديدة
+                codeVal.innerText = code;
+
+                showToast("✅ تم حفظ وتثبيت الكود بنجاح");
+            } else {
+                // ❌ فشل الحفظ
+                alert("حدث خطأ أثناء الحفظ: " + error.message);
+                // نرجع الزرار زي ما كان
+                btn.innerText = originalText;
+                btn.disabled = false;
+            }
+        }
+    }
+
+    // 10. حفظ النوتس تلقائي
+    let noteTimeout;
+    const notesArea = document.getElementById('user-notes');
+    if(notesArea) {
+        notesArea.addEventListener('input', (e) => {
+            const status = document.getElementById('notes-status');
+            if(status) { status.innerText = "جاري الحفظ..."; status.style.opacity = "1"; }
+            
+            clearTimeout(noteTimeout);
+            noteTimeout = setTimeout(async () => {
+                const notes = e.target.value;
+                const { error } = await sbClient
+                    .from('profiles')
+                    .update({ notes: notes })
+                    .eq('id', currentUser.id);
+                    
+                if (!error && status) {
+                    status.innerText = "تم الحفظ ✓";
+                    setTimeout(() => status.style.opacity = "0", 2000);
+                }
+            }, 1500);
+        });
+    }
     // ==========================================
     // 🎨 دوال فتح وإغلاق النافذة (Modal Logic)
     // ==========================================
@@ -3615,173 +3703,6 @@ function calculateGpaResult() {
         setTimeout(() => {
             modal.classList.add('hidden');
         }, 300);
-    }
-    // ==========================================
-    // 🧠 منطق البروفايل والملاحظات الجديد (Updated)
-    // ==========================================
-
-    let myNotesArray = []; // مصفوفة لتخزين الملاحظات محلياً
-
-    // 1. جلب بيانات الطالب (كود + ملاحظات) عند فتح الموقع
-    async function fetchProfileData() {
-        if (!currentUser) return;
-
-        console.log("📥 جاري جلب بيانات البروفايل...");
-        
-        let { data, error } = await sbClient
-            .from('profiles')
-            .select('*')
-            .eq('id', currentUser.id)
-            .single();
-
-        // إنشاء بروفايل جديد لو أول مرة
-        if (!data && !error) {
-            const { data: newData } = await sbClient
-                .from('profiles')
-                .insert([{ id: currentUser.id, full_name: currentUser.user_metadata.full_name, email: currentUser.email }])
-                .select().single();
-            data = newData;
-        }
-
-        if (data) {
-            // أ) معالجة الكود المدرسي (الثبات بعد التحديث)
-            const editCont = document.getElementById('code-edit-container');
-            const dispCont = document.getElementById('code-display-container');
-            const codeVal = document.getElementById('saved-code-value');
-
-            if (data.student_code && data.student_code.trim() !== "") {
-                // الكود موجود في الداتا بيز -> اخفي التعديل واظهر العرض فوراً
-                if(editCont) editCont.classList.add('hidden');
-                if(dispCont) dispCont.classList.remove('hidden');
-                if(codeVal) codeVal.innerText = data.student_code;
-            } else {
-                // الكود مش موجود -> اظهر مربع الكتابة
-                if(editCont) editCont.classList.remove('hidden');
-                if(dispCont) dispCont.classList.add('hidden');
-            }
-
-            // ب) معالجة الملاحظات (تحويل النص إلى قائمة)
-            if (data.notes) {
-                try {
-                    // نحاول قراءة الملاحظات كـ مصفوفة JSON
-                    if (data.notes.startsWith("[")) {
-                        myNotesArray = JSON.parse(data.notes);
-                    } else {
-                        // لو كانت نص عادي (من النظام القديم) نحولها لمصفوفة
-                        myNotesArray = [{ id: Date.now(), text: data.notes, date: new Date().toLocaleDateString('ar-EG') }];
-                    }
-                } catch (e) {
-                    myNotesArray = [];
-                }
-            } else {
-                myNotesArray = [];
-            }
-            renderNotesList(); // رسم القائمة
-        }
-    }
-
-    // 2. دالة حفظ الكود المدرسي (النهائية)
-    async function saveStudentCode() {
-        const codeInput = document.getElementById('student-code-input');
-        const code = codeInput.value.trim();
-        
-        if (!code) return showToast("⚠️ يرجى كتابة الكود أولاً");
-
-        if (confirm("⚠️ تنبيه هام:\nهل أنت متأكد من الكود؟ لن يمكنك تعديله لاحقاً!")) {
-            // تحديث الواجهة فوراً (عشان المستخدم يحس بالسرعة)
-            const editCont = document.getElementById('code-edit-container');
-            const dispCont = document.getElementById('code-display-container');
-            const codeVal = document.getElementById('saved-code-value');
-            
-            editCont.classList.add('hidden');
-            dispCont.classList.remove('hidden');
-            codeVal.innerText = code;
-
-            // الحفظ في الخلفية
-            const { error } = await sbClient
-                .from('profiles')
-                .update({ student_code: code })
-                .eq('id', currentUser.id);
-
-            if (error) {
-                alert("حدث خطأ في الحفظ، حاول مرة أخرى.");
-                editCont.classList.remove('hidden'); // رجعه لو حصل خطأ
-                dispCont.classList.add('hidden');
-            } else {
-                showToast("✅ تم تثبيت الكود بنجاح");
-            }
-        }
-    }
-
-    // 3. دالة حفظ ملاحظة جديدة (الزرار الجديد)
-    async function saveNewNote() {
-        const input = document.getElementById('new-note-input');
-        const text = input.value.trim();
-
-        if (!text) return showToast("⚠️ الملاحظة فارغة!");
-
-        // إضافة الملاحظة للمصفوفة
-        const newNoteObj = {
-            id: Date.now(), // رقم مميز
-            text: text,
-            date: new Date().toLocaleDateString('ar-EG') // التاريخ النهاردة
-        };
-
-        myNotesArray.unshift(newNoteObj); // إضافة في الأول (أحدث حاجة فوق)
-
-        // تحديث الشاشة فوراً
-        renderNotesList();
-        input.value = ""; // تفريغ الخانة
-
-        // الحفظ في الداتا بيز (كـ JSON String)
-        const { error } = await sbClient
-            .from('profiles')
-            .update({ notes: JSON.stringify(myNotesArray) })
-            .eq('id', currentUser.id);
-
-        if (error) console.error("Error saving notes:", error);
-        else showToast("✅ تم حفظ الملاحظة");
-    }
-
-    // 4. دالة حذف ملاحظة
-    async function deleteNote(id) {
-        if(confirm("هل تريد حذف هذه الملاحظة؟")) {
-            myNotesArray = myNotesArray.filter(note => note.id !== id);
-            renderNotesList();
-            
-            await sbClient
-                .from('profiles')
-                .update({ notes: JSON.stringify(myNotesArray) })
-                .eq('id', currentUser.id);
-        }
-    }
-
-    // 5. دالة رسم الملاحظات على الشاشة
-    function renderNotesList() {
-        const container = document.getElementById('saved-notes-list');
-        if(!container) return;
-
-        container.innerHTML = "";
-
-        if (myNotesArray.length === 0) {
-            container.innerHTML = '<p class="text-center text-gray-600 text-sm py-4">لا توجد ملاحظات محفوظة</p>';
-            return;
-        }
-
-        myNotesArray.forEach(note => {
-            const html = `
-                <div class="bg-dark-900 p-3 rounded-lg border border-gray-700 flex justify-between items-start group hover:border-yellow-600 transition">
-                    <div>
-                        <p class="text-white text-sm whitespace-pre-wrap leading-relaxed">${note.text}</p>
-                        <span class="text-[10px] text-gray-500 mt-2 block">${note.date || ''}</span>
-                    </div>
-                    <button onclick="deleteNote(${note.id})" class="text-red-500 hover:text-red-400 opacity-50 group-hover:opacity-100 transition p-1">
-                        <i class="fas fa-trash-alt"></i>
-                    </button>
-                </div>
-            `;
-            container.innerHTML += html;
-        });
     }
     </script>
 </body>
