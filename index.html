@@ -3604,22 +3604,50 @@ function calculateGpaResult() {
         }
     }
 
-    // 9. حفظ الكود
-    async function saveStudentCode() {
+   // دالة حفظ الكود (المعدلة للتحديث الفوري)
+   async function saveStudentCode() {
         const codeInput = document.getElementById('student-code-input');
         const code = codeInput.value.trim();
-        if (!code) return alert("اكتب الكود أولاً");
+        
+        // التأكد إن الحقل مش فاضي
+        if (!code) return showToast("⚠️ يرجى كتابة الكود أولاً");
 
-        if (confirm("هل أنت متأكد؟ لن يمكنك تغيير الكود لاحقاً!")) {
+        // رسالة التأكيد
+        if (confirm("⚠️ تنبيه هام:\nهل أنت متأكد من هذا الكود؟\nلن تتمكن من تعديله بعد الحفظ!")) {
+            
+            // 1. تغيير شكل الزرار عشان يحس إن في حاجة بتحصل
+            const btn = document.querySelector('#code-edit-container button');
+            const originalText = btn.innerText;
+            btn.innerText = "جاري الحفظ...";
+            btn.disabled = true; // نقفل الزرار عشان ميدوسش مرتين
+
+            // 2. إرسال البيانات لـ Supabase
             const { error } = await sbClient
                 .from('profiles')
                 .update({ student_code: code })
                 .eq('id', currentUser.id);
 
+            // 3. التحقق من النتيجة
             if (!error) {
-                fetchProfileData();
+                // ✅ نجح الحفظ: نغير الشكل فوراً يدوياً
+                const editCont = document.getElementById('code-edit-container');
+                const dispCont = document.getElementById('code-display-container');
+                const codeVal = document.getElementById('saved-code-value');
+
+                // إخفاء مربع الكتابة
+                editCont.classList.add('hidden');
+                // إظهار مربع العرض
+                dispCont.classList.remove('hidden');
+                // وضع القيمة الجديدة
+                codeVal.innerText = code;
+
+                showToast("✅ تم حفظ وتثبيت الكود بنجاح");
             } else {
-                alert("خطأ: " + error.message);
+                // ❌ فشل الحفظ
+                alert("حدث خطأ أثناء الحفظ: " + error.message);
+                // نرجع الزرار زي ما كان
+                btn.innerText = originalText;
+                btn.disabled = false;
             }
         }
     }
